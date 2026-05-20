@@ -6,7 +6,8 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 
 import roverWorkVideo from "@/assets/site/robot-rover-work.mp4.asset.json";
-import roverFeatureImg from "@/assets/site/rover-feature-warehouse.jpg";
+import roverFeatureVideo from "@/assets/site/rover-feature-warehouse.mp4.asset.json";
+import roverFeaturePoster from "@/assets/site/rover-feature-warehouse.jpg";
 import humanoidWorkVideo from "@/assets/site/robot-humanoid-work.mp4.asset.json";
 import quadrupedWorkVideo from "@/assets/site/robot-quadruped-work.mp4.asset.json";
 import armWorkVideo from "@/assets/site/robot-arm-work.mp4.asset.json";
