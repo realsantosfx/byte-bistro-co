@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import heroImg from "@/assets/site/robot-arm.jpg";
 import workVideo from "@/assets/site/robot-arm-work.mp4.asset.json";
-import precisionVideo from "@/assets/site/robot-arm-precision.mp4.asset.json";
+import precisionImg from "@/assets/site/robot-arm-precision.jpg";
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -123,7 +123,7 @@ const Page = () => {
 
         <section className="pb-20 md:pb-24 section-x container-shell">
           <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
-            <video src={precisionVideo.url} autoPlay muted loop playsInline preload="auto" poster={heroImg} className="absolute inset-0 w-full h-full object-cover" />
+            <img src={precisionImg} alt="Präzisions-Roboterarm" loading="lazy" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0) 50%,rgba(8,10,16,0.85) 100%)" }} />
             <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 flex flex-wrap items-end justify-between gap-4">
               <div className="max-w-[520px]">
