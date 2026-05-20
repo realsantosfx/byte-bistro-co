@@ -224,6 +224,7 @@ const Page = () => {
                 { l: "Operative Software", d: "Daten- & Prozesskontext für die KI", to: "/produkte/operative-software" },
                 { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb", to: "/produkte/terminals-kameras" },
                 { l: "Autonomer Roboter", d: "KI entscheidet, der Rover bewegt", to: "/produkte/autonomer-roboter" },
+                { l: "SantosOS", d: "Das Ökosystem hinter allem", to: "/santosos" },
               ].map((x) => (
                 <Link
                   key={x.l}
