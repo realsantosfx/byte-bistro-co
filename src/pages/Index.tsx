@@ -97,7 +97,7 @@ const RoverSVG = () => (
 const productCards = [
   { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]", img: cardKi, href: "/produkte/lokale-ki" },
   { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]", img: cardTerminals, href: "/produkte/terminals-kameras" },
-  { tag: "Add-on", title: "Autonomer Roboter", desc: "Optional. Coming Soon.", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover, href: "/produkte/autonomer-roboter", soon: true },
+  { tag: "Add-on", title: "Autonomer Roboter", desc: "Optionale Hardware-Erweiterung", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover, href: "/produkte/autonomer-roboter" },
 ];
 
 const buildTypes = [
@@ -249,11 +249,6 @@ const Index = () => {
                   <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                     {c.tag}
                   </div>
-                  {c.soon && (
-                    <div className="absolute top-5 right-14 text-[10px] font-medium text-white/70 uppercase tracking-[0.12em] px-2.5 py-1 rounded-full border border-white/15 bg-white/5">
-                      Coming Soon
-                    </div>
-                  )}
                   <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                     <Arrow />
                   </div>
