@@ -20,6 +20,9 @@ import ProduktOperativeSoftware from "./pages/ProduktOperativeSoftware";
 import ProduktLokaleKI from "./pages/ProduktLokaleKI";
 import ProduktTerminalsKameras from "./pages/ProduktTerminalsKameras";
 import ProduktAutonomerRoboter from "./pages/ProduktAutonomerRoboter";
+import ProduktHumanoid from "./pages/ProduktHumanoid";
+import ProduktQuadruped from "./pages/ProduktQuadruped";
+import ProduktRoboterArm from "./pages/ProduktRoboterArm";
 import Robotik from "./pages/Robotik";
 import SantosOS from "./pages/SantosOS";
 import Anwendung from "./pages/Anwendung";
@@ -69,6 +72,9 @@ const App = () => (
             <Route path="/produkte/terminals-kameras" element={<ProduktTerminalsKameras />} />
             <Route path="/produkte/autonomer-roboter" element={<ProduktAutonomerRoboter />} />
             <Route path="/robotik" element={<Robotik />} />
+            <Route path="/robotik/humanoid" element={<ProduktHumanoid />} />
+            <Route path="/robotik/quadruped" element={<ProduktQuadruped />} />
+            <Route path="/robotik/arme" element={<ProduktRoboterArm />} />
             <Route path="/santosos" element={<SantosOS />} />
             <Route path="/anwendung/:slug" element={<Anwendung />} />
             <Route path="/branche/:slug" element={<Branche />} />

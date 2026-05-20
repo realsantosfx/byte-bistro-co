@@ -42,21 +42,21 @@ const platforms = [
     title: "Humanoide Roboter",
     desc: "Zweibeinige Plattformen für Aufgaben, die bisher menschliche Beweglichkeit verlangen — Kommissionierung, Übergabe, Inspektion.",
     img: humanoidHero,
-    href: "#humanoid",
+    href: "/robotik/humanoid",
   },
   {
     tag: "Quadruped",
     title: "Vierbein-Roboter",
     desc: "Treppen, Schächte, Außenbereich. Inspektion, Sicherheit und Datenerfassung dort, wo Räder nicht hinkommen.",
     img: quadrupedImg,
-    href: "#quadruped",
+    href: "/robotik/quadruped",
   },
   {
     tag: "Manipulator",
     title: "Robotik-Arme",
     desc: "Stationäre 6-Achs-Arme für Pick-and-Place, Verpackung und Qualitätskontrolle — direkt an deine ERP- oder MES-Logik angebunden.",
     img: robotArmImg,
-    href: "#arme",
+    href: "/robotik/arme",
   },
 ];
 
