@@ -3,9 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
-import heroImg from "@/assets/site/page-ki-hero.jpg";
-import cardKi from "@/assets/site/card-ki.jpg";
-import reserveKi from "@/assets/site/reserve-ki.jpg";
+import heroImg from "@/assets/site/page-terminals-hero.jpg";
+import cardTerminals from "@/assets/site/card-terminals.jpg";
+import reserveHardware from "@/assets/site/reserve-hardware.jpg";
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -15,41 +15,41 @@ const Arrow = () => (
 
 const modules = [
   {
+    tag: "Arbeitsplatz",
+    title: "Touch-Terminals an jeder Station",
+    desc: "Robuste Industrie-Displays am Lagerplatz, am Packtisch, in der Werkstatt. Eine Oberfläche, die zum Arbeiten gebaut ist — nicht zum Erklären.",
+  },
+  {
+    tag: "Erfassung",
+    title: "Scanner, Waagen & Sensoren",
+    desc: "Barcode- und QR-Scanner, Industriewaagen, Temperatur- und Bewegungssensoren — direkt an die Operative Software angebunden, ohne Zwischenschritte.",
+  },
+  {
     tag: "Vision",
-    title: "Bilderkennung am Wareneingang",
-    desc: "Kameras zählen, prüfen und kategorisieren — Paletten, Etiketten, Schäden. Ohne dass ein Bild jemals den Betrieb verlässt.",
+    title: "Kameras mit lokaler KI",
+    desc: "Industrie-Kameras erfassen Wareneingang, prüfen Etiketten und Qualität. Die Auswertung läuft lokal — Bilder bleiben im Haus.",
   },
   {
-    tag: "Sprache",
-    title: "Sprach- & Textverarbeitung",
-    desc: "Anfragen, Mails und Telefonate werden klassifiziert, zusammengefasst und vorbereitet. Auf deiner eigenen Hardware.",
-  },
-  {
-    tag: "Vorhersage",
-    title: "Bedarf, Routen & Engpässe",
-    desc: "Modelle lernen aus deinem Betrieb — was bestellt wird, was knapp wird, welche Strecke effizient ist. Mit echten Daten, nicht Hochrechnungen.",
-  },
-  {
-    tag: "Assistenz",
-    title: "Operativer KI-Assistent",
-    desc: "Mitarbeiter fragen in natürlicher Sprache nach Beständen, Aufträgen oder Auswertungen. Antworten kommen aus deinem System.",
+    tag: "Anzeige",
+    title: "Pick-by-Light & Großbild-Displays",
+    desc: "Wege werden sichtbar, Aufträge laufen mit. Großbild-Displays zeigen Schichtstatus, Kommissionierlisten und Engpässe in Echtzeit.",
   },
 ];
 
 const facts = [
-  { n: "0", em: "", l: "Daten verlassen\ndeinen Betrieb" },
-  { n: "100", em: "%", l: "Modelle laufen\non-premise" },
-  { n: "~", em: "ms", l: "Antwortzeiten\nim Millisekundenbereich" },
-  { n: "", em: "DSGVO", l: "konform per Architektur,\nnicht per Vertrag" },
+  { n: "1", em: "×", l: "Anbindung —\ndann läuft es" },
+  { n: "0", em: "", l: "Zettel- oder\nExcel-Umweg" },
+  { n: "100", em: "%", l: "Daten landen direkt\nim System" },
+  { n: "", em: "24/7", l: "Industrie-Hardware,\ndie das aushält" },
 ];
 
 const features = [
-  "Keine Cloud, keine Drittanbieter — alles bleibt im Haus",
-  "Modelle werden für deinen Use Case feinjustiert, nicht generisch eingesetzt",
-  "Updates und Modellwechsel ohne Vendor-Lock-in",
-  "Voll integriert in Operative Software, Terminals und Roboter",
-  "Energieeffiziente Hardware ab Mini-Server bis Edge-Box",
-  "Transparente Entscheidungen — was die KI sagt, ist nachvollziehbar",
+  "Hardware-Auswahl passend zum Betrieb — kein One-Size-Fits-All",
+  "Robuste Industrie-Geräte für Lager, Produktion und Außeneinsatz",
+  "Vorinstalliert, vorkonfiguriert, fertig zum Einsatz",
+  "Wartung & Ersatzteile aus Deutschland — kein Reseller-Pingpong",
+  "Volle Integration in Operative Software und lokale KI",
+  "Skalierbar von einer Station bis zum kompletten Standort",
 ];
 
 const Page = () => {
@@ -62,7 +62,7 @@ const Page = () => {
         <section className="relative overflow-hidden min-h-[640px] flex items-end">
           <img
             src={heroImg}
-            alt="Lokaler KI-Server mit Neural-Network-Visualisierung"
+            alt="Terminal, Kamera und Scanner in einer Lagerumgebung"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div
@@ -74,21 +74,21 @@ const Page = () => {
           />
           <div
             className="hidden md:block absolute right-[8%] bottom-[20%] w-[320px] h-[320px] rounded-full blur-[90px] pointer-events-none"
-            style={{ background: "radial-gradient(circle,rgba(47,184,198,0.32) 0%,transparent 70%)" }}
+            style={{ background: "radial-gradient(circle,rgba(80,200,100,0.25) 0%,transparent 70%)" }}
           />
 
           <div className="relative z-[2] px-6 md:px-14 pb-16 md:pb-20 max-w-[760px] container-shell w-full">
             <div className="text-[11px] font-medium text-white/55 uppercase tracking-[0.18em] mb-6">
-              Produkt — KI Schicht
+              Produkt — Physical Layer
             </div>
             <h1 className="display text-white mb-6" style={{ fontSize: "clamp(44px, 6.5vw, 76px)", lineHeight: 1.04 }}>
-              Lokale<br />
-              <span style={{ color: "hsl(var(--teal))" }}>KI</span><br />
-              ohne Cloud
+              Terminals &<br />
+              <span style={{ color: "hsl(var(--teal))" }}>Kameras</span><br />
+              direkt verbunden
             </h1>
             <p className="text-[17px] font-light text-white/65 leading-relaxed max-w-[520px]">
-              Intelligenz, die in deinem Betrieb läuft — nicht auf fremden Servern.
-              Sehen, lesen, vorhersagen und entscheiden, ohne dass ein Bit das Haus verlässt.
+              Hardware, die deine Software in die echte Welt bringt. Touch-Terminals,
+              Scanner, Sensoren und Kameras — vorkonfiguriert und integriert in einem System.
             </p>
             <div className="flex flex-wrap gap-3 mt-9">
               <Link
@@ -104,7 +104,7 @@ const Page = () => {
                 href="#module"
                 className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-6 py-3.5 rounded-full transition-colors"
               >
-                Module ansehen
+                Komponenten
               </a>
             </div>
           </div>
@@ -114,20 +114,19 @@ const Page = () => {
         <section className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
             <h2 className="hl-lg">
-              KI, die deinen{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Betrieb versteht</em>
-              {" "}— nicht den Markt
+              Software ist nichts wert, wenn{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>niemand sie benutzt</em>
             </h2>
             <div className="space-y-5">
               <p className="bd pt-1.5">
-                Cloud-KI macht aus deinen Daten Trainingsmaterial für andere. Lokale KI
-                dreht das um: Deine Daten bleiben bei dir, das Modell lernt deinen Betrieb
-                und antwortet aus deinem Kontext — nicht aus dem allgemeinen Internet.
+                Genau deshalb gehört Hardware bei uns dazu. Ein Terminal an jeder
+                Arbeitsstation, Scanner in jeder Hand, Kameras, die mitsehen — damit
+                Daten dort entstehen, wo gearbeitet wird, und nicht erst hinterher im Büro.
               </p>
               <p className="bd">
-                Wir wählen Modelle aus, betreiben sie auf passender Hardware und integrieren
-                sie direkt in die Operative Software. Das Ergebnis ist KI, die so selbstverständlich
-                im Tagesgeschäft mitläuft wie ein zusätzliches Teammitglied.
+                Wir wählen die Geräte aus, konfigurieren sie und installieren sie vor Ort.
+                Was bei dir ankommt, läuft sofort — angebunden an die Operative Software
+                und lokale KI.
               </p>
             </div>
           </div>
@@ -140,13 +139,13 @@ const Page = () => {
               <div
                 key={m.title}
                 className="relative overflow-hidden rounded-[18px] aspect-[4/3] hover-lift"
-                style={{ background: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)" }}
+                style={{ background: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)" }}
               >
-                <img src={cardKi} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-45" />
+                <img src={cardTerminals} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-45" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.45) 40%,rgba(8,10,16,0.92) 100%)" }} />
                 <div
-                  className="absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none bottom-[20%] right-[20%]"
-                  style={{ background: "rgba(80,160,255,.24)" }}
+                  className="absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none top-[25%] left-[20%]"
+                  style={{ background: "rgba(80,200,100,.22)" }}
                 />
                 <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                   {m.tag}
@@ -176,13 +175,14 @@ const Page = () => {
         <section className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
             <h2 className="hl-lg">
-              KI mit{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Hausverstand</em>
+              Hardware, die für{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>echte Arbeit</em>
+              {" "}gebaut ist
             </h2>
             <p className="bd pt-1.5">
-              Wir setzen KI dort ein, wo sie echten Hebel hat — und lassen sie weg,
-              wo sie nur Buzzword ist. Das macht den Unterschied zwischen einem Hype-Tool
-              und einem operativen Produktionsfaktor.
+              Kein Büro-Equipment im Lager. Kein Consumer-Tablet an der Maschine.
+              Wir bringen Geräte mit, die mit Staub, Stoß und Schicht umgehen können —
+              und die deine Software endlich nahtlos mit der Realität verbinden.
             </p>
           </div>
 
@@ -202,28 +202,28 @@ const Page = () => {
         <section className="pb-24 section-x container-shell">
           <div
             className="relative rounded-[18px] overflow-hidden min-h-[360px] grid md:grid-cols-2 gap-0"
-            style={{ background: "linear-gradient(135deg,#0a1428 0%,#0c2a4a 45%,#06182e 100%)" }}
+            style={{ background: "linear-gradient(135deg,#0d1f0d 0%,#0f3520 45%,#0a2818 100%)" }}
           >
-            <img src={reserveKi} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+            <img src={reserveHardware} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-25" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(110deg,rgba(8,12,22,0.92) 35%,rgba(8,12,22,0.4) 100%)" }} />
             <div className="relative z-[2] p-10 md:p-14">
               <div className="text-[11px] font-medium text-white/45 uppercase tracking-[0.18em] mb-5">
                 Im System
               </div>
               <h3 className="display text-white text-[28px] md:text-[34px] font-bold leading-tight mb-4">
-                Lokale KI verbindet sich mit allem.
+                Terminals & Kameras sind nicht nur Geräte.
               </h3>
               <p className="text-[15px] text-white/60 leading-[1.8]">
-                Sie liest, was Kameras sehen, bewertet, was Terminals erfassen, und
-                steuert, was der Rover als Nächstes tut. Eine Intelligenzschicht über
-                deinem gesamten Betrieb.
+                Sie sind die Schnittstelle zwischen Menschen, Software und Maschinen.
+                Was dein Team scannt, was Kameras erkennen und was Sensoren messen —
+                alles fließt in dasselbe System, in Echtzeit.
               </p>
             </div>
             <div className="relative z-[2] p-10 md:p-14 flex flex-col justify-center gap-3">
               {[
-                { l: "Operative Software", d: "Daten- & Prozesskontext für die KI", to: "/produkte/operative-software" },
-                { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb", to: "/produkte/terminals-kameras" },
-                { l: "Autonomer Roboter", d: "KI entscheidet, der Rover bewegt", to: "/kontakt" },
+                { l: "Operative Software", d: "Das System hinter jedem Terminal", to: "/produkte/operative-software" },
+                { l: "Lokale KI", d: "Verarbeitet, was Kameras sehen", to: "/produkte/lokale-ki" },
+                { l: "Autonomer Roboter", d: "Bekommt Aufträge direkt von den Stationen", to: "/kontakt" },
               ].map((x) => (
                 <Link
                   key={x.l}
@@ -252,11 +252,11 @@ const Page = () => {
             />
             <div className="relative z-[2] max-w-[640px]">
               <h2 className="display text-white mb-5" style={{ fontSize: "clamp(28px, 3.8vw, 44px)", lineHeight: 1.1 }}>
-                Finde heraus, wo KI in deinem Betrieb echten Hebel hat.
+                Wir bringen die richtige Hardware in deinen Betrieb.
               </h2>
               <p className="text-[15px] text-white/55 leading-[1.8] mb-9">
-                Wir prüfen deine Prozesse, zeigen dir, was lokal sinnvoll automatisierbar ist,
-                und schlagen einen ehrlichen Pilot-Use-Case vor — kein KI-Theater.
+                Sag uns, wie deine Stationen heute aussehen — wir schlagen vor, welche
+                Terminals, Scanner und Kameras dort wirklich Sinn machen.
               </p>
               <Link
                 to="/kontakt"

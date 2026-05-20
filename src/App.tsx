@@ -18,6 +18,7 @@ import AdminBlueprints from "./pages/AdminBlueprints";
 import Enterprise from "./pages/Enterprise";
 import ProduktOperativeSoftware from "./pages/ProduktOperativeSoftware";
 import ProduktLokaleKI from "./pages/ProduktLokaleKI";
+import ProduktTerminalsKameras from "./pages/ProduktTerminalsKameras";
 import Demo from "./pages/Demo";
 import DemoDetail from "./pages/DemoDetail";
 import DemoRestaurant from "./pages/DemoRestaurant";
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/enterprise" element={<Enterprise />} />
             <Route path="/produkte/operative-software" element={<ProduktOperativeSoftware />} />
             <Route path="/produkte/lokale-ki" element={<ProduktLokaleKI />} />
+            <Route path="/produkte/terminals-kameras" element={<ProduktTerminalsKameras />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/demo/restaurant" element={<DemoRestaurant />} />
             <Route path="/demo/barber" element={<DemoBarber />} />
