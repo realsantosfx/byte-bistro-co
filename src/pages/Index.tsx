@@ -2,22 +2,19 @@ import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
-import { ArrowUpRight, Play } from "lucide-react";
-import heroRobot from "@/assets/site/rover-hero-frame.jpg";
-import heroRoverVideo from "@/assets/site/hero-rover.mp4.asset.json";
+import { ArrowUpRight } from "lucide-react";
+import heroSoftware from "@/assets/site/hero-software.jpg";
 import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
-import caseLager from "@/assets/site/case-lager.jpg";
+import brHandel from "@/assets/site/branche-handel.jpg";
+import brProduktion from "@/assets/site/branche-produktion.jpg";
+import brLogistik from "@/assets/site/branche-logistik.jpg";
+import brSanierung from "@/assets/site/branche-sanierung.jpg";
 import caseBuero from "@/assets/site/case-buero.jpg";
-import caseProduktion from "@/assets/site/case-produktion.jpg";
 import ctaControl from "@/assets/site/cta-control.jpg";
 import cardSoftware from "@/assets/site/card-software.jpg";
 import cardKi from "@/assets/site/card-ki.jpg";
 import cardTerminals from "@/assets/site/card-terminals.jpg";
 import cardRover from "@/assets/site/rover-hero-frame.jpg";
-import reserveSoftware from "@/assets/site/reserve-software.jpg";
-import reserveKi from "@/assets/site/reserve-ki.jpg";
-import reserveHardware from "@/assets/site/reserve-hardware.jpg";
-import reserveRover from "@/assets/site/reserve-rover.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
