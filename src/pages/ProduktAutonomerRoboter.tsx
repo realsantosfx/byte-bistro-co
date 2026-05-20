@@ -3,9 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
-import heroImg from "@/assets/site/page-ki-hero.jpg";
-import cardKi from "@/assets/site/card-ki.jpg";
-import reserveKi from "@/assets/site/reserve-ki.jpg";
+import heroImg from "@/assets/site/page-rover-hero.jpg";
+import cardRover from "@/assets/site/rover-hero-frame.jpg";
+import reserveRover from "@/assets/site/reserve-rover.jpg";
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -15,41 +15,41 @@ const Arrow = () => (
 
 const modules = [
   {
-    tag: "Vision",
-    title: "Bilderkennung am Wareneingang",
-    desc: "Kameras zählen, prüfen und kategorisieren — Paletten, Etiketten, Schäden. Ohne dass ein Bild jemals den Betrieb verlässt.",
+    tag: "Navigation",
+    title: "Fährt selbst — ohne Schienen, ohne Marker",
+    desc: "LiDAR, Tiefenkameras und Sensorfusion. Der Roboter kartiert dein Lager beim ersten Einlernen und navigiert danach autonom zwischen Regalen, Menschen und Maschinen.",
   },
   {
-    tag: "Sprache",
-    title: "Sprach- & Textverarbeitung",
-    desc: "Anfragen, Mails und Telefonate werden klassifiziert, zusammengefasst und vorbereitet. Auf deiner eigenen Hardware.",
+    tag: "Aufträge",
+    title: "Holt sich Jobs direkt aus dem System",
+    desc: "Kein Bediener, kein Zuruf. Die Operative Software gibt den Auftrag — der Roboter fährt zur Station, übernimmt die Ware und bringt sie ans Ziel.",
   },
   {
-    tag: "Vorhersage",
-    title: "Bedarf, Routen & Engpässe",
-    desc: "Modelle lernen aus deinem Betrieb — was bestellt wird, was knapp wird, welche Strecke effizient ist. Mit echten Daten, nicht Hochrechnungen.",
+    tag: "Handling",
+    title: "Kommissionieren, Transportieren, Übergeben",
+    desc: "Pickt aus Regalen, fährt Paletten, dockt an Förderstrecken an. Modular erweiterbar — vom kleinen AMR bis zum schweren Transporter.",
   },
   {
-    tag: "Assistenz",
-    title: "Operativer KI-Assistent",
-    desc: "Mitarbeiter fragen in natürlicher Sprache nach Beständen, Aufträgen oder Auswertungen. Antworten kommen aus deinem System.",
+    tag: "Sicherheit",
+    title: "Arbeitet zwischen Menschen, nicht statt ihnen",
+    desc: "Mehrschichtige Hindernis-Erkennung, sanftes Bremsen, klare Signale. Der Roboter weicht aus, wartet ab und meldet sich, wenn er Hilfe braucht.",
   },
 ];
 
 const facts = [
-  { n: "0", em: "", l: "Daten verlassen\ndeinen Betrieb" },
-  { n: "100", em: "%", l: "Modelle laufen\non-premise" },
-  { n: "~", em: "ms", l: "Antwortzeiten\nim Millisekundenbereich" },
-  { n: "", em: "DSGVO", l: "konform per Architektur,\nnicht per Vertrag" },
+  { n: "0", em: "", l: "Bauliche Umbauten\nnötig im Lager" },
+  { n: "1", em: "Tag", l: "Einlernen der\nersten Route" },
+  { n: "24", em: "/7", l: "Einsatzbereit —\nauch in der Nacht" },
+  { n: "~", em: "500€", l: "Hardware-Einstieg\nfür einen Pilot-Roboter" },
 ];
 
 const features = [
-  "Keine Cloud, keine Drittanbieter — alles bleibt im Haus",
-  "Modelle werden für deinen Use Case feinjustiert, nicht generisch eingesetzt",
-  "Updates und Modellwechsel ohne Vendor-Lock-in",
-  "Voll integriert in Operative Software, Terminals und Roboter",
-  "Energieeffiziente Hardware ab Mini-Server bis Edge-Box",
-  "Transparente Entscheidungen — was die KI sagt, ist nachvollziehbar",
+  "Plug-and-play in bestehende Lager — ohne Bodenmarkierungen oder Schienen",
+  "Direkte Anbindung an Operative Software & lokale KI",
+  "Mehrere Roboter koordinieren sich selbst über die Flottensteuerung",
+  "Wartung, Updates und Ersatzteile aus Deutschland",
+  "Skalierbar von einem Pilot-Roboter bis zur kompletten Flotte",
+  "Einsatz in Lager, Produktion, Intralogistik und Outdoor-Bereichen",
 ];
 
 const Page = () => {
@@ -62,40 +62,40 @@ const Page = () => {
         <section className="relative overflow-hidden min-h-[640px] flex items-end">
           <img
             src={heroImg}
-            alt="Lokaler KI-Server mit Neural-Network-Visualisierung"
+            alt="Autonomer Lager-Roboter zwischen Regalreihen mit Teal-LEDs"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to right,rgba(8,10,18,0.95) 0%,rgba(8,10,18,0.75) 45%,rgba(8,10,18,0.4) 100%), linear-gradient(to top,rgba(8,10,18,0.92) 0%,rgba(8,10,18,0.2) 60%,rgba(8,10,18,0.5) 100%)",
+                "linear-gradient(to right,rgba(8,10,18,0.95) 0%,rgba(8,10,18,0.7) 45%,rgba(8,10,18,0.35) 100%), linear-gradient(to top,rgba(8,10,18,0.92) 0%,rgba(8,10,18,0.2) 60%,rgba(8,10,18,0.5) 100%)",
             }}
           />
           <div
             className="hidden md:block absolute right-[8%] bottom-[20%] w-[320px] h-[320px] rounded-full blur-[90px] pointer-events-none"
-            style={{ background: "radial-gradient(circle,rgba(47,184,198,0.32) 0%,transparent 70%)" }}
+            style={{ background: "radial-gradient(circle,rgba(47,184,198,0.28) 0%,transparent 70%)" }}
           />
 
           <div className="relative z-[2] px-6 md:px-14 pb-16 md:pb-20 max-w-[760px] container-shell w-full">
             <div className="text-[11px] font-medium text-white/55 uppercase tracking-[0.18em] mb-6">
-              Produkt — KI Schicht
+              Produkt — Autonomer Roboter
             </div>
             <h1 className="display text-white mb-6" style={{ fontSize: "clamp(44px, 6.5vw, 76px)", lineHeight: 1.04 }}>
-              Lokale<br />
-              <span style={{ color: "hsl(var(--teal))" }}>KI</span><br />
-              ohne Cloud
+              Dein Lager<br />
+              <span style={{ color: "hsl(var(--teal))" }}>bewegt sich</span><br />
+              selbst
             </h1>
             <p className="text-[17px] font-light text-white/65 leading-relaxed max-w-[520px]">
-              Intelligenz, die in deinem Betrieb läuft — nicht auf fremden Servern.
-              Sehen, lesen, vorhersagen und entscheiden, ohne dass ein Bit das Haus verlässt.
+              Autonome Roboter, die Aufträge direkt aus deinem System übernehmen.
+              Kommissionieren, transportieren, übergeben — ohne Schienen, ohne Eingriff.
             </p>
             <div className="flex flex-wrap gap-3 mt-9">
               <Link
                 to="/kontakt"
                 className="inline-flex items-center gap-3 bg-white text-[#0d0d0d] text-sm font-medium pl-6 pr-3.5 py-3.5 rounded-full hover:bg-white/90 transition-colors"
               >
-                Demo anfragen
+                Pilot-Roboter anfragen
                 <span className="w-[32px] h-[32px] bg-[#0d0d0d] rounded-full flex items-center justify-center">
                   <Arrow />
                 </span>
@@ -104,7 +104,7 @@ const Page = () => {
                 href="#module"
                 className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-6 py-3.5 rounded-full transition-colors"
               >
-                Module ansehen
+                Was er kann
               </a>
             </div>
           </div>
@@ -114,20 +114,18 @@ const Page = () => {
         <section className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
             <h2 className="hl-lg">
-              KI, die deinen{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Betrieb versteht</em>
-              {" "}— nicht den Markt
+              Roboter, die nicht in der Demo bleiben{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>— sondern arbeiten.</em>
             </h2>
             <div className="space-y-5">
               <p className="bd pt-1.5">
-                Cloud-KI macht aus deinen Daten Trainingsmaterial für andere. Lokale KI
-                dreht das um: Deine Daten bleiben bei dir, das Modell lernt deinen Betrieb
-                und antwortet aus deinem Kontext — nicht aus dem allgemeinen Internet.
+                Wir bauen keine Showcase-Roboter. Unsere Systeme fahren nach einem Tag
+                Einlernen die ersten echten Aufträge — koordiniert über die Operative
+                Software, mit lokaler KI für Erkennung und Entscheidungen direkt am Gerät.
               </p>
               <p className="bd">
-                Wir wählen Modelle aus, betreiben sie auf passender Hardware und integrieren
-                sie direkt in die Operative Software. Das Ergebnis ist KI, die so selbstverständlich
-                im Tagesgeschäft mitläuft wie ein zusätzliches Teammitglied.
+                Ein Pilot-Roboter ist kein Großprojekt. Du startest klein, lernst, was
+                wirklich Wert bringt — und skalierst zur Flotte, wenn der Case sitzt.
               </p>
             </div>
           </div>
@@ -140,13 +138,13 @@ const Page = () => {
               <div
                 key={m.title}
                 className="relative overflow-hidden rounded-[18px] aspect-[4/3] hover-lift"
-                style={{ background: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)" }}
+                style={{ background: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)" }}
               >
-                <img src={cardKi} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-45" />
+                <img src={cardRover} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-40" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.45) 40%,rgba(8,10,16,0.92) 100%)" }} />
                 <div
-                  className="absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none bottom-[20%] right-[20%]"
-                  style={{ background: "rgba(80,160,255,.24)" }}
+                  className="absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none top-[20%] right-[20%]"
+                  style={{ background: "rgba(47,184,198,.22)" }}
                 />
                 <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                   {m.tag}
@@ -176,13 +174,14 @@ const Page = () => {
         <section className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
             <h2 className="hl-lg">
-              KI mit{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Hausverstand</em>
+              Ein Roboter, der in deinen{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Betrieb passt</em>
+              {" "}— nicht umgekehrt
             </h2>
             <p className="bd pt-1.5">
-              Wir setzen KI dort ein, wo sie echten Hebel hat — und lassen sie weg,
-              wo sie nur Buzzword ist. Das macht den Unterschied zwischen einem Hype-Tool
-              und einem operativen Produktionsfaktor.
+              Kein Lager-Umbau, keine teure Infrastruktur, keine Lock-in-Verträge.
+              Wir bringen den Roboter, lernen die Routen ein und integrieren ihn in
+              das System, das du sowieso schon hast.
             </p>
           </div>
 
@@ -202,28 +201,28 @@ const Page = () => {
         <section className="pb-24 section-x container-shell">
           <div
             className="relative rounded-[18px] overflow-hidden min-h-[360px] grid md:grid-cols-2 gap-0"
-            style={{ background: "linear-gradient(135deg,#0a1428 0%,#0c2a4a 45%,#06182e 100%)" }}
+            style={{ background: "linear-gradient(135deg,#18181f 0%,#252538 45%,#14142a 100%)" }}
           >
-            <img src={reserveKi} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+            <img src={reserveRover} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-25" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(110deg,rgba(8,12,22,0.92) 35%,rgba(8,12,22,0.4) 100%)" }} />
             <div className="relative z-[2] p-10 md:p-14">
               <div className="text-[11px] font-medium text-white/45 uppercase tracking-[0.18em] mb-5">
                 Im System
               </div>
               <h3 className="display text-white text-[28px] md:text-[34px] font-bold leading-tight mb-4">
-                Lokale KI verbindet sich mit allem.
+                Der Roboter ist kein Insel-Projekt.
               </h3>
               <p className="text-[15px] text-white/60 leading-[1.8]">
-                Sie liest, was Kameras sehen, bewertet, was Terminals erfassen, und
-                steuert, was der Rover als Nächstes tut. Eine Intelligenzschicht über
-                deinem gesamten Betrieb.
+                Er bekommt Aufträge aus der Operativen Software, nutzt lokale KI für
+                Bild- und Umgebungserkennung und meldet seinen Status an die Terminals
+                in Echtzeit. Alles im selben System.
               </p>
             </div>
             <div className="relative z-[2] p-10 md:p-14 flex flex-col justify-center gap-3">
               {[
-                { l: "Operative Software", d: "Daten- & Prozesskontext für die KI", to: "/produkte/operative-software" },
-                { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb", to: "/produkte/terminals-kameras" },
-                { l: "Autonomer Roboter", d: "KI entscheidet, der Rover bewegt", to: "/produkte/autonomer-roboter" },
+                { l: "Operative Software", d: "Gibt Aufträge & koordiniert die Flotte", to: "/produkte/operative-software" },
+                { l: "Lokale KI", d: "Erkennt Ware, Hindernisse & Situationen", to: "/produkte/lokale-ki" },
+                { l: "Terminals & Kameras", d: "Status und Übergabe an jeder Station", to: "/produkte/terminals-kameras" },
               ].map((x) => (
                 <Link
                   key={x.l}
@@ -252,11 +251,11 @@ const Page = () => {
             />
             <div className="relative z-[2] max-w-[640px]">
               <h2 className="display text-white mb-5" style={{ fontSize: "clamp(28px, 3.8vw, 44px)", lineHeight: 1.1 }}>
-                Finde heraus, wo KI in deinem Betrieb echten Hebel hat.
+                Starte mit einem Pilot-Roboter.
               </h2>
               <p className="text-[15px] text-white/55 leading-[1.8] mb-9">
-                Wir prüfen deine Prozesse, zeigen dir, was lokal sinnvoll automatisierbar ist,
-                und schlagen einen ehrlichen Pilot-Use-Case vor — kein KI-Theater.
+                Sag uns, wie deine Wege heute aussehen — wir zeigen, wo ein autonomer
+                Roboter sofort Stunden spart, ohne dass du dein Lager umbauen musst.
               </p>
               <Link
                 to="/kontakt"

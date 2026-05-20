@@ -223,7 +223,7 @@ const Page = () => {
               {[
                 { l: "Operative Software", d: "Das System hinter jedem Terminal", to: "/produkte/operative-software" },
                 { l: "Lokale KI", d: "Verarbeitet, was Kameras sehen", to: "/produkte/lokale-ki" },
-                { l: "Autonomer Roboter", d: "Bekommt Aufträge direkt von den Stationen", to: "/kontakt" },
+                { l: "Autonomer Roboter", d: "Bekommt Aufträge direkt von den Stationen", to: "/produkte/autonomer-roboter" },
               ].map((x) => (
                 <Link
                   key={x.l}
