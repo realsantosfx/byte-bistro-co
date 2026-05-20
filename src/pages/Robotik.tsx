@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 
-import roverVideo from "@/assets/site/hero-rover.mp4.asset.json";
-import humanoidVideo from "@/assets/site/humanoid-robot.mp4.asset.json";
+import roverWorkVideo from "@/assets/site/robot-rover-work.mp4.asset.json";
+import humanoidWorkVideo from "@/assets/site/robot-humanoid-work.mp4.asset.json";
+import quadrupedWorkVideo from "@/assets/site/robot-quadruped-work.mp4.asset.json";
+import armWorkVideo from "@/assets/site/robot-arm-work.mp4.asset.json";
+
 import humanoidHero from "@/assets/site/humanoid-hero.jpg";
 import quadrupedImg from "@/assets/site/quadruped-robot.jpg";
 import robotArmImg from "@/assets/site/robot-arm.jpg";
 import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
 import roverProduct from "@/assets/site/rover-product.jpg";
+
+const heroReel = [
+  { url: roverWorkVideo.url, label: "Autonomer Rover", task: "Kommissionierung im Lager" },
+  { url: humanoidWorkVideo.url, label: "Humanoide Plattform", task: "Übergabe & Werkzeug-Handling" },
+  { url: quadrupedWorkVideo.url, label: "Quadruped", task: "Inspektion auf Treppen & Schächten" },
+  { url: armWorkVideo.url, label: "Robotik-Arm", task: "Pick-and-Place an der Linie" },
+];
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
