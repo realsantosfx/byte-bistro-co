@@ -481,6 +481,93 @@ const Index = () => {
         </section>
 
 
+        {/* FAQ — Software vs. Robotics */}
+        <section id="faq" className="section-x pb-20 container-shell">
+          <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16 items-start">
+            <div>
+              <div className="text-[11px] font-medium text-white/45 uppercase tracking-[0.14em] mb-4">
+                FAQ
+              </div>
+              <h2 className="hl-lg">
+                Software{" "}
+                <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>oder</em>{" "}
+                Roboter?
+              </h2>
+              <p className="bd pt-4 max-w-md">
+                Die häufigsten Fragen dazu, wie Software-Kern und Hardware-Add-on bei uns zusammenspielen.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              {[
+                {
+                  q: "Baut ihr primär Software oder Roboter?",
+                  a: "Software. SantosLab ist ein Softwarestudio für den Mittelstand — ERP, CRM, Branchenlösungen und KI-Integrationen. Der autonome Roboter ist eine optionale Hardware-Erweiterung für Kunden, deren Prozesse über reine Software hinausgehen.",
+                },
+                {
+                  q: "Muss ich den Roboter mitbestellen?",
+                  a: "Nein. Die Software steht für sich. Der Roboter wird nur eingesetzt, wenn ein physischer Prozess (Kommissionierung, innerbetrieblicher Transport, Nachtschicht-Inventur) ihn rechtfertigt — und immer angebunden an die Software, die wir für dich gebaut haben.",
+                },
+                {
+                  q: "Kann ich den Roboter ohne eure Software einsetzen?",
+                  a: "Nein. Der Roboter ist kein Standalone-Produkt. Er funktioniert als Teil eines Systems, das wir gemeinsam aufsetzen — über die Software erhält er Aufträge, Routen und Übergabepunkte.",
+                },
+                {
+                  q: "Wann macht der Roboter wirtschaftlich Sinn?",
+                  a: "Typischerweise dort, wo 1–2 Vollzeitkräfte für wiederholbare Transport- oder Kommissionieraufgaben gebunden sind. ROI liegt erfahrungsgemäß bei 12–18 Monaten — abhängig von Schichten, Wegelängen und Volumen.",
+                },
+                {
+                  q: "Was kostet ein Software-Projekt im Vergleich zum Roboter-Add-on?",
+                  a: "Software-Projekte starten je nach Umfang im niedrigen fünfstelligen Bereich; Enterprise-Systeme deutlich darüber. Der Roboter ist eine zusätzliche Hardware-Investition, die separat kalkuliert wird — sinnvoll, wenn die operative Software bereits steht.",
+                },
+                {
+                  q: "Wie lange dauert es bis zum ersten Ergebnis?",
+                  a: "Erste Prototypen der Software stehen meist innerhalb weniger Wochen. Roboter-Integration wird erst danach geplant — wenn Datenflüsse, Prozesse und Übergaben sauber digital abgebildet sind.",
+                },
+              ].map((item, i) => (
+                <details
+                  key={i}
+                  className="group rounded-[14px] border border-border bg-[#0f1722] open:bg-[#121b2a] transition-colors"
+                >
+                  <summary className="cursor-pointer list-none flex items-center justify-between gap-4 p-5 md:p-6">
+                    <span className="text-[15px] md:text-[16px] font-medium text-white pr-4">
+                      {item.q}
+                    </span>
+                    <span className="w-[28px] h-[28px] shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 text-[16px] leading-none group-open:rotate-45 transition-transform">
+                      +
+                    </span>
+                  </summary>
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 -mt-1 text-[14px] text-white/60 leading-relaxed">
+                    {item.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  ["Baut ihr primär Software oder Roboter?", "Software. SantosLab ist ein Softwarestudio für den Mittelstand — ERP, CRM, Branchenlösungen und KI-Integrationen. Der autonome Roboter ist eine optionale Hardware-Erweiterung."],
+                  ["Muss ich den Roboter mitbestellen?", "Nein. Die Software steht für sich. Der Roboter wird nur eingesetzt, wenn ein physischer Prozess ihn rechtfertigt."],
+                  ["Kann ich den Roboter ohne eure Software einsetzen?", "Nein. Der Roboter ist kein Standalone-Produkt, sondern Teil eines Systems, das über unsere Software gesteuert wird."],
+                  ["Wann macht der Roboter wirtschaftlich Sinn?", "Wenn 1–2 Vollzeitkräfte für wiederholbare Transport- oder Kommissionieraufgaben gebunden sind. ROI typisch in 12–18 Monaten."],
+                  ["Was kostet ein Software-Projekt im Vergleich zum Roboter-Add-on?", "Software-Projekte starten im niedrigen fünfstelligen Bereich. Der Roboter ist eine zusätzliche, separat kalkulierte Hardware-Investition."],
+                  ["Wie lange dauert es bis zum ersten Ergebnis?", "Erste Software-Prototypen entstehen in wenigen Wochen. Roboter-Integration folgt erst, wenn Prozesse digital sauber abgebildet sind."],
+                ].map(([q, a]) => ({
+                  "@type": "Question",
+                  name: q,
+                  acceptedAnswer: { "@type": "Answer", text: a },
+                })),
+              }),
+            }}
+          />
+        </section>
+
         {/* CTA DARK */}
         <div className="section-x pb-14 container-shell">
           <div
