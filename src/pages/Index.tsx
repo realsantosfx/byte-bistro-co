@@ -107,10 +107,10 @@ const useCases = [
 ];
 
 const reserveCards = [
-  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)" },
-  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)" },
-  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)" },
-  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)" },
+  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)", img: cardSoftware },
+  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)", img: cardKi },
+  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)", img: cardTerminals },
+  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)", img: cardRover },
 ];
 
 const Index = () => {
