@@ -221,19 +221,23 @@ const Page = () => {
             </div>
             <div className="relative z-[2] p-10 md:p-14 flex flex-col justify-center gap-3">
               {[
-                { l: "Operative Software", d: "Daten- & Prozesskontext für die KI" },
-                { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb" },
-                { l: "Autonomer Roboter", d: "KI entscheidet, der Rover bewegt" },
+                { l: "Operative Software", d: "Daten- & Prozesskontext für die KI", to: "/produkte/operative-software" },
+                { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb", to: "/kontakt" },
+                { l: "Autonomer Roboter", d: "KI entscheidet, der Rover bewegt", to: "/kontakt" },
               ].map((x) => (
-                <div key={x.l} className="flex items-center justify-between border-t border-white/10 pt-3">
+                <Link
+                  key={x.l}
+                  to={x.to}
+                  className="flex items-center justify-between border-t border-white/10 pt-3 group hover:text-white"
+                >
                   <div>
                     <div className="text-white text-[15px] font-medium">{x.l}</div>
                     <div className="text-white/45 text-[12.5px]">{x.d}</div>
                   </div>
-                  <span className="w-[30px] h-[30px] bg-white/10 rounded-full flex items-center justify-center">
+                  <span className="w-[30px] h-[30px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                     <Arrow />
                   </span>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
