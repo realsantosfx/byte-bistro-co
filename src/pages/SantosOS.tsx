@@ -251,14 +251,9 @@ const Page = () => {
                   { l: "Hardware spricht mit allem", d: "Terminals, Kameras, Roboter im selben Netz" },
                   { l: "Wächst mit dem Betrieb", d: "Eine Schicht heute, vier morgen" },
                 ].map((x) => (
-                  <div key={x.l} className="flex items-center justify-between border-t border-white/10 pt-3">
-                    <div>
-                      <div className="text-white text-[15px] font-medium">{x.l}</div>
-                      <div className="text-white/45 text-[12.5px]">{x.d}</div>
-                    </div>
-                    <span className="w-[30px] h-[30px] bg-white/10 rounded-full flex items-center justify-center">
-                      <Arrow />
-                    </span>
+                  <div key={x.l} className="border-t border-white/10 pt-3">
+                    <div className="text-white text-[15px] font-medium">{x.l}</div>
+                    <div className="text-white/45 text-[12.5px]">{x.d}</div>
                   </div>
                 ))}
               </div>
