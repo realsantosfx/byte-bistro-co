@@ -742,11 +742,11 @@ export const translations: Record<string, Translations> = {
   },
   de: {
     nav: {
-      services: "Systeme",
-      cases: "Beispiele",
-      approach: "Ablauf",
-      about: "Über uns",
-      cta: "System ansehen",
+      services: "Software",
+      cases: "Anwendungen",
+      approach: "Branchen",
+      about: "Studio",
+      cta: "Projekt starten",
       ctaSecondary: "Live Demo öffnen",
       mobileMicrocopy: "Sieh zuerst, wie dein System funktioniert",
     },
