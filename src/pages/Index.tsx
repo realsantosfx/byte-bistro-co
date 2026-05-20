@@ -194,6 +194,15 @@ const Index = () => {
                 className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group"
                 style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
               >
+                <img
+                  src={c.img}
+                  alt=""
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.85) 100%)" }} />
                 <div
                   className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
                   style={{ background: c.glow }}
