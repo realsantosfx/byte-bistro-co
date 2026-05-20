@@ -1,10 +1,9 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { projects } from "@/data/projects";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FadeInSection from "@/components/ui/FadeInSection";
-import ParallaxImage from "@/components/ui/ParallaxImage";
+
 
 const Projekte = () => {
   return (
