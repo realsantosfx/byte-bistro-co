@@ -272,11 +272,11 @@ export type Translations = {
 export const translations: Record<string, Translations> = {
   en: {
     nav: {
-      services: "Systems",
-      cases: "Examples",
-      approach: "Process",
-      about: "About",
-      cta: "View Systems",
+      services: "Software",
+      cases: "Applications",
+      approach: "Industries",
+      about: "Studio",
+      cta: "Start project",
       ctaSecondary: "Open Live Demo",
       mobileMicrocopy: "See how your system works first",
     },
@@ -742,11 +742,11 @@ export const translations: Record<string, Translations> = {
   },
   de: {
     nav: {
-      services: "Systeme",
-      cases: "Beispiele",
-      approach: "Ablauf",
-      about: "Über uns",
-      cta: "System ansehen",
+      services: "Software",
+      cases: "Anwendungen",
+      approach: "Branchen",
+      about: "Studio",
+      cta: "Projekt starten",
       ctaSecondary: "Live Demo öffnen",
       mobileMicrocopy: "Sieh zuerst, wie dein System funktioniert",
     },
