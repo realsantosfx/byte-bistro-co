@@ -238,6 +238,13 @@ const Index = () => {
           </Link>
 
           {/* Secondary row — KI, Terminals, Roboter (Add-on) */}
+          <div className="flex items-center gap-3 mt-7 mb-3.5">
+            <div className="h-px flex-1 bg-white/10" />
+            <span className="text-[10.5px] font-medium text-white/40 uppercase tracking-[0.16em]">
+              Optionale Ergänzungen
+            </span>
+            <div className="h-px flex-1 bg-white/10" />
+          </div>
           <div className="grid md:grid-cols-3 gap-3.5">
             {productCards.map((c, i) => {
               const Cmp: any = c.href ? Link : "div";
