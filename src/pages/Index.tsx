@@ -306,25 +306,66 @@ const Index = () => {
           </div>
         </section>
 
-        {/* USE CASES */}
-        <section id="branchen" className="pb-24 section-x container-shell">
+        {/* WAS WIR BAUEN */}
+        <section id="bauen" className="pb-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
             <h2 className="hl-lg">
-              Software & Robotik für<br />
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>jeden Betrieb</em>
+              Was wir{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>bauen</em>
             </h2>
             <p className="bd pt-1.5">
-              Entwickelt für jede Aufgabe, in jeder Umgebung. Ob es um die Automatisierung des Lagers,
-              die Optimierung von Geschäftsabläufen oder die Qualitätskontrolle geht — unsere Technologie
-              passt sich deiner Arbeitsweise an.
+              Vier Disziplinen, ein Ziel: dein Betrieb läuft auf Systemen, die zu dir passen — nicht umgekehrt.
+              Keine Lizenz-Akrobatik, keine endlosen Customizing-Projekte. Eine Codebase, gebaut für deine Realität.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-3.5">
-            {useCases.map((u) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3.5">
+            {buildTypes.map((b, i) => (
               <div
+                key={b.title}
+                className="relative overflow-hidden rounded-[18px] aspect-[4/5] hover-lift group p-7 flex flex-col justify-between"
+                style={{
+                  background: "linear-gradient(155deg,#0f1722 0%,#152538 50%,#0c1828 100%)",
+                  animationDelay: `${i * 80}ms`,
+                }}
+              >
+                <div
+                  className="absolute w-[260px] h-[260px] rounded-full blur-[80px] -top-12 -right-12 pointer-events-none"
+                  style={{ background: "rgba(47,184,198,.18)" }}
+                />
+                <div className="relative z-[2] text-[11px] font-medium text-white/40 uppercase tracking-[0.12em]">
+                  {b.tag}
+                </div>
+                <div className="relative z-[2]">
+                  <h3 className="display text-[22px] md:text-[24px] font-bold text-white leading-tight mb-3">
+                    {b.title}
+                  </h3>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* BRANCHEN */}
+        <section id="branchen" className="pb-24 section-x container-shell">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
+            <h2 className="hl-lg">
+              Software für{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>jede Branche</em>
+            </h2>
+            <p className="bd pt-1.5">
+              Jede Branche hat ihre eigenen Prozesse, Regeln und Engpässe. Wir haben für jede die Vorlagen —
+              und passen sie an deinen Betrieb an. Vom Wareneingang bis zur Versandkontrolle, vom Tresen bis zur Halle.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+            {branchen.map((u) => (
+              <Link
                 key={u.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift group"
+                to={u.to}
+                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift group block"
                 style={{ background: u.bg }}
               >
                 <img
@@ -343,13 +384,30 @@ const Index = () => {
                   className="absolute w-[260px] h-[260px] rounded-full blur-[80px] top-[25%] left-1/2 -translate-x-1/2 pointer-events-none"
                   style={{ background: u.glow }}
                 />
-                <div className="absolute bottom-7 left-7 z-[2]">
-                  <h3 className="display text-[26px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
+                <div className="absolute bottom-6 left-6 right-6 z-[2]">
+                  <h3 className="display text-[20px] md:text-[22px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
+
+        {/* NUMBERS STRIP */}
+        <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-border container-shell">
+          {[
+            { n: "100", em: "%", l: "Projekte die\nlive gehen" },
+            { n: "4", em: "", l: "Wochen bis\nzum Prototyp" },
+            { n: "5", em: "+", l: "Branchen\nim Einsatz" },
+            { n: "10", em: "+", l: "Jahre\nErfahrung" },
+          ].map((x, i) => (
+            <div key={i} className={`px-8 md:px-12 py-10 ${i < 3 ? "md:border-r border-border" : ""} ${i % 2 === 0 ? "border-r md:border-r" : ""}`}>
+              <div className="display text-[44px] md:text-[52px] font-bold leading-none mb-1.5">
+                {x.n}<em className="not-italic" style={{ color: "hsl(var(--teal))" }}>{x.em}</em>
+              </div>
+              <div className="text-[13.5px] text-muted-foreground whitespace-pre-line leading-snug">{x.l}</div>
+            </div>
+          ))}
+        </div>
 
         {/* NUMBERS STRIP */}
         <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-border container-shell">
