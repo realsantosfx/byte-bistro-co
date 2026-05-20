@@ -176,17 +176,53 @@ const Index = () => {
         <section id="produkte" className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16">
             <h2 className="hl-lg">
-              Software der nächsten Generation für eine{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>smarte Automatisierung</em>
+              Software als{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Kern</em>.
+              Hardware als{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Option</em>.
             </h2>
             <p className="bd pt-1.5">
-              Wir verbinden operative Software, lokale KI-Intelligenz und physische Hardware zu einem einzigen System.
-              Terminals die Aufträge anzeigen, Kameras die Wareneingänge erkennen, Roboter die autonom kommissionieren —
-              und alle sprechen miteinander. Für Unternehmen die echte Dinge tun.
+              SantosLab baut maßgeschneiderte Software für den Mittelstand — ERP, CRM, Branchenlösungen und KI-Integrationen.
+              Wenn Hardware sinnvoll ist, ergänzen wir Terminals, Kameras oder Roboter. Aber nur dann.
+              Software ist der Kern. Alles andere ist optional.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-3.5">
+          {/* Dominant card — Operative Software */}
+          <Link
+            to="/produkte/operative-software"
+            className="relative overflow-hidden rounded-[18px] aspect-[16/9] md:aspect-[21/9] cursor-pointer hover-lift group block mb-3.5"
+            style={{ background: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)" }}
+          >
+            <img
+              src={cardSoftware}
+              alt=""
+              loading="lazy"
+              width={1920}
+              height={1080}
+              className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.9) 100%)" }} />
+            <div
+              className="absolute w-[420px] h-[420px] rounded-full blur-[90px] pointer-events-none top-[10%] right-[5%]"
+              style={{ background: "rgba(47,184,198,.28)" }}
+            />
+            <div className="absolute top-6 left-7 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
+              Software Core — Unser Hauptprodukt
+            </div>
+            <div className="absolute top-6 right-6 w-[40px] h-[40px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <Arrow />
+            </div>
+            <div className="absolute bottom-8 left-7 right-7 max-w-[640px]">
+              <h3 className="display text-[34px] md:text-[48px] font-bold text-white leading-[1.02] mb-3">Operative Software</h3>
+              <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
+                ERP, CRM, Branchensoftware — exakt auf deinen Betrieb zugeschnitten. Eine Codebase, eine Wahrheit.
+              </p>
+            </div>
+          </Link>
+
+          {/* Secondary row — KI, Terminals, Roboter (Add-on) */}
+          <div className="grid md:grid-cols-3 gap-3.5">
             {productCards.map((c, i) => {
               const Cmp: any = c.href ? Link : "div";
               const cmpProps: any = c.href ? { to: c.href } : {};
@@ -213,11 +249,16 @@ const Index = () => {
                   <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                     {c.tag}
                   </div>
+                  {c.soon && (
+                    <div className="absolute top-5 right-14 text-[10px] font-medium text-white/70 uppercase tracking-[0.12em] px-2.5 py-1 rounded-full border border-white/15 bg-white/5">
+                      Coming Soon
+                    </div>
+                  )}
                   <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                     <Arrow />
                   </div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
+                    <h3 className="display text-[24px] md:text-[26px] font-bold text-white leading-none">{c.title}</h3>
                     <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
                   </div>
                 </Cmp>
