@@ -98,7 +98,7 @@ const RoverSVG = () => (
 );
 
 const productCards = [
-  { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]", img: cardSoftware },
+  { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]", img: cardSoftware, href: "/produkte/operative-software" },
   { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", icon: "◈", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]", img: cardKi },
   { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", icon: "◉", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]", img: cardTerminals },
   { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover },
@@ -192,37 +192,42 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3.5">
-            {productCards.map((c, i) => (
-              <div
-                key={c.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group"
-                style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
-              >
-                <img
-                  src={c.img}
-                  alt=""
-                  loading="lazy"
-                  width={1024}
-                  height={768}
-                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
-                />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.85) 100%)" }} />
-                <div
-                  className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
-                  style={{ background: c.glow }}
-                />
-                <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
-                  {c.tag}
-                </div>
-                <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
-                  <Arrow />
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
-                  <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
-                </div>
-              </div>
-            ))}
+            {productCards.map((c, i) => {
+              const Cmp: any = c.href ? Link : "div";
+              const cmpProps: any = c.href ? { to: c.href } : {};
+              return (
+                <Cmp
+                  key={c.title}
+                  {...cmpProps}
+                  className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group block"
+                  style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
+                >
+                  <img
+                    src={c.img}
+                    alt=""
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.85) 100%)" }} />
+                  <div
+                    className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
+                    style={{ background: c.glow }}
+                  />
+                  <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
+                    {c.tag}
+                  </div>
+                  <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                    <Arrow />
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
+                    <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
+                  </div>
+                </Cmp>
+              );
+            })}
           </div>
         </section>
 
