@@ -120,6 +120,24 @@ const Page = () => {
           </div>
         </section>
 
+        <section className="pb-20 md:pb-24 section-x container-shell">
+          <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
+            <video src={workVideo.url} autoPlay muted loop playsInline preload="auto" poster={heroImg} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0) 50%,rgba(8,10,16,0.85) 100%)" }} />
+            <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-[520px]">
+                <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-white/50 mb-2">Live — Pick-and-Place an der Linie</div>
+                <h3 className="display text-[22px] md:text-[28px] font-bold text-white leading-tight">6-Achs-Arm im Produktionstakt</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["6 Achsen", "Vision", "QS", "ERP/MES"].map((b) => (
+                  <span key={b} className="text-[11.5px] text-white/80 px-2.5 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur">{b}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="module" className="pb-24 section-x container-shell">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {modules.map((m) => (
