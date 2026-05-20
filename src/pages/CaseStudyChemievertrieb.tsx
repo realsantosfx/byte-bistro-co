@@ -101,7 +101,7 @@ const copy = {
     metrics: [
       { value: "−100%", label: "Lost visit reports" },
       { value: "1", label: "Central pipeline for everyone" },
-      { value: "€20,000", label: "Project volume" },
+      
       { value: "6 wks", label: "Until first AI alert active" },
     ],
     quoteLabel: "Voice from the project",
