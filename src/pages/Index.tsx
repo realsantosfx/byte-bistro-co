@@ -96,9 +96,9 @@ const productCards = [
 ];
 
 const useCases = [
-  { title: "Lager &\nLogistik", emoji: "📦", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)" },
-  { title: "Büro &\nManagement", emoji: "🖥️", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)" },
-  { title: "Produktion &\nQualität", emoji: "🏭", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)" },
+  { title: "Lager &\nLogistik", emoji: "📦", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)", img: caseLager },
+  { title: "Büro &\nManagement", emoji: "🖥️", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)", img: caseBuero },
+  { title: "Produktion &\nQualität", emoji: "🏭", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)", img: caseProduktion },
 ];
 
 const reserveCards = [
