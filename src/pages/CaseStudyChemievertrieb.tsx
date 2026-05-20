@@ -47,7 +47,7 @@ const copy = {
     metrics: [
       { value: "−100%", label: "Verlorene Besuchsberichte" },
       { value: "1", label: "Zentrale Pipeline für alle" },
-      { value: "20.000€", label: "Projektvolumen" },
+      
       { value: "6 Wo.", label: "Bis erstes AI-Alert aktiv" },
     ],
     quoteLabel: "Stimme aus dem Projekt",
@@ -101,7 +101,7 @@ const copy = {
     metrics: [
       { value: "−100%", label: "Lost visit reports" },
       { value: "1", label: "Central pipeline for everyone" },
-      { value: "€20,000", label: "Project volume" },
+      
       { value: "6 wks", label: "Until first AI alert active" },
     ],
     quoteLabel: "Voice from the project",
