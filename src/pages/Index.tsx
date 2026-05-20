@@ -267,19 +267,17 @@ const Index = () => {
           </div>
         </section>
 
-        {/* FEATURE: ROVER */}
+        {/* FEATURE: ROVER (Add-on) */}
         <section id="anwendungen" className="pb-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
             <h2 className="hl-lg">
-              Deutschlands erster{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>intelligenter Lager-Assistent</em>
-              {" "}für den Mittelstand
+              Wenn Software allein nicht reicht —{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Hardware als Add-on</em>
             </h2>
             <p className="bd pt-1.5">
-              Gebaut, um deinem Team zu folgen. Entwickelt, um mit Menschen zusammenzuarbeiten.
-              Unser autonomer Roboter übernimmt Kommissionierung mit selbständiger Navigation,
-              Kartierung und direkter Software-Integration. Wenn qualifizierte Mitarbeiter Besseres zu tun haben,
-              übernimmt die Maschine.
+              Manche Betriebe brauchen mehr als Pixel. Wenn dein Prozess Hände, Augen oder Räder benötigt,
+              ergänzen wir das System um Terminals, Vision-Kameras oder autonome Roboter — direkt angebunden
+              an die Software, die wir für dich gebaut haben. Optional. Auf Wunsch. Nie als Standard.
             </p>
           </div>
 
