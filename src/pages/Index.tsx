@@ -384,10 +384,9 @@ const Index = () => {
               {reserveCards.map((r) => (
                 <div key={r.name} className="flex flex-col gap-4">
                   <div className="rounded-[14px] aspect-[3/4] relative overflow-hidden flex items-center justify-center" style={{ background: r.bg }}>
+                    <img src={r.img} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.35) 0%,rgba(8,10,16,0.7) 100%)" }} />
                     <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[150px] h-[150px] rounded-full blur-[50px]" style={{ background: r.glow }} />
-                    <div className="relative z-[2] text-[56px]" style={{ filter: "drop-shadow(0 0 24px rgba(255,255,255,.25))" }}>
-                      {r.icon}
-                    </div>
                   </div>
                   <div className="display text-[19px] font-bold">{r.name}</div>
                   <div className="text-[13.5px] text-muted-foreground leading-snug">{r.desc}</div>
