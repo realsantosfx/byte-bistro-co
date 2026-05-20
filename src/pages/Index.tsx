@@ -107,10 +107,10 @@ const useCases = [
 ];
 
 const reserveCards = [
-  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)" },
-  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)" },
-  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)" },
-  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)" },
+  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)", img: cardSoftware },
+  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)", img: cardKi },
+  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)", img: cardTerminals },
+  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)", img: cardRover },
 ];
 
 const Index = () => {
@@ -384,10 +384,9 @@ const Index = () => {
               {reserveCards.map((r) => (
                 <div key={r.name} className="flex flex-col gap-4">
                   <div className="rounded-[14px] aspect-[3/4] relative overflow-hidden flex items-center justify-center" style={{ background: r.bg }}>
+                    <img src={r.img} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.35) 0%,rgba(8,10,16,0.7) 100%)" }} />
                     <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[150px] h-[150px] rounded-full blur-[50px]" style={{ background: r.glow }} />
-                    <div className="relative z-[2] text-[56px]" style={{ filter: "drop-shadow(0 0 24px rgba(255,255,255,.25))" }}>
-                      {r.icon}
-                    </div>
                   </div>
                   <div className="display text-[19px] font-bold">{r.name}</div>
                   <div className="text-[13.5px] text-muted-foreground leading-snug">{r.desc}</div>
