@@ -19,7 +19,6 @@ const Header = () => {
     { label: t.nav.cases, href: "/#anwendungen" },
     { label: t.nav.approach, href: "/#branchen" },
     { label: "Robotik", href: "/robotik" },
-    { label: t.nav.about, href: "/#unternehmen" },
   ];
 
   return (
