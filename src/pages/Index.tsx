@@ -160,11 +160,6 @@ const Index = () => {
 
 
           <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[660px] container-shell w-full">
-            <div className="inline-flex items-center gap-3 mb-7 cursor-pointer group">
-              <div className="w-[38px] h-[38px] rounded-full border border-white/35 group-hover:border-white/70 transition-colors flex items-center justify-center">
-                <Play className="w-3 h-3 fill-white text-white ml-0.5" />
-              </div>
-            </div>
             <h1 className="display text-white mb-6" style={{ fontSize: "clamp(52px, 7.5vw, 88px)", lineHeight: 1.02 }}>
               Operative<br />Intelligenz<br />für den<br />Mittelstand
             </h1>
