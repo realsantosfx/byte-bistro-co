@@ -133,8 +133,8 @@ const Index = () => {
             }}
           />
 
-          {/* Rover video right */}
-          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[55%] z-[2]">
+          {/* Rover video — full hero background */}
+          <div className="absolute inset-0 z-[2]">
             <video
               src={heroRoverVideo.url}
               poster={heroRobot}
@@ -146,16 +146,18 @@ const Index = () => {
               className="w-full h-full object-cover object-center"
               style={{ filter: "saturate(0.95) contrast(1.05)" }}
             />
+            {/* Readability overlay: strong on left for text, lighter on right */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right,rgba(10,12,18,1) 0%,rgba(10,12,18,0.85) 25%,rgba(10,12,18,0.2) 60%,rgba(10,12,18,0.5) 100%), linear-gradient(to top,rgba(10,12,18,0.6) 0%,transparent 40%)",
+                  "linear-gradient(to right,rgba(10,12,18,0.92) 0%,rgba(10,12,18,0.75) 30%,rgba(10,12,18,0.35) 60%,rgba(10,12,18,0.55) 100%), linear-gradient(to top,rgba(10,12,18,0.85) 0%,rgba(10,12,18,0.2) 45%,rgba(10,12,18,0.5) 100%)",
               }}
             />
           </div>
-          <div className="hidden md:block absolute right-[8%] bottom-[20%] w-[260px] h-[260px] rounded-full blur-[80px] z-[3] pointer-events-none"
+          <div className="hidden md:block absolute right-[8%] bottom-[20%] w-[320px] h-[320px] rounded-full blur-[90px] z-[3] pointer-events-none"
                style={{ background: "radial-gradient(circle,rgba(47,184,198,0.35) 0%,transparent 70%)" }} />
+
 
           <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[660px] container-shell w-full">
             <div className="inline-flex items-center gap-3 mb-7 cursor-pointer group">
