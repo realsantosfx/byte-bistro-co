@@ -40,7 +40,7 @@ const copy = {
       "Zentrale Auftrags- und Kundendatenbank",
       "Echtzeit-Lagerbestände mit automatischer Nachbestellung",
       "Kapazitätsplanung über alle Fertigungslinien",
-      "AI-Mustererkennung auf 2 Monate Betriebsdaten",
+      "AI-Mustererkennung auf 2 Wochen Betriebsdaten",
       "Proaktive Empfehlungen zu Priorisierung und Kapazität",
       "Dashboards für Geschäftsführung und Operations",
     ],
