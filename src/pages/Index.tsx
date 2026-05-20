@@ -447,6 +447,81 @@ const Index = () => {
           ))}
         </div>
 
+        {/* CASE STUDIES */}
+        <section id="case-studies" className="py-20 md:py-28 section-x container-shell">
+          <div className="flex items-end justify-between mb-10 md:mb-14 gap-6 flex-wrap">
+            <div className="max-w-[640px]">
+              <div className="text-[12px] tracking-[0.18em] uppercase text-muted-foreground mb-4">Case Studies</div>
+              <h2 className="display font-bold leading-[1.05]" style={{ fontSize: "clamp(34px, 4.5vw, 54px)" }}>
+                Echte Projekte.<br />
+                <span style={{ color: "hsl(var(--teal))" }}>Messbare Resultate.</span>
+              </h2>
+            </div>
+            <p className="text-[15px] text-muted-foreground max-w-[380px] leading-[1.7]">
+              Zwei aktuelle Beispiele, wie wir mittelständische Prozesse in funktionierende Systeme verwandelt haben.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                to: "/case/mittelstand-erp",
+                tag: "ERP · Mittelstand",
+                title: "7M€ Umsatz, Excel-Chaos — abgelöst durch ein custom ERP mit AI-Schicht.",
+                metric: "−80%",
+                metricLabel: "Fehlerquote nach 2 Monaten",
+                bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)",
+                glow: "rgba(80,140,220,.22)",
+                img: caseLager,
+              },
+              {
+                to: "/case/chemievertrieb-crm",
+                tag: "CRM · Chemievertrieb",
+                title: "Außendienst auf Zuruf — abgelöst durch ein CRM, in dem kein Lead mehr versickert.",
+                metric: "−100%",
+                metricLabel: "verlorene Leads",
+                bg: "linear-gradient(145deg,#0f2024 0%,#1a3a3f 50%,#0a1f24 100%)",
+                glow: "rgba(47,184,198,.22)",
+                img: caseProduktion,
+              },
+            ].map((c) => (
+              <Link
+                key={c.to}
+                to={c.to}
+                className="group relative rounded-[18px] overflow-hidden p-8 md:p-10 min-h-[420px] flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+                style={{ background: c.bg }}
+              >
+                <img
+                  src={c.img}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-35 transition-opacity duration-500"
+                />
+                <div
+                  className="absolute w-[320px] h-[320px] rounded-full blur-[90px] -top-10 -right-10 pointer-events-none"
+                  style={{ background: c.glow }}
+                />
+                <div className="relative z-[2] flex items-start justify-between">
+                  <span className="text-[11px] tracking-[0.18em] uppercase text-white/60">{c.tag}</span>
+                  <span className="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                    <ArrowUpRight size={16} />
+                  </span>
+                </div>
+                <div className="relative z-[2]">
+                  <h3 className="display text-white text-[22px] md:text-[26px] font-semibold leading-[1.2] mb-8 max-w-[440px]">
+                    {c.title}
+                  </h3>
+                  <div className="flex items-end gap-5 pt-6 border-t border-white/15">
+                    <div className="display text-white font-bold leading-none" style={{ fontSize: "clamp(44px, 5vw, 60px)", color: "hsl(var(--teal))" }}>
+                      {c.metric}
+                    </div>
+                    <div className="text-[13px] text-white/65 pb-2 leading-snug">{c.metricLabel}</div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* SANTOSOS ECOSYSTEM */}
         <section id="santosos" className="py-20 md:py-24 section-x container-shell">
           <div
