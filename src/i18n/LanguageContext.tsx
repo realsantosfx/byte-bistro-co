@@ -10,10 +10,8 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>(() => {
-    const saved = localStorage.getItem("santoslab-lang");
-    return (saved === "de" || saved === "en") ? saved : "en";
-  });
+  // Toggle is hidden until the full site is bilingual — force DE for all visitors.
+  const [lang, setLang] = useState<Language>("de");
 
   const handleSetLang = (newLang: Language) => {
     setLang(newLang);
