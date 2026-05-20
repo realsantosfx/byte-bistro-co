@@ -192,37 +192,42 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3.5">
-            {productCards.map((c, i) => (
-              <div
-                key={c.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group"
-                style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
-              >
-                <img
-                  src={c.img}
-                  alt=""
-                  loading="lazy"
-                  width={1024}
-                  height={768}
-                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
-                />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.85) 100%)" }} />
-                <div
-                  className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
-                  style={{ background: c.glow }}
-                />
-                <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
-                  {c.tag}
-                </div>
-                <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
-                  <Arrow />
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
-                  <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
-                </div>
-              </div>
-            ))}
+            {productCards.map((c, i) => {
+              const Cmp: any = c.href ? Link : "div";
+              const cmpProps: any = c.href ? { to: c.href } : {};
+              return (
+                <Cmp
+                  key={c.title}
+                  {...cmpProps}
+                  className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group block"
+                  style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
+                >
+                  <img
+                    src={c.img}
+                    alt=""
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.85) 100%)" }} />
+                  <div
+                    className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
+                    style={{ background: c.glow }}
+                  />
+                  <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
+                    {c.tag}
+                  </div>
+                  <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                    <Arrow />
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
+                    <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
+                  </div>
+                </Cmp>
+              );
+            })}
           </div>
         </section>
 
