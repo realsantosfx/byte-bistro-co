@@ -207,17 +207,33 @@ const Index = () => {
               className="absolute w-[420px] h-[420px] rounded-full blur-[90px] pointer-events-none top-[10%] right-[5%]"
               style={{ background: "rgba(47,184,198,.28)" }}
             />
-            <div className="absolute top-6 left-7 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
-              Software Core — Unser Hauptprodukt
+            <div className="absolute top-6 left-7 flex items-center gap-2">
+              <span
+                className="text-[10.5px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full"
+                style={{ background: "hsl(var(--teal) / 0.18)", color: "hsl(var(--teal))", border: "1px solid hsl(var(--teal) / 0.35)" }}
+              >
+                Hauptprodukt
+              </span>
+              <span className="text-[11px] font-medium text-white/40 uppercase tracking-[0.1em]">
+                Software Core
+              </span>
             </div>
-            <div className="absolute top-6 right-6 w-[40px] h-[40px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+            <div className="absolute top-6 right-6 w-[44px] h-[44px] bg-white/15 group-hover:bg-white/25 rounded-full flex items-center justify-center transition-colors">
               <Arrow />
             </div>
-            <div className="absolute bottom-8 left-7 right-7 max-w-[640px]">
-              <h3 className="display text-[34px] md:text-[48px] font-bold text-white leading-[1.02] mb-3">Operative Software</h3>
-              <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
+            <div className="absolute bottom-8 left-7 right-7 max-w-[720px]">
+              <h3 className="display text-[38px] md:text-[56px] font-bold text-white leading-[1.0] mb-3.5">Operative Software</h3>
+              <p className="text-[14.5px] md:text-[16px] text-white/70 leading-relaxed mb-4 max-w-[600px]">
                 ERP, CRM, Branchensoftware — exakt auf deinen Betrieb zugeschnitten. Eine Codebase, eine Wahrheit.
+                Das ist, was wir tun. Alles andere ist Ergänzung.
               </p>
+              <div className="flex flex-wrap gap-2">
+                {["ERP", "CRM", "Branchensoftware", "KI-Integration"].map((t) => (
+                  <span key={t} className="text-[11.5px] text-white/80 px-2.5 py-1 rounded-full bg-white/10 border border-white/15">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           </Link>
 
