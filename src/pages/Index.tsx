@@ -383,36 +383,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* RESERVATION GRID */}
-        <section className="py-20 md:py-24 section-x" style={{ background: "hsl(var(--off))" }}>
-          <div className="container-shell">
-            <h2 className="hl-lg mb-2">
-              Projekte <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>verfügbar</em>
-            </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-              {reserveCards.map((r) => (
-                <div key={r.name} className="flex flex-col gap-4">
-                  <div className="rounded-[14px] aspect-[3/4] relative overflow-hidden flex items-center justify-center" style={{ background: r.bg }}>
-                    <img src={r.img} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-60" />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.35) 0%,rgba(8,10,16,0.7) 100%)" }} />
-                    <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[150px] h-[150px] rounded-full blur-[50px]" style={{ background: r.glow }} />
-                  </div>
-                  <div className="display text-[19px] font-bold">{r.name}</div>
-                  <div className="text-[13.5px] text-muted-foreground leading-snug">{r.desc}</div>
-                  <Link
-                    to="/kontakt"
-                    className="flex items-center justify-between bg-black/[0.07] hover:bg-black/[0.12] rounded-full pl-5 pr-3 py-2.5 text-sm font-medium text-foreground transition-colors"
-                  >
-                    Demo anfragen
-                    <span className="w-[30px] h-[30px] bg-foreground rounded-full flex items-center justify-center">
-                      <Arrow />
-                    </span>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA DARK */}
         <div className="section-x pb-14 container-shell">
