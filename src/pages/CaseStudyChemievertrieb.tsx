@@ -31,7 +31,7 @@ const copy = {
     steps: [
       "Analyse der Außendienst-Prozesse und Kundenstruktur über 3 Wochen",
       "Entwicklung des custom CRM mit Lager-Integration und mobiler App",
-      "Aktivierung der AI-Schicht nach 3 Monaten Datenbasis",
+      "Aktivierung der AI-Schicht nach 2 Wochen Datenbasis",
     ],
     backendLabel: "Was im System steckt",
     backendTitle: "Die operative Schicht im Detail.",
