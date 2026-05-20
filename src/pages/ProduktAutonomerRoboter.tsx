@@ -138,6 +138,13 @@ const Page = () => {
               Lager-Kommissionierung, innerbetrieblicher Transport, Nachtschicht-Inventur.
             </div>
           </div>
+
+          <p className="mt-5 text-[13.5px] md:text-[14px] text-white/55 leading-relaxed max-w-3xl">
+            <span className="text-white/75">Warum nur als Add-on?</span> Im Kern bauen wir Software für den Mittelstand — ERP, CRM, Branchenlösungen, KI.
+            Der autonome Roboter ist eine optionale Hardware-Erweiterung für Kunden, deren Prozesse physisch werden:
+            wenn Software allein nicht mehr reicht und tatsächlich etwas bewegt, kommissioniert oder transportiert werden muss.
+            Er wird direkt an deine bestehende Software angebunden — nicht als Standalone-Produkt verkauft.
+          </p>
         </section>
 
 
