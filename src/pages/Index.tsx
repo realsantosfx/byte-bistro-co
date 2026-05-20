@@ -14,6 +14,10 @@ import cardSoftware from "@/assets/site/card-software.jpg";
 import cardKi from "@/assets/site/card-ki.jpg";
 import cardTerminals from "@/assets/site/card-terminals.jpg";
 import cardRover from "@/assets/site/rover-hero-frame.jpg";
+import reserveSoftware from "@/assets/site/reserve-software.jpg";
+import reserveKi from "@/assets/site/reserve-ki.jpg";
+import reserveHardware from "@/assets/site/reserve-hardware.jpg";
+import reserveRover from "@/assets/site/reserve-rover.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -107,10 +111,10 @@ const useCases = [
 ];
 
 const reserveCards = [
-  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)", img: cardSoftware },
-  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)", img: cardKi },
-  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)", img: cardTerminals },
-  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)", img: cardRover },
+  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)", img: reserveSoftware },
+  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)", img: reserveKi },
+  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)", img: reserveHardware },
+  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)", img: reserveRover },
 ];
 
 const Index = () => {
