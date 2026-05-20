@@ -18,6 +18,7 @@ import AdminBlueprints from "./pages/AdminBlueprints";
 import Enterprise from "./pages/Enterprise";
 import ProduktOperativeSoftware from "./pages/ProduktOperativeSoftware";
 import ProduktLokaleKI from "./pages/ProduktLokaleKI";
+import ProduktTerminalsKameras from "./pages/ProduktTerminalsKameras";
 import Demo from "./pages/Demo";
 import DemoDetail from "./pages/DemoDetail";
 import DemoRestaurant from "./pages/DemoRestaurant";
