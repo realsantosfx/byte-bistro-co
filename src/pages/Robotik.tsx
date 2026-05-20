@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 
-import roverVideo from "@/assets/site/hero-rover.mp4.asset.json";
-import humanoidVideo from "@/assets/site/humanoid-robot.mp4.asset.json";
+import roverWorkVideo from "@/assets/site/robot-rover-work.mp4.asset.json";
+import humanoidWorkVideo from "@/assets/site/robot-humanoid-work.mp4.asset.json";
+import quadrupedWorkVideo from "@/assets/site/robot-quadruped-work.mp4.asset.json";
+import armWorkVideo from "@/assets/site/robot-arm-work.mp4.asset.json";
+
 import humanoidHero from "@/assets/site/humanoid-hero.jpg";
 import quadrupedImg from "@/assets/site/quadruped-robot.jpg";
 import robotArmImg from "@/assets/site/robot-arm.jpg";
 import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
 import roverProduct from "@/assets/site/rover-product.jpg";
+
+const heroReel = [
+  { url: roverWorkVideo.url, label: "Autonomer Rover", task: "Kommissionierung im Lager" },
+  { url: humanoidWorkVideo.url, label: "Humanoide Plattform", task: "Übergabe & Werkzeug-Handling" },
+  { url: quadrupedWorkVideo.url, label: "Quadruped", task: "Inspektion auf Treppen & Schächten" },
+  { url: armWorkVideo.url, label: "Robotik-Arm", task: "Pick-and-Place an der Linie" },
+];
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -67,22 +78,37 @@ const useCases = [
 ];
 
 const Page = () => {
+  const [reelIdx, setReelIdx] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setReelIdx((i) => (i + 1) % heroReel.length);
+    }, 10000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const current = heroReel[reelIdx];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       <main>
-        {/* HERO — Rover Video */}
+        {/* HERO — Cycling Robot Reel */}
         <section className="relative overflow-hidden min-h-[720px] md:min-h-[820px] flex items-end">
-          <video
-            src={roverVideo.url}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          {heroReel.map((clip, i) => (
+            <video
+              key={clip.url}
+              src={clip.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+              style={{ opacity: i === reelIdx ? 1 : 0 }}
+            />
+          ))}
           <div
             className="absolute inset-0"
             style={{
@@ -132,6 +158,30 @@ const Page = () => {
               >
                 Plattformen ansehen
               </a>
+            </div>
+          </div>
+
+          {/* Reel indicator */}
+          <div className="absolute z-[3] bottom-6 right-6 md:bottom-8 md:right-10 hidden sm:flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/10 rounded-full pl-5 pr-2 py-2">
+            <div className="text-right">
+              <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em]" style={{ color: "hsl(var(--teal))" }}>
+                {current.label}
+              </div>
+              <div className="text-[11px] text-white/55 leading-none mt-0.5">{current.task}</div>
+            </div>
+            <div className="flex items-center gap-1.5 pl-3 border-l border-white/10">
+              {heroReel.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setReelIdx(i)}
+                  aria-label={`Clip ${i + 1}`}
+                  className="w-1.5 h-1.5 rounded-full transition-all"
+                  style={{
+                    background: i === reelIdx ? "hsl(var(--teal))" : "rgba(255,255,255,0.25)",
+                    width: i === reelIdx ? 18 : 6,
+                  }}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -228,7 +278,7 @@ const Page = () => {
 
           <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
             <video
-              src={humanoidVideo.url}
+              src={humanoidWorkVideo.url}
               autoPlay
               muted
               loop
