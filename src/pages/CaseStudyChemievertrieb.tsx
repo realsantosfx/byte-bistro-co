@@ -31,7 +31,7 @@ const copy = {
     steps: [
       "Analyse der Außendienst-Prozesse und Kundenstruktur über 3 Wochen",
       "Entwicklung des custom CRM mit Lager-Integration und mobiler App",
-      "Aktivierung der AI-Schicht nach 3 Monaten Datenbasis",
+      "Aktivierung der AI-Schicht nach 2 Wochen Datenbasis",
     ],
     backendLabel: "Was im System steckt",
     backendTitle: "Die operative Schicht im Detail.",
@@ -85,7 +85,7 @@ const copy = {
     steps: [
       "Analysis of field sales processes and customer structure over 3 weeks",
       "Development of the custom CRM with warehouse integration and mobile app",
-      "Activation of the AI layer after 3 months of data baseline",
+      "Activation of the AI layer after 2 weeks of data baseline",
     ],
     backendLabel: "What's in the system",
     backendTitle: "The operational layer in detail.",
