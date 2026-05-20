@@ -104,8 +104,7 @@ const copy = {
     metrics: [
       { value: "−80%", label: "Manual coordination effort" },
       { value: "+127%", label: "Process efficiency in 3 months" },
-      
-      { value: "6 mo.", label: "Until first AI recommendations active" },
+      { value: "2 mo.", label: "Until first AI recommendations active" },
     ],
     quoteLabel: "Voice from the project",
     quote: "We didn't need another tool, we needed an operational brain for our company. That's exactly what SantosLab delivered.",
