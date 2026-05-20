@@ -62,7 +62,7 @@ const copy = {
     backLabel: "Back to homepage",
     eyebrow: "Case Study · Mid-market · Manufacturing",
     heroHeadline: "€7M revenue. Processes ran on Excel and phone calls.",
-    heroSub: "How we built a custom ERP with an active AI layer for a 40-person company – and why the error rate dropped by 80% after three months.",
+    heroSub: "How we built a custom ERP with an active AI layer for a 40-person company – and why the error rate dropped by 80% after two months.",
     heroCta: "Book intro call",
     contextLabel: "Starting Point",
     contextTitle: "Growth without structure.",
