@@ -314,9 +314,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3.5">
             {buildTypes.map((b, i) => (
-              <div
+              <Link
                 key={b.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[4/5] hover-lift group p-7 flex flex-col justify-between"
+                to={b.href}
+                className="relative overflow-hidden rounded-[18px] aspect-[4/5] hover-lift group p-7 flex flex-col justify-between block"
                 style={{
                   background: "linear-gradient(155deg,#0f1722 0%,#152538 50%,#0c1828 100%)",
                   animationDelay: `${i * 80}ms`,
@@ -326,6 +327,9 @@ const Index = () => {
                   className="absolute w-[260px] h-[260px] rounded-full blur-[80px] -top-12 -right-12 pointer-events-none"
                   style={{ background: "rgba(47,184,198,.18)" }}
                 />
+                <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors z-[2]">
+                  <Arrow />
+                </div>
                 <div className="relative z-[2] text-[11px] font-medium text-white/40 uppercase tracking-[0.12em]">
                   {b.tag}
                 </div>
@@ -335,7 +339,7 @@ const Index = () => {
                   </h3>
                   <p className="text-[13px] text-white/55 leading-relaxed">{b.desc}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
