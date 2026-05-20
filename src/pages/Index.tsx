@@ -133,13 +133,16 @@ const Index = () => {
             }}
           />
 
-          {/* Robot photo right */}
+          {/* Rover video right */}
           <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[55%] z-[2]">
-            <img
-              src={heroRobot}
-              alt="Humanoider Service-Roboter im dunklen Lager mit Teal-Licht"
-              width={1024}
-              height={1280}
+            <video
+              src={heroRoverVideo.url}
+              poster={heroRobot}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
               className="w-full h-full object-cover object-center"
               style={{ filter: "saturate(0.95) contrast(1.05)" }}
             />
