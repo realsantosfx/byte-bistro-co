@@ -78,22 +78,37 @@ const useCases = [
 ];
 
 const Page = () => {
+  const [reelIdx, setReelIdx] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setReelIdx((i) => (i + 1) % heroReel.length);
+    }, 10000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const current = heroReel[reelIdx];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       <main>
-        {/* HERO — Rover Video */}
+        {/* HERO — Cycling Robot Reel */}
         <section className="relative overflow-hidden min-h-[720px] md:min-h-[820px] flex items-end">
-          <video
-            src={roverVideo.url}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          {heroReel.map((clip, i) => (
+            <video
+              key={clip.url}
+              src={clip.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+              style={{ opacity: i === reelIdx ? 1 : 0 }}
+            />
+          ))}
           <div
             className="absolute inset-0"
             style={{
