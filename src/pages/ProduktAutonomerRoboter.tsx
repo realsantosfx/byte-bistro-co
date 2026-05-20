@@ -110,6 +110,37 @@ const Page = () => {
           </div>
         </section>
 
+        {/* NUTZENZEILE */}
+        <section className="pt-10 md:pt-14 section-x container-shell">
+          <div className="rounded-[18px] border border-border bg-[#0f1722] p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+            <div className="flex items-center gap-3 shrink-0">
+              <div className="w-[34px] h-[34px] rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 text-[15px]">◐</div>
+              <div className="text-[11px] font-medium text-white/45 uppercase tracking-[0.12em] whitespace-nowrap">
+                Roboter — Add-on
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 md:flex-1">
+              {[
+                "24/7 Kommissionierung",
+                "Spart 1–2 Vollzeitkräfte",
+                "ROI in 12–18 Monaten",
+                "Kollisionsfrei mit Menschen",
+              ].map((b) => (
+                <span key={b} className="text-[12px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+                  {b}
+                </span>
+              ))}
+            </div>
+
+            <div className="text-[12.5px] text-white/45 md:text-right md:max-w-[260px] leading-snug">
+              <span className="text-white/35">Typisch für:</span>{" "}
+              Lager-Kommissionierung, innerbetrieblicher Transport, Nachtschicht-Inventur.
+            </div>
+          </div>
+        </section>
+
+
         {/* INTRO */}
         <section className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
