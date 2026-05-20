@@ -222,7 +222,7 @@ const Page = () => {
             <div className="relative z-[2] p-10 md:p-14 flex flex-col justify-center gap-3">
               {[
                 { l: "Operative Software", d: "Daten- & Prozesskontext für die KI", to: "/produkte/operative-software" },
-                { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb", to: "/kontakt" },
+                { l: "Terminals & Kameras", d: "Live-Input aus dem Betrieb", to: "/produkte/terminals-kameras" },
                 { l: "Autonomer Roboter", d: "KI entscheidet, der Rover bewegt", to: "/kontakt" },
               ].map((x) => (
                 <Link
