@@ -161,7 +161,7 @@ const Index = () => {
 
 
           <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[720px] container-shell w-full">
-            <h1 className="display text-white mb-6" style={{ fontSize: "clamp(52px, 7.5vw, 88px)", lineHeight: 1.02 }}>
+            <h1 className="display text-white mb-6 break-words hyphens-auto" lang="de" style={{ fontSize: "clamp(38px, 9vw, 88px)", lineHeight: 1.04 }}>
               Maßgeschneiderte<br />
               <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Software</em><br />
               für den<br />Mittelstand
