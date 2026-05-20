@@ -95,7 +95,7 @@ const copy = {
       "Central order and customer database",
       "Real-time inventory with automatic reordering",
       "Capacity planning across all production lines",
-      "AI pattern recognition on 6 months of operational data",
+      "AI pattern recognition on 2 months of operational data",
       "Proactive recommendations on prioritization and capacity",
       "Dashboards for leadership and operations",
     ],
