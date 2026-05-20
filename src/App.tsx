@@ -20,6 +20,7 @@ import ProduktOperativeSoftware from "./pages/ProduktOperativeSoftware";
 import ProduktLokaleKI from "./pages/ProduktLokaleKI";
 import ProduktTerminalsKameras from "./pages/ProduktTerminalsKameras";
 import ProduktAutonomerRoboter from "./pages/ProduktAutonomerRoboter";
+import Robotik from "./pages/Robotik";
 import SantosOS from "./pages/SantosOS";
 import Anwendung from "./pages/Anwendung";
 import Branche from "./pages/Branche";
@@ -67,6 +68,7 @@ const App = () => (
             <Route path="/produkte/lokale-ki" element={<ProduktLokaleKI />} />
             <Route path="/produkte/terminals-kameras" element={<ProduktTerminalsKameras />} />
             <Route path="/produkte/autonomer-roboter" element={<ProduktAutonomerRoboter />} />
+            <Route path="/robotik" element={<Robotik />} />
             <Route path="/santosos" element={<SantosOS />} />
             <Route path="/anwendung/:slug" element={<Anwendung />} />
             <Route path="/branche/:slug" element={<Branche />} />
