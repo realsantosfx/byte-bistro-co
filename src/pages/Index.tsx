@@ -249,11 +249,6 @@ const Index = () => {
                   <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                     {c.tag}
                   </div>
-                  {c.soon && (
-                    <div className="absolute top-5 right-14 text-[10px] font-medium text-white/70 uppercase tracking-[0.12em] px-2.5 py-1 rounded-full border border-white/15 bg-white/5">
-                      Coming Soon
-                    </div>
-                  )}
                   <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                     <Arrow />
                   </div>
