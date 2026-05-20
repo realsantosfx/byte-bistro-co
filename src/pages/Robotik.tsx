@@ -278,7 +278,7 @@ const Page = () => {
 
           <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
             <video
-              src={humanoidVideo.url}
+              src={humanoidWorkVideo.url}
               autoPlay
               muted
               loop
