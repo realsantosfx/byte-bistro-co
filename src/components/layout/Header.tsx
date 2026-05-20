@@ -25,12 +25,14 @@ const Header = () => {
   return (
     <header className="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-[1280px]">
       <div
-        className={`glass-dark transition-all duration-300 ${
-          isOpen ? "rounded-3xl" : "rounded-full"
-        } ${scrolled ? "shadow-2xl" : ""}`}
+        className={`transition-all duration-300 ${
+          isOpen
+            ? "rounded-[28px] bg-[#0a0f18] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
+            : `rounded-full glass-dark ${scrolled ? "shadow-2xl" : ""}`
+        }`}
       >
         <div className="flex items-center justify-between gap-4 md:gap-6 pl-5 md:pl-7 pr-3 py-2.5">
-          <Link to="/" className="display text-[19px] font-bold text-white whitespace-nowrap">
+          <Link to="/" className="display text-[19px] font-bold text-white whitespace-nowrap" onClick={() => setIsOpen(false)}>
             Santos<span style={{ color: "hsl(var(--teal))" }}>Lab</span>
           </Link>
 
@@ -56,15 +58,17 @@ const Header = () => {
               <span className={lang === "en" ? "text-white" : ""}>EN</span>
             </button>
 
-            <Link
-              to="/kontakt"
-              className="hidden sm:inline-flex bg-white text-[#0f0f0f] text-[13.5px] font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
-            >
-              {t.nav.cta}
-            </Link>
+            {!isOpen && (
+              <Link
+                to="/kontakt"
+                className="hidden sm:inline-flex bg-white text-[#0f0f0f] text-[13.5px] font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+              >
+                {t.nav.cta}
+              </Link>
+            )}
 
             <button
-              className="lg:hidden p-2 text-white"
+              className="lg:hidden w-9 h-9 flex items-center justify-center text-white rounded-full hover:bg-white/10 transition-colors"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Menu"
             >
@@ -75,31 +79,45 @@ const Header = () => {
 
         {isOpen && (
           <div className="lg:hidden px-6 pb-6 pt-2 animate-fade-up">
-            <nav className="flex flex-col gap-1">
-              {links.map((l) => (
+            <div className="text-[10.5px] font-medium text-white/35 uppercase tracking-[0.18em] py-3 border-t border-white/10">
+              Navigation
+            </div>
+            <nav className="flex flex-col">
+              {links.map((l, i) => (
                 <a
                   key={l.label}
                   href={l.href}
-                  className="text-base text-white/75 hover:text-white py-2.5"
+                  className="flex items-center justify-between text-[17px] font-medium text-white/85 hover:text-white py-4 border-b border-white/[0.06] group"
                   onClick={() => setIsOpen(false)}
                 >
-                  {l.label}
+                  <span>{l.label}</span>
+                  <span className="text-white/25 group-hover:text-white/60 transition-colors text-[18px] leading-none">→</span>
                 </a>
               ))}
-              <button
-                onClick={() => { setLang(lang === "en" ? "de" : "en"); setIsOpen(false); }}
-                className="text-base text-white/60 py-2.5 text-left"
-              >
-                {lang === "en" ? "🇩🇪 Deutsch" : "🇬🇧 English"}
-              </button>
-              <Link
-                to="/kontakt"
-                onClick={() => setIsOpen(false)}
-                className="mt-3 bg-white text-[#0f0f0f] text-center text-sm font-medium py-3 rounded-full"
-              >
-                {t.nav.cta}
-              </Link>
             </nav>
+
+            <div className="flex items-center justify-between pt-5">
+              <div className="text-[10.5px] font-medium text-white/35 uppercase tracking-[0.18em]">
+                Sprache
+              </div>
+              <button
+                onClick={() => setLang(lang === "en" ? "de" : "en")}
+                className="text-[13px] font-medium text-white/50 hover:text-white transition-colors"
+              >
+                <span className={lang === "de" ? "text-white" : ""}>DE</span>
+                <span className="mx-2 text-white/20">/</span>
+                <span className={lang === "en" ? "text-white" : ""}>EN</span>
+              </button>
+            </div>
+
+            <Link
+              to="/kontakt"
+              onClick={() => setIsOpen(false)}
+              className="mt-5 flex items-center justify-center gap-2 bg-white text-[#0f0f0f] text-center text-[14px] font-medium py-3.5 rounded-full hover:opacity-90 transition-opacity"
+            >
+              {t.nav.cta}
+              <span className="text-[16px] leading-none">→</span>
+            </Link>
           </div>
         )}
       </div>
