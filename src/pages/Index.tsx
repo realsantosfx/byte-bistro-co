@@ -271,17 +271,26 @@ const Index = () => {
             {useCases.map((u) => (
               <div
                 key={u.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift"
+                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift group"
                 style={{ background: u.bg }}
               >
+                <img
+                  src={u.img}
+                  alt={u.title.replace("\n", " ")}
+                  width={768}
+                  height={1152}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity duration-500"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(180deg,rgba(8,12,20,0.25) 0%,rgba(8,12,20,0.85) 100%)" }}
+                />
                 <div
                   className="absolute w-[260px] h-[260px] rounded-full blur-[80px] top-[25%] left-1/2 -translate-x-1/2 pointer-events-none"
                   style={{ background: u.glow }}
                 />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[56%] text-[80px] opacity-10 pointer-events-none">
-                  {u.emoji}
-                </div>
-                <div className="absolute bottom-7 left-7">
+                <div className="absolute bottom-7 left-7 z-[2]">
                   <h3 className="display text-[26px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
                 </div>
               </div>
