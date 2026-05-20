@@ -207,9 +207,6 @@ const Index = () => {
                   className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
                   style={{ background: c.glow }}
                 />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[72px] opacity-10 pointer-events-none select-none">
-                  {c.icon}
-                </div>
                 <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                   {c.tag}
                 </div>
