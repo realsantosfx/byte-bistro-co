@@ -3,6 +3,12 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import { ArrowUpRight, Play } from "lucide-react";
+import heroRobot from "@/assets/site/hero-robot.jpg";
+import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
+import caseLager from "@/assets/site/case-lager.jpg";
+import caseBuero from "@/assets/site/case-buero.jpg";
+import caseProduktion from "@/assets/site/case-produktion.jpg";
+import ctaControl from "@/assets/site/cta-control.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
