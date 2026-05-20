@@ -256,6 +256,58 @@ const Page = () => {
           </div>
         </section>
 
+        {/* AMR / ROVER — Video Feature */}
+        <section id="rover" className="section-x container-shell pb-20 md:pb-24">
+          <div className="grid md:grid-cols-[1fr_1.3fr] gap-10 md:gap-16 items-start mb-10">
+            <div>
+              <div className="text-[11px] font-medium text-white/45 uppercase tracking-[0.14em] mb-3">
+                AMR — Autonomer Rover
+              </div>
+              <h2 className="hl-lg">
+                Fährt selbst.{" "}
+                <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Ohne Schienen</em>.
+                Ohne Bediener.
+              </h2>
+            </div>
+            <p className="bd pt-2">
+              Der Rover bekommt seine Aufträge direkt aus deiner Operativen Software — kommissioniert, transportiert
+              und übergibt Ware zwischen Lager, Produktion und Übergabepunkt. Kartiert dein Umfeld einmal, fährt
+              dann selbst und meldet jeden Status zurück ins zentrale Dashboard.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
+            <video
+              src={roverWorkVideo.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={roverWarehouse}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0) 50%,rgba(8,10,16,0.85) 100%)" }} />
+            <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-[520px]">
+                <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-white/50 mb-2">
+                  Live — Kommissionierung im Lager
+                </div>
+                <h3 className="display text-[22px] md:text-[28px] font-bold text-white leading-tight">
+                  Autonomer Rover im Realbetrieb
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Navigation", "Transport", "Übergabe", "Flotte"].map((b) => (
+                  <span key={b} className="text-[11.5px] text-white/80 px-2.5 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur">
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* HUMANOID — Video Feature */}
         <section id="humanoid" className="section-x container-shell pb-20 md:pb-24">
           <div className="grid md:grid-cols-[1fr_1.3fr] gap-10 md:gap-16 items-start mb-10">
