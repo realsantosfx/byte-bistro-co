@@ -105,10 +105,10 @@ const productCards = [
 ];
 
 const buildTypes = [
-  { tag: "01", title: "ERP-Systeme", desc: "Auftrag, Lager, Einkauf, Finanzen — in einem System statt fünf.", href: "/produkte/operative-software" },
-  { tag: "02", title: "CRM-Lösungen", desc: "Pipeline, Angebot, Kunde — exakt wie dein Vertrieb arbeitet.", href: "/produkte/operative-software" },
-  { tag: "03", title: "Branchensoftware", desc: "Maßgeschneidert für deinen Prozess, nicht für 1.000 andere.", href: "/produkte/operative-software" },
-  { tag: "04", title: "KI-Integration", desc: "Lokale Modelle für Vision, Klassifikation, Automatisierung.", href: "/produkte/lokale-ki" },
+  { tag: "01", title: "ERP-Systeme", desc: "Auftrag, Lager, Einkauf, Finanzen — in einem System statt fünf.", href: "/produkte/operative-software", img: buildErp },
+  { tag: "02", title: "CRM-Lösungen", desc: "Pipeline, Angebot, Kunde — exakt wie dein Vertrieb arbeitet.", href: "/produkte/operative-software", img: buildCrm },
+  { tag: "03", title: "Branchensoftware", desc: "Maßgeschneidert für deinen Prozess, nicht für 1.000 andere.", href: "/produkte/operative-software", img: buildBranche },
+  { tag: "04", title: "KI-Integration", desc: "Lokale Modelle für Vision, Klassifikation, Automatisierung.", href: "/produkte/lokale-ki", img: buildKi },
 ];
 
 const branchen = [
