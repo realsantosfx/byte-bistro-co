@@ -14,6 +14,10 @@ import cardSoftware from "@/assets/site/card-software.jpg";
 import cardKi from "@/assets/site/card-ki.jpg";
 import cardTerminals from "@/assets/site/card-terminals.jpg";
 import cardRover from "@/assets/site/rover-hero-frame.jpg";
+import reserveSoftware from "@/assets/site/reserve-software.jpg";
+import reserveKi from "@/assets/site/reserve-ki.jpg";
+import reserveHardware from "@/assets/site/reserve-hardware.jpg";
+import reserveRover from "@/assets/site/reserve-rover.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
