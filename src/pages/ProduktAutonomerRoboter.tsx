@@ -214,6 +214,7 @@ const Page = () => {
                 { l: "Operative Software", d: "Gibt Aufträge & koordiniert die Flotte", to: "/produkte/operative-software" },
                 { l: "Lokale KI", d: "Erkennt Ware, Hindernisse & Situationen", to: "/produkte/lokale-ki" },
                 { l: "Terminals & Kameras", d: "Status und Übergabe an jeder Station", to: "/produkte/terminals-kameras" },
+                { l: "SantosOS", d: "Das Ökosystem hinter allem", to: "/santosos" },
               ].map((x) => (
                 <Link
                   key={x.l}
