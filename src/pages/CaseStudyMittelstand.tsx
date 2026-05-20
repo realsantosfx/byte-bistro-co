@@ -1,11 +1,6 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, AlertTriangle, CheckCircle2, Zap, Eye, TrendingUp } from "lucide-react";
-import MotionSection from "@/components/ui/MotionSection";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import CaseStudyLayout from "@/components/case/CaseStudyLayout";
 import { useLanguage } from "@/i18n/LanguageContext";
+
 
 const copy = {
   de: {
