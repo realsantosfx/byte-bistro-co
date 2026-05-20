@@ -191,7 +191,7 @@ const Index = () => {
           {/* Dominant card — Operative Software */}
           <Link
             to="/produkte/operative-software"
-            className="relative overflow-hidden rounded-[18px] aspect-[16/9] md:aspect-[21/9] cursor-pointer hover-lift group block mb-3.5"
+            className="relative overflow-hidden rounded-[18px] min-h-[560px] md:min-h-0 md:aspect-[21/9] cursor-pointer hover-lift group block mb-3.5"
             style={{ background: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)" }}
           >
             <img
@@ -200,14 +200,14 @@ const Index = () => {
               loading="lazy"
               width={1920}
               height={1080}
-              className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+              className="absolute inset-0 w-full h-full object-cover opacity-40 md:opacity-55 group-hover:opacity-60 transition-opacity"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.9) 100%)" }} />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.55) 0%,rgba(8,10,16,0.55) 30%,rgba(8,10,16,0.97) 75%,rgba(8,10,16,1) 100%)" }} />
             <div
               className="absolute w-[420px] h-[420px] rounded-full blur-[90px] pointer-events-none top-[10%] right-[5%]"
               style={{ background: "rgba(47,184,198,.28)" }}
             />
-            <div className="absolute top-6 left-7 flex items-center gap-2">
+            <div className="absolute top-5 left-5 md:top-6 md:left-7 flex flex-wrap items-center gap-2 pr-16">
               <span
                 className="text-[10.5px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full"
                 style={{ background: "hsl(var(--teal) / 0.18)", color: "hsl(var(--teal))", border: "1px solid hsl(var(--teal) / 0.35)" }}
@@ -218,18 +218,18 @@ const Index = () => {
                 Software Core
               </span>
             </div>
-            <div className="absolute top-6 right-6 w-[44px] h-[44px] bg-white/15 group-hover:bg-white/25 rounded-full flex items-center justify-center transition-colors">
+            <div className="absolute top-5 right-5 md:top-6 md:right-6 w-[40px] h-[40px] md:w-[44px] md:h-[44px] bg-white/15 group-hover:bg-white/25 rounded-full flex items-center justify-center transition-colors">
               <Arrow />
             </div>
-            <div className="absolute bottom-8 left-7 right-7 max-w-[720px]">
-              <h3 className="display text-[38px] md:text-[56px] font-bold text-white leading-[1.0] mb-3.5">Operative Software</h3>
-              <p className="text-[14.5px] md:text-[16px] text-white/70 leading-relaxed mb-4 max-w-[600px]">
+            <div className="absolute bottom-6 left-5 right-5 md:bottom-8 md:left-7 md:right-7 max-w-[720px]">
+              <h3 className="display text-[28px] md:text-[56px] font-bold text-white leading-[1.05] md:leading-[1.0] mb-2.5 md:mb-3.5">Operative Software</h3>
+              <p className="text-[13.5px] md:text-[16px] text-white/75 leading-relaxed mb-3.5 md:mb-4 max-w-[600px]">
                 ERP, CRM, Branchensoftware — exakt auf deinen Betrieb zugeschnitten. Eine Codebase, eine Wahrheit.
                 Das ist, was wir tun. Alles andere ist Ergänzung.
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {["ERP", "CRM", "Branchensoftware", "KI-Integration"].map((t) => (
-                  <span key={t} className="text-[11.5px] text-white/80 px-2.5 py-1 rounded-full bg-white/10 border border-white/15">
+                  <span key={t} className="text-[11px] md:text-[11.5px] text-white/85 px-2.5 py-1 rounded-full bg-white/10 border border-white/15">
                     {t}
                   </span>
                 ))}
