@@ -21,6 +21,7 @@ import ProduktLokaleKI from "./pages/ProduktLokaleKI";
 import ProduktTerminalsKameras from "./pages/ProduktTerminalsKameras";
 import ProduktAutonomerRoboter from "./pages/ProduktAutonomerRoboter";
 import SantosOS from "./pages/SantosOS";
+import Anwendung from "./pages/Anwendung";
 import Demo from "./pages/Demo";
 import DemoDetail from "./pages/DemoDetail";
 import DemoRestaurant from "./pages/DemoRestaurant";
@@ -66,6 +67,7 @@ const App = () => (
             <Route path="/produkte/terminals-kameras" element={<ProduktTerminalsKameras />} />
             <Route path="/produkte/autonomer-roboter" element={<ProduktAutonomerRoboter />} />
             <Route path="/santosos" element={<SantosOS />} />
+            <Route path="/anwendung/:slug" element={<Anwendung />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/demo/restaurant" element={<DemoRestaurant />} />
             <Route path="/demo/barber" element={<DemoBarber />} />
