@@ -123,7 +123,6 @@ const Index = () => {
       <main>
         {/* HERO */}
         <section className="relative overflow-hidden h-screen min-h-[680px] flex items-end">
-          {/* dark cinematic gradient */}
           <div
             className="absolute inset-0 z-0"
             style={{
@@ -139,20 +138,16 @@ const Index = () => {
             }}
           />
 
-          {/* Rover video — full hero background */}
+          {/* Software hero background */}
           <div className="absolute inset-0 z-[2]">
-            <video
-              src={heroRoverVideo.url}
-              poster={heroRobot}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
+            <img
+              src={heroSoftware}
+              alt="Maßgeschneiderte Software für den Mittelstand"
+              width={1920}
+              height={1080}
               className="w-full h-full object-cover object-center"
               style={{ filter: "saturate(0.95) contrast(1.05)" }}
             />
-            {/* Readability overlay: strong on left for text, lighter on right */}
             <div
               className="absolute inset-0"
               style={{
@@ -165,12 +160,14 @@ const Index = () => {
                style={{ background: "radial-gradient(circle,rgba(47,184,198,0.35) 0%,transparent 70%)" }} />
 
 
-          <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[660px] container-shell w-full">
+          <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[720px] container-shell w-full">
             <h1 className="display text-white mb-6" style={{ fontSize: "clamp(52px, 7.5vw, 88px)", lineHeight: 1.02 }}>
-              Operative<br />Intelligenz<br />für den<br />Mittelstand
+              Maßgeschneiderte<br />
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Software</em><br />
+              für den<br />Mittelstand
             </h1>
             <p className="text-[17px] font-light text-white/60 leading-relaxed max-w-[460px]">
-              Eine neue Ära der Zusammenarbeit<br />zwischen Mensch, Software und Roboter
+              ERP, CRM, Branchensoftware und KI —<br />gebaut für deinen Betrieb, nicht für 1.000 andere.
             </p>
           </div>
         </section>
