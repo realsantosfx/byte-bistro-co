@@ -6,6 +6,7 @@ import CookieBanner from "@/components/CookieBanner";
 import heroImg from "@/assets/site/page-rover-hero.jpg";
 import cardRover from "@/assets/site/rover-hero-frame.jpg";
 import reserveRover from "@/assets/site/reserve-rover.jpg";
+import workVideo from "@/assets/site/robot-rover-work.mp4.asset.json";
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
