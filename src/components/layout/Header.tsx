@@ -1,114 +1,104 @@
-import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/SantosLab_favi.png";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { lang, t, setLang } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLinks = [
-    { label: t.nav.services, href: "/#services" },
-    { label: t.nav.cases, href: "/#cases" },
-    { label: t.nav.approach, href: "/#approach" },
-    { label: t.nav.about, href: "/#about" },
+  const links = [
+    { label: t.nav.services, href: "/#produkte" },
+    { label: t.nav.cases, href: "/#anwendungen" },
+    { label: t.nav.approach, href: "/#branchen" },
+    { label: "SantosOS", href: "/#santosos" },
+    { label: t.nav.about, href: "/#unternehmen" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+    <header className="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-[1280px]">
       <div
-        className={`px-6 md:px-8 mx-auto max-w-7xl ${
-          isMenuOpen
-            ? "rounded-3xl bg-background/70 backdrop-blur-xl border border-border/50 shadow-lg"
-            : `transition-all duration-500 ${isScrolled
-              ? "rounded-full bg-background/70 backdrop-blur-xl border border-border/50 shadow-lg"
-              : "rounded-full bg-background/40 backdrop-blur-md border border-transparent"}`
-        }`}
+        className={`glass-dark transition-all duration-300 ${
+          isOpen ? "rounded-3xl" : "rounded-full"
+        } ${scrolled ? "shadow-2xl" : ""}`}
       >
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-lg font-semibold text-foreground tracking-tight">
-            <img src={logo} alt="SantosLab Logo" className="h-6 w-6" />
-            SantosLab
+        <div className="flex items-center justify-between gap-4 md:gap-6 pl-5 md:pl-7 pr-3 py-2.5">
+          <Link to="/" className="display text-[19px] font-bold text-white whitespace-nowrap">
+            Santos<span style={{ color: "hsl(var(--teal))" }}>Lab</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <nav className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
+            {links.map((l) => (
               <a
-                key={link.label}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                key={l.label}
+                href={l.href}
+                className="text-[13.5px] font-normal text-white/65 hover:text-white hover:bg-white/10 px-3.5 py-2 rounded-full transition-all whitespace-nowrap"
               >
-                {link.label}
+                {l.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-3 md:gap-4">
             <button
               onClick={() => setLang(lang === "en" ? "de" : "en")}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-300 px-2 py-1 rounded-full border border-border hover:border-foreground/20"
+              className="hidden md:block text-[13px] font-medium text-white/40 hover:text-white transition-colors"
             >
-              {lang === "en" ? "DE" : "EN"}
+              <span className={lang === "de" ? "text-white" : ""}>DE</span>
+              <span className="mx-1">/</span>
+              <span className={lang === "en" ? "text-white" : ""}>EN</span>
             </button>
 
-
-            <Link to="/demo">
-              <Button variant="apple" size="sm">
-                {t.nav.cta}
-              </Button>
+            <Link
+              to="/kontakt"
+              className="hidden sm:inline-flex bg-white text-[#0f0f0f] text-[13.5px] font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              {t.nav.cta}
             </Link>
-          </div>
 
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Menu"
-          >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            <button
+              className="lg:hidden p-2 text-white"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Menu"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border/50 animate-fade-up rounded-b-3xl">
-            <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
+        {isOpen && (
+          <div className="lg:hidden px-6 pb-6 pt-2 animate-fade-up">
+            <nav className="flex flex-col gap-1">
+              {links.map((l) => (
                 <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-lg text-muted-foreground hover:text-foreground transition-colors duration-300 py-2"
-                  onClick={() => setIsMenuOpen(false)}
+                  key={l.label}
+                  href={l.href}
+                  className="text-base text-white/75 hover:text-white py-2.5"
+                  onClick={() => setIsOpen(false)}
                 >
-                  {link.label}
+                  {l.label}
                 </a>
               ))}
-
               <button
-                onClick={() => { setLang(lang === "en" ? "de" : "en"); setIsMenuOpen(false); }}
-                className="text-lg text-muted-foreground hover:text-foreground transition-colors duration-300 py-2 text-left"
+                onClick={() => { setLang(lang === "en" ? "de" : "en"); setIsOpen(false); }}
+                className="text-base text-white/60 py-2.5 text-left"
               >
                 {lang === "en" ? "🇩🇪 Deutsch" : "🇬🇧 English"}
               </button>
-
-              <div className="flex flex-col gap-3 mt-4">
-                <Link to="/demo" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="apple" size="lg" className="w-full group">
-                    {t.nav.cta}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </Button>
-                </Link>
-                <p className="text-xs text-muted-foreground text-center mt-1">{t.nav.mobileMicrocopy}</p>
-              </div>
+              <Link
+                to="/kontakt"
+                onClick={() => setIsOpen(false)}
+                className="mt-3 bg-white text-[#0f0f0f] text-center text-sm font-medium py-3 rounded-full"
+              >
+                {t.nav.cta}
+              </Link>
             </nav>
           </div>
         )}

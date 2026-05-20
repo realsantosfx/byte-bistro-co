@@ -1,65 +1,64 @@
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border">
-      <div className="container-narrow px-6 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-1">
-            <Link to="/" className="text-lg font-semibold text-foreground tracking-tight">
-              SantosLab
+    <footer className="bg-[#0f0f0f] text-white px-6 md:px-14 pt-16 pb-8">
+      <div className="container-shell">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-8 pb-12 border-b border-white/10">
+          <div className="col-span-2 md:col-span-1">
+            <Link to="/" className="display text-[20px] font-bold">
+              Santos<span style={{ color: "hsl(var(--teal))" }}>Lab</span>
             </Link>
-            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{t.footer.tagline}</p>
           </div>
 
           <div>
-            <h4 className="text-xs text-muted-foreground tracking-widest uppercase mb-4">{t.footer.navigate}</h4>
-            <div className="flex flex-col gap-3">
-              <a href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {t.nav.services}
-              </a>
-              <a href="/#cases" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {t.nav.cases}
-              </a>
-              <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {t.nav.about}
-              </a>
-              <Link to="/demo" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {t.footer.contactLabel}
-              </Link>
-            </div>
+            <h4 className="display text-sm font-semibold mb-4">Produkte</h4>
+            <ul className="space-y-3">
+              {["Operative Software", "Lokale KI", "Hardware", "Autonomer Roboter", "SantosOS"].map((i) => (
+                <li key={i}><a href="#produkte" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">{i}</a></li>
+              ))}
+            </ul>
           </div>
 
           <div>
-            <h4 className="text-xs text-muted-foreground tracking-widest uppercase mb-4">{t.footer.connect}</h4>
-            <div className="flex flex-col gap-3">
-              <Link to="/enterprise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Enterprise Systeme
-              </Link>
-            </div>
+            <h4 className="display text-sm font-semibold mb-4">Anwendungen</h4>
+            <ul className="space-y-3">
+              {["Pick & Pack", "Wareneingang", "Qualitätskontrolle", "Inventur", "Versandkontrolle"].map((i) => (
+                <li key={i}><a href="#anwendungen" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">{i}</a></li>
+              ))}
+            </ul>
           </div>
 
           <div>
-            <h4 className="text-xs text-muted-foreground tracking-widest uppercase mb-4">{t.footer.legal}</h4>
-            <div className="flex flex-col gap-3">
-              <Link to="/impressum" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Impressum
-              </Link>
-              <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Datenschutz
-              </Link>
-            </div>
+            <h4 className="display text-sm font-semibold mb-4">Branchen</h4>
+            <ul className="space-y-3">
+              {["Handel & Distribution", "Produktion", "Logistik", "Sanierung"].map((i) => (
+                <li key={i}><a href="#branchen" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">{i}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="display text-sm font-semibold mb-4">Unternehmen</h4>
+            <ul className="space-y-3">
+              <li><Link to="/enterprise" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">Enterprise</Link></li>
+              <li><Link to="/projekte" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">Referenzen</Link></li>
+              <li><Link to="/ki-beratung" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">KI Beratung</Link></li>
+              <li><Link to="/kontakt" className="text-[13.5px] text-white/40 hover:text-white/80 transition-colors">Kontakt</Link></li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8">
-          <p className="text-xs text-muted-foreground">
-            © {currentYear} SantosLab. {t.footer.rights}
+        <div className="pt-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="text-xs text-white/30">
+            © {year} SantosLab — Johannes Santos. Dietmannsried, Germany.
           </p>
+          <ul className="flex gap-5">
+            <li><Link to="/impressum" className="text-xs text-white/30 hover:text-white/60 transition-colors">Impressum</Link></li>
+            <li><Link to="/datenschutz" className="text-xs text-white/30 hover:text-white/60 transition-colors">Datenschutz</Link></li>
+          </ul>
         </div>
       </div>
     </footer>

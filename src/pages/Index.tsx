@@ -1,31 +1,396 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/sections/Hero";
-import WhatWeBuild from "@/components/sections/WhatWeBuild";
-import Approach from "@/components/sections/Approach";
-import CaseStudies from "@/components/sections/CaseStudies";
-import WhySantosLab from "@/components/sections/WhySantosLab";
-import AboutNew from "@/components/sections/AboutNew";
-import WaysToWork from "@/components/sections/WaysToWork";
-import FinalCTA from "@/components/sections/FinalCTA";
-import Testimonials from "@/components/sections/Testimonials";
 import CookieBanner from "@/components/CookieBanner";
+import { ArrowUpRight, Play } from "lucide-react";
+
+const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
+  <svg width="11" height="11" viewBox="0 0 11 11">
+    <path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke={stroke} strokeWidth="1.4" fill="none" strokeLinecap="round" />
+  </svg>
+);
+
+const RobotSVG = () => (
+  <svg viewBox="0 0 340 420" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <rect x="95" y="130" width="150" height="130" rx="20" fill="rgba(47,184,198,0.1)" stroke="rgba(47,184,198,0.45)" strokeWidth="1.5"/>
+    <rect x="120" y="80" width="100" height="60" rx="16" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.4)" strokeWidth="1.5"/>
+    <line x1="170" y1="80" x2="170" y2="50" stroke="rgba(47,184,198,0.5)" strokeWidth="1.5"/>
+    <circle cx="170" cy="46" r="5" fill="rgba(47,184,198,0.9)">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="148" cy="108" r="9" fill="rgba(47,184,198,0.12)" stroke="rgba(47,184,198,0.5)" strokeWidth="1.5"/>
+    <circle cx="148" cy="108" r="4" fill="rgba(47,184,198,1)">
+      <animate attributeName="r" values="4;2.5;4" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="192" cy="108" r="9" fill="rgba(47,184,198,0.12)" stroke="rgba(47,184,198,0.5)" strokeWidth="1.5"/>
+    <circle cx="192" cy="108" r="4" fill="rgba(47,184,198,1)">
+      <animate attributeName="r" values="4;2.5;4" dur="3.5s" begin=".5s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="115" y="150" width="110" height="80" rx="10" fill="rgba(47,184,198,0.06)" stroke="rgba(47,184,198,0.25)" strokeWidth="1"/>
+    <rect x="125" y="162" width="90" height="5" rx="2.5" fill="rgba(47,184,198,0.12)"/>
+    <rect x="125" y="162" width="70" height="5" rx="2.5" fill="rgba(47,184,198,0.7)"/>
+    <rect x="125" y="174" width="90" height="5" rx="2.5" fill="rgba(47,184,198,0.12)"/>
+    <rect x="125" y="174" width="45" height="5" rx="2.5" fill="rgba(47,184,198,0.5)"/>
+    <rect x="125" y="186" width="90" height="5" rx="2.5" fill="rgba(47,184,198,0.12)"/>
+    <rect x="125" y="186" width="82" height="5" rx="2.5" fill="rgba(47,184,198,0.6)"/>
+    <rect x="125" y="200" width="48" height="18" rx="9" fill="rgba(47,184,198,0.2)" stroke="rgba(47,184,198,0.4)" strokeWidth="1"/>
+    <circle cx="135" cy="209" r="3" fill="rgba(47,184,198,1)">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M95 165 Q60 180 50 210" stroke="rgba(47,184,198,0.4)" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <circle cx="48" cy="215" r="10" fill="rgba(47,184,198,0.1)" stroke="rgba(47,184,198,0.45)" strokeWidth="1.5"/>
+    <path d="M245 165 Q280 180 290 210" stroke="rgba(47,184,198,0.4)" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <circle cx="292" cy="215" r="10" fill="rgba(47,184,198,0.1)" stroke="rgba(47,184,198,0.45)" strokeWidth="1.5"/>
+    <rect x="125" y="260" width="35" height="70" rx="10" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.3)" strokeWidth="1.5"/>
+    <rect x="180" y="260" width="35" height="70" rx="10" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.3)" strokeWidth="1.5"/>
+    <ellipse cx="142" cy="336" rx="26" ry="12" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.35)" strokeWidth="1.5"/>
+    <ellipse cx="198" cy="336" rx="26" ry="12" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.35)" strokeWidth="1.5"/>
+    <ellipse cx="170" cy="352" rx="90" ry="7" fill="rgba(47,184,198,0.06)"/>
+    <line x1="50" y1="200" x2="50" y2="140" stroke="rgba(47,184,198,0.12)" strokeWidth="1" strokeDasharray="5 4">
+      <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="290" y1="200" x2="290" y2="140" stroke="rgba(47,184,198,0.12)" strokeWidth="1" strokeDasharray="5 4">
+      <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+  </svg>
+);
+
+const RoverSVG = () => (
+  <svg viewBox="0 0 600 280" fill="none" className="w-full max-w-[700px] opacity-90" xmlns="http://www.w3.org/2000/svg">
+    <rect x="200" y="60" width="200" height="140" rx="24" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.35)" strokeWidth="1.5"/>
+    <rect x="230" y="80" width="140" height="90" rx="12" fill="rgba(47,184,198,0.05)" stroke="rgba(47,184,198,0.2)" strokeWidth="1"/>
+    <circle cx="263" cy="118" r="16" fill="rgba(47,184,198,0.15)" stroke="rgba(47,184,198,0.5)" strokeWidth="1.5"/>
+    <circle cx="263" cy="118" r="6" fill="rgba(47,184,198,0.9)"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="337" cy="118" r="16" fill="rgba(47,184,198,0.15)" stroke="rgba(47,184,198,0.5)" strokeWidth="1.5"/>
+    <circle cx="337" cy="118" r="6" fill="rgba(47,184,198,0.9)"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" begin=".4s" repeatCount="indefinite"/></circle>
+    <rect x="240" y="146" width="120" height="12" rx="6" fill="rgba(47,184,198,0.12)"/>
+    <rect x="240" y="146" width="85" height="12" rx="6" fill="rgba(47,184,198,0.6)"/>
+    <ellipse cx="230" cy="218" rx="34" ry="18" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.35)" strokeWidth="1.5"/>
+    <ellipse cx="300" cy="222" rx="34" ry="18" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.35)" strokeWidth="1.5"/>
+    <ellipse cx="370" cy="218" rx="34" ry="18" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.35)" strokeWidth="1.5"/>
+    <path d="M200 110 Q140 130 110 170" stroke="rgba(47,184,198,0.35)" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <circle cx="104" cy="176" r="14" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.4)" strokeWidth="1.5"/>
+    <path d="M400 110 Q460 130 490 170" stroke="rgba(47,184,198,0.35)" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <circle cx="496" cy="176" r="14" fill="rgba(47,184,198,0.08)" stroke="rgba(47,184,198,0.4)" strokeWidth="1.5"/>
+    <ellipse cx="300" cy="240" rx="160" ry="10" fill="rgba(47,184,198,0.05)"/>
+    <circle cx="300" cy="30" r="20" stroke="rgba(47,184,198,0.2)" strokeWidth="1" fill="none">
+      <animate attributeName="r" values="20;35;20" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="30" r="10" fill="rgba(47,184,198,0.3)" stroke="rgba(47,184,198,0.6)" strokeWidth="1.5"/>
+    <line x1="300" y1="38" x2="300" y2="60" stroke="rgba(47,184,198,0.3)" strokeWidth="1.5"/>
+  </svg>
+);
+
+const productCards = [
+  { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]" },
+  { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", icon: "◈", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]" },
+  { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", icon: "◉", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]" },
+  { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]" },
+];
+
+const useCases = [
+  { title: "Lager &\nLogistik", emoji: "📦", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)" },
+  { title: "Büro &\nManagement", emoji: "🖥️", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)" },
+  { title: "Produktion &\nQualität", emoji: "🏭", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)" },
+];
+
+const reserveCards = [
+  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)" },
+  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)" },
+  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)" },
+  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)" },
+];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
       <main>
-        <Hero />
-        <WhatWeBuild />
-        <Approach />
-        <CaseStudies />
-        <Testimonials />
-        <WhySantosLab />
-        <AboutNew />
-        <WaysToWork />
-        <FinalCTA />
+        {/* HERO */}
+        <section className="relative overflow-hidden h-screen min-h-[680px] flex items-end">
+          {/* dark cinematic gradient */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 60% at 65% 35%,rgba(40,55,80,.55) 0%,transparent 60%), radial-gradient(ellipse 100% 100% at 50% 0%,rgba(15,18,28,1) 0%,rgba(30,40,55,.9) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 z-[1]"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 80% at 70% 60%,rgba(60,80,60,.18) 0%,transparent 60%), radial-gradient(ellipse 50% 50% at 30% 70%,rgba(80,60,40,.15) 0%,transparent 50%), linear-gradient(180deg,rgba(10,12,18,0.7) 0%,rgba(18,24,36,0.6) 40%,rgba(8,10,14,0.85) 100%)",
+            }}
+          />
+
+          {/* Robot right */}
+          <div className="hidden md:flex absolute right-0 bottom-0 w-1/2 h-[85%] z-[3] items-end justify-center"
+               style={{ background: "linear-gradient(to left,rgba(10,12,18,0) 0%,rgba(10,12,18,0.6) 100%)" }}>
+            <div className="w-[340px] h-[420px] animate-float" style={{ filter: "drop-shadow(0 0 80px rgba(47,184,198,0.25))" }}>
+              <RobotSVG />
+            </div>
+          </div>
+
+          <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[660px] container-shell w-full">
+            <div className="inline-flex items-center gap-3 mb-7 cursor-pointer group">
+              <div className="w-[38px] h-[38px] rounded-full border border-white/35 group-hover:border-white/70 transition-colors flex items-center justify-center">
+                <Play className="w-3 h-3 fill-white text-white ml-0.5" />
+              </div>
+            </div>
+            <h1 className="display text-white mb-6" style={{ fontSize: "clamp(52px, 7.5vw, 88px)", lineHeight: 1.02 }}>
+              Operative<br />Intelligenz<br />für den<br />Mittelstand
+            </h1>
+            <p className="text-[17px] font-light text-white/60 leading-relaxed max-w-[460px]">
+              Eine neue Ära der Zusammenarbeit<br />zwischen Mensch, Software und Roboter
+            </p>
+          </div>
+        </section>
+
+        {/* INTRO + PRODUCT CARDS */}
+        <section id="produkte" className="py-20 md:py-24 section-x container-shell">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16">
+            <h2 className="hl-lg">
+              Software der nächsten Generation für eine{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>smarte Automatisierung</em>
+            </h2>
+            <p className="bd pt-1.5">
+              Wir verbinden operative Software, lokale KI-Intelligenz und physische Hardware zu einem einzigen System.
+              Terminals die Aufträge anzeigen, Kameras die Wareneingänge erkennen, Roboter die autonom kommissionieren —
+              und alle sprechen miteinander. Für Unternehmen die echte Dinge tun.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-3.5">
+            {productCards.map((c, i) => (
+              <div
+                key={c.title}
+                className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group"
+                style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
+              >
+                <div
+                  className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
+                  style={{ background: c.glow }}
+                />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[72px] opacity-10 pointer-events-none select-none">
+                  {c.icon}
+                </div>
+                <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
+                  {c.tag}
+                </div>
+                <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                  <Arrow />
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
+                  <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FEATURE: ROVER */}
+        <section id="anwendungen" className="pb-24 section-x container-shell">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
+            <h2 className="hl-lg">
+              Deutschlands erster{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>intelligenter Lager-Assistent</em>
+              {" "}für den Mittelstand
+            </h2>
+            <p className="bd pt-1.5">
+              Gebaut, um deinem Team zu folgen. Entwickelt, um mit Menschen zusammenzuarbeiten.
+              Unser autonomer Roboter übernimmt Kommissionierung mit selbständiger Navigation,
+              Kartierung und direkter Software-Integration. Wenn qualifizierte Mitarbeiter Besseres zu tun haben,
+              übernimmt die Maschine.
+            </p>
+          </div>
+
+          <div
+            className="relative rounded-[18px] overflow-hidden min-h-[420px] flex items-center justify-center"
+            style={{ background: "linear-gradient(135deg,#10181a 0%,#1a3035 40%,#0d2028 100%)" }}
+          >
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[40px]"
+              style={{ background: "radial-gradient(ellipse,rgba(47,184,198,.12) 0%,transparent 70%)" }}
+            />
+            <div className="relative z-[2] p-10 md:p-16 flex items-center justify-center">
+              <RoverSVG />
+            </div>
+          </div>
+        </section>
+
+        {/* USE CASES */}
+        <section id="branchen" className="pb-24 section-x container-shell">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
+            <h2 className="hl-lg">
+              Software & Robotik für<br />
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>jeden Betrieb</em>
+            </h2>
+            <p className="bd pt-1.5">
+              Entwickelt für jede Aufgabe, in jeder Umgebung. Ob es um die Automatisierung des Lagers,
+              die Optimierung von Geschäftsabläufen oder die Qualitätskontrolle geht — unsere Technologie
+              passt sich deiner Arbeitsweise an.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-3.5">
+            {useCases.map((u) => (
+              <div
+                key={u.title}
+                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift"
+                style={{ background: u.bg }}
+              >
+                <div
+                  className="absolute w-[260px] h-[260px] rounded-full blur-[80px] top-[25%] left-1/2 -translate-x-1/2 pointer-events-none"
+                  style={{ background: u.glow }}
+                />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[56%] text-[80px] opacity-10 pointer-events-none">
+                  {u.emoji}
+                </div>
+                <div className="absolute bottom-7 left-7">
+                  <h3 className="display text-[26px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* NUMBERS STRIP */}
+        <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-border container-shell">
+          {[
+            { n: "3", em: "×", l: "Schichten in\neinem System" },
+            { n: "100", em: "%", l: "On-Premise KI —\nkein Cloud-Upload" },
+            { n: "~", em: "500€", l: "Hardware für\neinen Pilot-Roboter" },
+            { n: "", em: "0", l: "manuelle Einträge\nim Automatik-Prozess" },
+          ].map((x, i) => (
+            <div key={i} className={`px-8 md:px-12 py-10 ${i < 3 ? "md:border-r border-border" : ""} ${i % 2 === 0 ? "border-r md:border-r" : ""}`}>
+              <div className="display text-[44px] md:text-[52px] font-bold leading-none mb-1.5">
+                {x.n}<em className="not-italic" style={{ color: "hsl(var(--teal))" }}>{x.em}</em>
+              </div>
+              <div className="text-[13.5px] text-muted-foreground whitespace-pre-line leading-snug">{x.l}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* SANTOSOS ECOSYSTEM */}
+        <section id="santosos" className="py-20 md:py-24 section-x container-shell">
+          <div
+            className="relative rounded-[18px] overflow-hidden p-10 md:p-20"
+            style={{ background: "linear-gradient(135deg,#060e1c 0%,#0a1e3a 40%,#06182e 70%,#030c18 100%)" }}
+          >
+            <div
+              className="absolute -right-20 -top-20 w-[480px] h-[480px] rounded-full blur-[60px] pointer-events-none animate-orb"
+              style={{ background: "radial-gradient(circle,rgba(47,184,198,.18) 0%,transparent 65%)" }}
+            />
+            <div
+              className="absolute left-[35%] -bottom-16 w-[320px] h-[320px] rounded-full blur-[60px] pointer-events-none animate-orb"
+              style={{ background: "radial-gradient(circle,rgba(80,120,255,.12) 0%,transparent 65%)", animationDirection: "reverse" }}
+            />
+            <div className="relative z-[2] max-w-[580px]">
+              <h2 className="display text-white mb-6" style={{ fontSize: "clamp(38px, 5vw, 58px)", lineHeight: 1.04 }}>
+                <span style={{ color: "hsl(var(--teal))" }}>SantosOS.</span><br />
+                Ein ganzes Betriebs-Ökosystem hinter jedem System
+              </h2>
+              <p className="text-[15.5px] text-white/55 leading-[1.8] mb-10">
+                SantosOS vereint Software, KI-Modelle und Hardware an einem Ort. Terminals, Kameras, Roboter und
+                operative Systeme kommunizieren in Echtzeit. So gestalten wir die Zukunft des deutschen Mittelstands.
+              </p>
+              <a href="#" className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-3 py-3 rounded-full transition-colors">
+                SantosOS entdecken
+                <span className="w-[30px] h-[30px] bg-white rounded-full flex items-center justify-center">
+                  <Arrow stroke="#111" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* DRIVEN BY */}
+        <section id="unternehmen" className="py-20 md:py-24 section-x container-shell">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-0">
+            <h2 className="hl-lg max-w-[540px]">
+              Driven by <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>People.</em><br />
+              Powered by <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Purpose.</em>
+            </h2>
+            <p className="bd pt-2 max-w-[480px]">
+              Wir dienen dem Mittelstand durch die Entwicklung von Systemen, die Unternehmen ihre Zeit für das
+              Wesentliche zurückgeben. Unsere Mission ist es, operative Intelligenz zugänglich zu machen — durch
+              Software die denkt, KI die versteht, und Hardware die handelt. Alles verbunden. Alles DSGVO-konform.
+            </p>
+          </div>
+          <div className="hl-md text-center pt-16 mt-16 border-t border-border">
+            Wir dienen dem Mittelstand.
+          </div>
+        </section>
+
+        {/* RESERVATION GRID */}
+        <section className="py-20 md:py-24 section-x" style={{ background: "hsl(var(--off))" }}>
+          <div className="container-shell">
+            <h2 className="hl-lg mb-2">
+              Projekte <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>verfügbar</em>
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+              {reserveCards.map((r) => (
+                <div key={r.name} className="flex flex-col gap-4">
+                  <div className="rounded-[14px] aspect-[3/4] relative overflow-hidden flex items-center justify-center" style={{ background: r.bg }}>
+                    <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[150px] h-[150px] rounded-full blur-[50px]" style={{ background: r.glow }} />
+                    <div className="relative z-[2] text-[56px]" style={{ filter: "drop-shadow(0 0 24px rgba(255,255,255,.25))" }}>
+                      {r.icon}
+                    </div>
+                  </div>
+                  <div className="display text-[19px] font-bold">{r.name}</div>
+                  <div className="text-[13.5px] text-muted-foreground leading-snug">{r.desc}</div>
+                  <Link
+                    to="/kontakt"
+                    className="flex items-center justify-between bg-black/[0.07] hover:bg-black/[0.12] rounded-full pl-5 pr-3 py-2.5 text-sm font-medium text-foreground transition-colors"
+                  >
+                    Demo anfragen
+                    <span className="w-[30px] h-[30px] bg-foreground rounded-full flex items-center justify-center">
+                      <Arrow />
+                    </span>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA DARK */}
+        <div className="section-x pb-14 container-shell">
+          <div
+            id="contact"
+            className="relative rounded-[18px] overflow-hidden min-h-[460px] flex items-end"
+          >
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(130deg,#0f1520 0%,#1a2535 50%,#0d1825 100%)" }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to right,rgba(10,15,25,0.95) 45%,rgba(10,15,25,0.3) 100%)" }}
+            />
+            <div className="relative z-[2] p-10 md:p-16 max-w-[55%]">
+              <h2 className="display text-white mb-5" style={{ fontSize: "clamp(28px, 3.8vw, 46px)", lineHeight: 1.1 }}>
+                Mach einen Schritt in Richtung smarter Automatisierung
+              </h2>
+              <p className="text-[15px] text-white/55 leading-[1.75] mb-9">
+                Arbeite mit uns zusammen, um das richtige System für deine größten Herausforderungen zu finden.
+                Wir helfen dir bei der Auswahl aus unserem umfassenden Angebot, damit du direkt loslegen kannst.
+              </p>
+              <Link to="/kontakt" className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-3.5 py-3.5 rounded-full transition-colors">
+                Kontakt aufnehmen
+                <span className="w-[32px] h-[32px] bg-white rounded-full flex items-center justify-center">
+                  <ArrowUpRight className="w-4 h-4 text-[#111]" />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
       </main>
+
       <Footer />
       <CookieBanner />
     </div>
