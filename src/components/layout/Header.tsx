@@ -49,14 +49,6 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-3 md:gap-4">
-            <button
-              onClick={() => setLang(lang === "en" ? "de" : "en")}
-              className="hidden md:block text-[13px] font-medium text-white/40 hover:text-white transition-colors"
-            >
-              <span className={lang === "de" ? "text-white" : ""}>DE</span>
-              <span className="mx-1">/</span>
-              <span className={lang === "en" ? "text-white" : ""}>EN</span>
-            </button>
 
             {!isOpen && (
               <Link
@@ -96,19 +88,6 @@ const Header = () => {
               ))}
             </nav>
 
-            <div className="flex items-center justify-between pt-5">
-              <div className="text-[10.5px] font-medium text-white/35 uppercase tracking-[0.18em]">
-                Sprache
-              </div>
-              <button
-                onClick={() => setLang(lang === "en" ? "de" : "en")}
-                className="text-[13px] font-medium text-white/50 hover:text-white transition-colors"
-              >
-                <span className={lang === "de" ? "text-white" : ""}>DE</span>
-                <span className="mx-2 text-white/20">/</span>
-                <span className={lang === "en" ? "text-white" : ""}>EN</span>
-              </button>
-            </div>
 
             <Link
               to="/kontakt"
