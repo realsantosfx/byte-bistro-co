@@ -409,23 +409,6 @@ const Index = () => {
           ))}
         </div>
 
-        {/* NUMBERS STRIP */}
-        <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-border container-shell">
-          {[
-            { n: "3", em: "×", l: "Schichten in\neinem System" },
-            { n: "100", em: "%", l: "On-Premise KI —\nkein Cloud-Upload" },
-            { n: "~", em: "500€", l: "Hardware für\neinen Pilot-Roboter" },
-            { n: "", em: "0", l: "manuelle Einträge\nim Automatik-Prozess" },
-          ].map((x, i) => (
-            <div key={i} className={`px-8 md:px-12 py-10 ${i < 3 ? "md:border-r border-border" : ""} ${i % 2 === 0 ? "border-r md:border-r" : ""}`}>
-              <div className="display text-[44px] md:text-[52px] font-bold leading-none mb-1.5">
-                {x.n}<em className="not-italic" style={{ color: "hsl(var(--teal))" }}>{x.em}</em>
-              </div>
-              <div className="text-[13.5px] text-muted-foreground whitespace-pre-line leading-snug">{x.l}</div>
-            </div>
-          ))}
-        </div>
-
         {/* SANTOSOS ECOSYSTEM */}
         <section id="santosos" className="py-20 md:py-24 section-x container-shell">
           <div
@@ -443,11 +426,11 @@ const Index = () => {
             <div className="relative z-[2] max-w-[580px]">
               <h2 className="display text-white mb-6" style={{ fontSize: "clamp(38px, 5vw, 58px)", lineHeight: 1.04 }}>
                 <span style={{ color: "hsl(var(--teal))" }}>SantosOS.</span><br />
-                Ein ganzes Betriebs-Ökosystem hinter jedem System
+                Das Betriebssystem hinter jedem Projekt
               </h2>
               <p className="text-[15.5px] text-white/55 leading-[1.8] mb-10">
-                SantosOS vereint Software, KI-Modelle und Hardware an einem Ort. Terminals, Kameras, Roboter und
-                operative Systeme kommunizieren in Echtzeit. So gestalten wir die Zukunft des deutschen Mittelstands.
+                SantosOS ist das Fundament, auf dem wir bauen — wiederverwendbare Module für Auth, Daten, Rollen,
+                Workflows und KI. So entstehen deine Systeme schneller, sicherer und ohne Vendor-Lock-in.
               </p>
               <Link to="/santosos" className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-3 py-3 rounded-full transition-colors">
                 SantosOS entdecken
@@ -459,21 +442,21 @@ const Index = () => {
           </div>
         </section>
 
-        {/* DRIVEN BY */}
+        {/* HALTUNG */}
         <section id="unternehmen" className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-0">
             <h2 className="hl-lg max-w-[540px]">
-              Driven by <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>People.</em><br />
-              Powered by <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Purpose.</em>
+              Kein <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Template</em>.<br />
+              Kein <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Kompromiss</em>.
             </h2>
             <p className="bd pt-2 max-w-[480px]">
-              Wir dienen dem Mittelstand durch die Entwicklung von Systemen, die Unternehmen ihre Zeit für das
-              Wesentliche zurückgeben. Unsere Mission ist es, operative Intelligenz zugänglich zu machen — durch
-              Software die denkt, KI die versteht, und Hardware die handelt. Alles verbunden. Alles DSGVO-konform.
+              Wir bauen, was du brauchst — und nichts, was du nicht brauchst.
+              Keine aufgeblasenen Standardlösungen, keine Lizenz-Akrobatik, keine Module für die du extra zahlst und nie nutzt.
+              Dein Betrieb bekommt ein System, das genau eure Realität abbildet. Sonst nichts.
             </p>
           </div>
           <div className="hl-md text-center pt-16 mt-16 border-t border-border">
-            Wir dienen dem Mittelstand.
+            Wir bauen für den Mittelstand.
           </div>
         </section>
 
