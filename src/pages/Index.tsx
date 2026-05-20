@@ -101,7 +101,7 @@ const productCards = [
   { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]", img: cardSoftware, href: "/produkte/operative-software" },
   { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", icon: "◈", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]", img: cardKi, href: "/produkte/lokale-ki" },
   { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", icon: "◉", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]", img: cardTerminals, href: "/produkte/terminals-kameras" },
-  { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover },
+  { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover, href: "/produkte/autonomer-roboter" },
 ];
 
 const useCases = [
