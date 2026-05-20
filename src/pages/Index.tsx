@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import { ArrowUpRight, Play } from "lucide-react";
-import heroRobot from "@/assets/site/hero-robot.jpg";
+import heroRobot from "@/assets/site/rover-hero-frame.jpg";
 import heroRoverVideo from "@/assets/site/hero-rover.mp4.asset.json";
 import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
 import caseLager from "@/assets/site/case-lager.jpg";
