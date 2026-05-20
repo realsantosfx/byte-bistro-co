@@ -10,6 +10,10 @@ import caseLager from "@/assets/site/case-lager.jpg";
 import caseBuero from "@/assets/site/case-buero.jpg";
 import caseProduktion from "@/assets/site/case-produktion.jpg";
 import ctaControl from "@/assets/site/cta-control.jpg";
+import cardSoftware from "@/assets/site/card-software.jpg";
+import cardKi from "@/assets/site/card-ki.jpg";
+import cardTerminals from "@/assets/site/card-terminals.jpg";
+import cardRover from "@/assets/site/rover-hero-frame.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -90,10 +94,10 @@ const RoverSVG = () => (
 );
 
 const productCards = [
-  { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]" },
-  { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", icon: "◈", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]" },
-  { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", icon: "◉", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]" },
-  { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]" },
+  { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]", img: cardSoftware },
+  { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", icon: "◈", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]", img: cardKi },
+  { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", icon: "◉", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]", img: cardTerminals },
+  { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover },
 ];
 
 const useCases = [
@@ -190,6 +194,15 @@ const Index = () => {
                 className="relative overflow-hidden rounded-[18px] aspect-[4/3] cursor-pointer hover-lift group"
                 style={{ background: c.bg, animationDelay: `${i * 80}ms` }}
               >
+                <img
+                  src={c.img}
+                  alt=""
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.85) 100%)" }} />
                 <div
                   className={`absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none ${c.glowPos}`}
                   style={{ background: c.glow }}
