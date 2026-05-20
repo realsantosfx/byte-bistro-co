@@ -18,7 +18,7 @@ const Header = () => {
     { label: t.nav.services, href: "/#produkte" },
     { label: t.nav.cases, href: "/#anwendungen" },
     { label: t.nav.approach, href: "/#branchen" },
-    { label: "SantosOS", href: "/#santosos" },
+    { label: "Robotik", href: "/robotik" },
     { label: t.nav.about, href: "/#unternehmen" },
   ];
 
