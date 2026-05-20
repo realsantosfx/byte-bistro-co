@@ -231,11 +231,23 @@ const Index = () => {
             className="relative rounded-[18px] overflow-hidden min-h-[420px] flex items-center justify-center"
             style={{ background: "linear-gradient(135deg,#10181a 0%,#1a3035 40%,#0d2028 100%)" }}
           >
+            <img
+              src={roverWarehouse}
+              alt="Autonomer Lager-Roboter zwischen Regalreihen mit Teal-LEDs"
+              width={1600}
+              height={900}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover opacity-70"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(180deg,rgba(10,20,25,0.45) 0%,rgba(10,20,25,0.7) 100%)" }}
+            />
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[40px]"
-              style={{ background: "radial-gradient(ellipse,rgba(47,184,198,.12) 0%,transparent 70%)" }}
+              style={{ background: "radial-gradient(ellipse,rgba(47,184,198,.18) 0%,transparent 70%)" }}
             />
-            <div className="relative z-[2] p-10 md:p-16 flex items-center justify-center">
+            <div className="relative z-[2] p-10 md:p-16 flex items-center justify-center opacity-90">
               <RoverSVG />
             </div>
           </div>
