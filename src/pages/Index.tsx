@@ -350,6 +350,18 @@ const Index = () => {
                   animationDelay: `${i * 80}ms`,
                 }}
               >
+                <img
+                  src={b.img}
+                  alt={b.title}
+                  width={896}
+                  height={1120}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition-opacity duration-500"
+                />
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ background: "linear-gradient(180deg,rgba(8,12,20,0.55) 0%,rgba(8,12,20,0.35) 40%,rgba(8,12,20,0.95) 100%)" }}
+                />
                 <div
                   className="absolute w-[260px] h-[260px] rounded-full blur-[80px] -top-12 -right-12 pointer-events-none"
                   style={{ background: "rgba(47,184,198,.18)" }}
@@ -357,14 +369,14 @@ const Index = () => {
                 <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors z-[2]">
                   <Arrow />
                 </div>
-                <div className="relative z-[2] text-[11px] font-medium text-white/40 uppercase tracking-[0.12em]">
+                <div className="relative z-[2] text-[11px] font-medium text-white/55 uppercase tracking-[0.12em]">
                   {b.tag}
                 </div>
                 <div className="relative z-[2]">
                   <h3 className="display text-[22px] md:text-[24px] font-bold text-white leading-tight mb-3">
                     {b.title}
                   </h3>
-                  <p className="text-[13px] text-white/55 leading-relaxed">{b.desc}</p>
+                  <p className="text-[13px] text-white/60 leading-relaxed">{b.desc}</p>
                 </div>
               </Link>
             ))}
