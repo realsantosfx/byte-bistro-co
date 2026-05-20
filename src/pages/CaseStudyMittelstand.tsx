@@ -87,7 +87,7 @@ const copy = {
       "Analysis of current processes and data flows over 4 weeks",
       "Architecture of the custom ERP, aligned with the operations team",
       "Step-by-step rollout over 3 months, parallel to live operations",
-      "Activation of the AI layer after 2 months of data baseline",
+      "Activation of the AI layer after 2 weeks of data baseline",
     ],
     backendLabel: "What's in the system",
     backendTitle: "The operational layer in detail.",
