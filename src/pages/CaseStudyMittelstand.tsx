@@ -32,7 +32,7 @@ const copy = {
       "Analyse der Ist-Prozesse und Datenflüsse über 4 Wochen",
       "Architektur des custom ERP, abgestimmt mit dem Operations-Team",
       "Schrittweiser Rollout über 3 Monate, parallel zum laufenden Betrieb",
-      "Aktivierung der AI-Schicht nach 2 Monaten Datenbasis",
+      "Aktivierung der AI-Schicht nach 2 Wochen Datenbasis",
     ],
     backendLabel: "Was im System steckt",
     backendTitle: "Die operative Schicht im Detail.",
