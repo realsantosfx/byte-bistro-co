@@ -258,9 +258,6 @@ const Index = () => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[40px]"
               style={{ background: "radial-gradient(ellipse,rgba(47,184,198,.18) 0%,transparent 70%)" }}
             />
-            <div className="relative z-[2] p-10 md:p-16 flex items-center justify-center opacity-90">
-              <RoverSVG />
-            </div>
           </div>
         </section>
 
