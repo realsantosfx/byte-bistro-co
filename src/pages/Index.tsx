@@ -404,13 +404,17 @@ const Index = () => {
             id="contact"
             className="relative rounded-[18px] overflow-hidden min-h-[460px] flex items-end"
           >
-            <div
-              className="absolute inset-0"
-              style={{ background: "linear-gradient(130deg,#0f1520 0%,#1a2535 50%,#0d1825 100%)" }}
+            <img
+              src={ctaControl}
+              alt="Dunkler Leitstand mit teal Datenvisualisierung"
+              width={1600}
+              height={900}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to right,rgba(10,15,25,0.95) 45%,rgba(10,15,25,0.3) 100%)" }}
+              style={{ background: "linear-gradient(to right,rgba(10,15,25,0.96) 35%,rgba(10,15,25,0.55) 75%,rgba(10,15,25,0.35) 100%)" }}
             />
             <div className="relative z-[2] p-10 md:p-16 max-w-[55%]">
               <h2 className="display text-white mb-5" style={{ fontSize: "clamp(28px, 3.8vw, 46px)", lineHeight: 1.1 }}>
