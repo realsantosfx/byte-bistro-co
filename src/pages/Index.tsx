@@ -3,6 +3,12 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import { ArrowUpRight, Play } from "lucide-react";
+import heroRobot from "@/assets/site/hero-robot.jpg";
+import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
+import caseLager from "@/assets/site/case-lager.jpg";
+import caseBuero from "@/assets/site/case-buero.jpg";
+import caseProduktion from "@/assets/site/case-produktion.jpg";
+import ctaControl from "@/assets/site/cta-control.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -90,9 +96,9 @@ const productCards = [
 ];
 
 const useCases = [
-  { title: "Lager &\nLogistik", emoji: "📦", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)" },
-  { title: "Büro &\nManagement", emoji: "🖥️", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)" },
-  { title: "Produktion &\nQualität", emoji: "🏭", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)" },
+  { title: "Lager &\nLogistik", emoji: "📦", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)", img: caseLager },
+  { title: "Büro &\nManagement", emoji: "🖥️", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)", img: caseBuero },
+  { title: "Produktion &\nQualität", emoji: "🏭", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)", img: caseProduktion },
 ];
 
 const reserveCards = [
@@ -126,13 +132,26 @@ const Index = () => {
             }}
           />
 
-          {/* Robot right */}
-          <div className="hidden md:flex absolute right-0 bottom-0 w-1/2 h-[85%] z-[3] items-end justify-center"
-               style={{ background: "linear-gradient(to left,rgba(10,12,18,0) 0%,rgba(10,12,18,0.6) 100%)" }}>
-            <div className="w-[340px] h-[420px] animate-float" style={{ filter: "drop-shadow(0 0 80px rgba(47,184,198,0.25))" }}>
-              <RobotSVG />
-            </div>
+          {/* Robot photo right */}
+          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[55%] z-[2]">
+            <img
+              src={heroRobot}
+              alt="Humanoider Service-Roboter im dunklen Lager mit Teal-Licht"
+              width={1024}
+              height={1280}
+              className="w-full h-full object-cover object-center"
+              style={{ filter: "saturate(0.95) contrast(1.05)" }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to right,rgba(10,12,18,1) 0%,rgba(10,12,18,0.85) 25%,rgba(10,12,18,0.2) 60%,rgba(10,12,18,0.5) 100%), linear-gradient(to top,rgba(10,12,18,0.6) 0%,transparent 40%)",
+              }}
+            />
           </div>
+          <div className="hidden md:block absolute right-[8%] bottom-[20%] w-[260px] h-[260px] rounded-full blur-[80px] z-[3] pointer-events-none"
+               style={{ background: "radial-gradient(circle,rgba(47,184,198,0.35) 0%,transparent 70%)" }} />
 
           <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[660px] container-shell w-full">
             <div className="inline-flex items-center gap-3 mb-7 cursor-pointer group">
@@ -212,11 +231,23 @@ const Index = () => {
             className="relative rounded-[18px] overflow-hidden min-h-[420px] flex items-center justify-center"
             style={{ background: "linear-gradient(135deg,#10181a 0%,#1a3035 40%,#0d2028 100%)" }}
           >
+            <img
+              src={roverWarehouse}
+              alt="Autonomer Lager-Roboter zwischen Regalreihen mit Teal-LEDs"
+              width={1600}
+              height={900}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover opacity-70"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(180deg,rgba(10,20,25,0.45) 0%,rgba(10,20,25,0.7) 100%)" }}
+            />
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[40px]"
-              style={{ background: "radial-gradient(ellipse,rgba(47,184,198,.12) 0%,transparent 70%)" }}
+              style={{ background: "radial-gradient(ellipse,rgba(47,184,198,.18) 0%,transparent 70%)" }}
             />
-            <div className="relative z-[2] p-10 md:p-16 flex items-center justify-center">
+            <div className="relative z-[2] p-10 md:p-16 flex items-center justify-center opacity-90">
               <RoverSVG />
             </div>
           </div>
@@ -240,17 +271,26 @@ const Index = () => {
             {useCases.map((u) => (
               <div
                 key={u.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift"
+                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift group"
                 style={{ background: u.bg }}
               >
+                <img
+                  src={u.img}
+                  alt={u.title.replace("\n", " ")}
+                  width={768}
+                  height={1152}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity duration-500"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(180deg,rgba(8,12,20,0.25) 0%,rgba(8,12,20,0.85) 100%)" }}
+                />
                 <div
                   className="absolute w-[260px] h-[260px] rounded-full blur-[80px] top-[25%] left-1/2 -translate-x-1/2 pointer-events-none"
                   style={{ background: u.glow }}
                 />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[56%] text-[80px] opacity-10 pointer-events-none">
-                  {u.emoji}
-                </div>
-                <div className="absolute bottom-7 left-7">
+                <div className="absolute bottom-7 left-7 z-[2]">
                   <h3 className="display text-[26px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
                 </div>
               </div>
@@ -364,13 +404,17 @@ const Index = () => {
             id="contact"
             className="relative rounded-[18px] overflow-hidden min-h-[460px] flex items-end"
           >
-            <div
-              className="absolute inset-0"
-              style={{ background: "linear-gradient(130deg,#0f1520 0%,#1a2535 50%,#0d1825 100%)" }}
+            <img
+              src={ctaControl}
+              alt="Dunkler Leitstand mit teal Datenvisualisierung"
+              width={1600}
+              height={900}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to right,rgba(10,15,25,0.95) 45%,rgba(10,15,25,0.3) 100%)" }}
+              style={{ background: "linear-gradient(to right,rgba(10,15,25,0.96) 35%,rgba(10,15,25,0.55) 75%,rgba(10,15,25,0.35) 100%)" }}
             />
             <div className="relative z-[2] p-10 md:p-16 max-w-[55%]">
               <h2 className="display text-white mb-5" style={{ fontSize: "clamp(28px, 3.8vw, 46px)", lineHeight: 1.1 }}>
