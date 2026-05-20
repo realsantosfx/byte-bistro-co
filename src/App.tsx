@@ -72,6 +72,9 @@ const App = () => (
             <Route path="/produkte/terminals-kameras" element={<ProduktTerminalsKameras />} />
             <Route path="/produkte/autonomer-roboter" element={<ProduktAutonomerRoboter />} />
             <Route path="/robotik" element={<Robotik />} />
+            <Route path="/robotik/humanoid" element={<ProduktHumanoid />} />
+            <Route path="/robotik/quadruped" element={<ProduktQuadruped />} />
+            <Route path="/robotik/arme" element={<ProduktRoboterArm />} />
             <Route path="/santosos" element={<SantosOS />} />
             <Route path="/anwendung/:slug" element={<Anwendung />} />
             <Route path="/branche/:slug" element={<Branche />} />
