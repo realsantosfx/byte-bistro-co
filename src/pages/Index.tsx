@@ -355,12 +355,12 @@ const Index = () => {
                 SantosOS vereint Software, KI-Modelle und Hardware an einem Ort. Terminals, Kameras, Roboter und
                 operative Systeme kommunizieren in Echtzeit. So gestalten wir die Zukunft des deutschen Mittelstands.
               </p>
-              <a href="#" className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-3 py-3 rounded-full transition-colors">
+              <Link to="/santosos" className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-3 py-3 rounded-full transition-colors">
                 SantosOS entdecken
                 <span className="w-[30px] h-[30px] bg-white rounded-full flex items-center justify-center">
                   <Arrow stroke="#111" />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
