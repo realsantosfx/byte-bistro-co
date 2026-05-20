@@ -133,26 +133,17 @@ const Page = () => {
 
         {/* MODULES */}
         <section id="module" className="pb-24 section-x container-shell">
-          <div className="grid md:grid-cols-2 gap-3.5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {modules.map((m) => (
               <div
                 key={m.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[4/3] hover-lift"
-                style={{ background: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)" }}
+                className="relative rounded-[14px] p-6 border border-border bg-card hover-lift"
               >
-                <img src={cardRover} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.45) 40%,rgba(8,10,16,0.92) 100%)" }} />
-                <div
-                  className="absolute w-[220px] h-[220px] rounded-full blur-[70px] pointer-events-none top-[20%] right-[20%]"
-                  style={{ background: "rgba(47,184,198,.22)" }}
-                />
-                <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
+                <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.14em] mb-3">
                   {m.tag}
                 </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="display text-[26px] md:text-[28px] font-bold text-white leading-tight mb-2">{m.title}</h3>
-                  <p className="text-[13.5px] text-white/60 leading-snug">{m.desc}</p>
-                </div>
+                <h3 className="display text-[18px] font-bold leading-snug mb-2">{m.title}</h3>
+                <p className="text-[13px] text-muted-foreground leading-snug">{m.desc}</p>
               </div>
             ))}
           </div>
