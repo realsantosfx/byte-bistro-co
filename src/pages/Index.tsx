@@ -2,22 +2,19 @@ import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
-import { ArrowUpRight, Play } from "lucide-react";
-import heroRobot from "@/assets/site/rover-hero-frame.jpg";
-import heroRoverVideo from "@/assets/site/hero-rover.mp4.asset.json";
+import { ArrowUpRight } from "lucide-react";
+import heroSoftware from "@/assets/site/hero-software.jpg";
 import roverWarehouse from "@/assets/site/rover-warehouse.jpg";
-import caseLager from "@/assets/site/case-lager.jpg";
+import brHandel from "@/assets/site/branche-handel.jpg";
+import brProduktion from "@/assets/site/branche-produktion.jpg";
+import brLogistik from "@/assets/site/branche-logistik.jpg";
+import brSanierung from "@/assets/site/branche-sanierung.jpg";
 import caseBuero from "@/assets/site/case-buero.jpg";
-import caseProduktion from "@/assets/site/case-produktion.jpg";
 import ctaControl from "@/assets/site/cta-control.jpg";
 import cardSoftware from "@/assets/site/card-software.jpg";
 import cardKi from "@/assets/site/card-ki.jpg";
 import cardTerminals from "@/assets/site/card-terminals.jpg";
 import cardRover from "@/assets/site/rover-hero-frame.jpg";
-import reserveSoftware from "@/assets/site/reserve-software.jpg";
-import reserveKi from "@/assets/site/reserve-ki.jpg";
-import reserveHardware from "@/assets/site/reserve-hardware.jpg";
-import reserveRover from "@/assets/site/reserve-rover.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -98,23 +95,24 @@ const RoverSVG = () => (
 );
 
 const productCards = [
-  { tag: "Software Core", title: "Operative Software", desc: "Das Gehirn deines Betriebs", icon: "⬡", bg: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)", glow: "rgba(47,184,198,.28)", glowPos: "top-[15%] right-[5%]", img: cardSoftware, href: "/produkte/operative-software" },
-  { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", icon: "◈", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]", img: cardKi, href: "/produkte/lokale-ki" },
-  { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", icon: "◉", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]", img: cardTerminals, href: "/produkte/terminals-kameras" },
-  { tag: "Autonomer Roboter", title: "Autonomer Roboter", desc: "Dein Lager bewegt sich selbst", icon: "🤖", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover, href: "/produkte/autonomer-roboter" },
+  { tag: "KI Schicht", title: "Lokale KI", desc: "Intelligenz ohne Cloud", bg: "linear-gradient(145deg,#0a1520 0%,#0f3040 50%,#083050 100%)", glow: "rgba(80,160,255,.22)", glowPos: "bottom-[20%] right-[20%]", img: cardKi, href: "/produkte/lokale-ki" },
+  { tag: "Physical Layer", title: "Terminals & Kameras", desc: "Hardware direkt verbunden", bg: "linear-gradient(145deg,#0d1f0d 0%,#0f3520 50%,#0a2818 100%)", glow: "rgba(80,200,100,.2)", glowPos: "top-[25%] left-[20%]", img: cardTerminals, href: "/produkte/terminals-kameras" },
+  { tag: "Add-on", title: "Autonomer Roboter", desc: "Optional. Coming Soon.", bg: "linear-gradient(145deg,#18181f 0%,#252538 50%,#14142a 100%)", glow: "rgba(200,160,60,.2)", glowPos: "top-[20%] right-[20%]", img: cardRover, href: "/produkte/autonomer-roboter", soon: true },
 ];
 
-const useCases = [
-  { title: "Lager &\nLogistik", emoji: "📦", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)", img: caseLager },
-  { title: "Büro &\nManagement", emoji: "🖥️", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)", img: caseBuero },
-  { title: "Produktion &\nQualität", emoji: "🏭", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)", img: caseProduktion },
+const buildTypes = [
+  { tag: "01", title: "ERP-Systeme", desc: "Auftrag, Lager, Einkauf, Finanzen — in einem System statt fünf." },
+  { tag: "02", title: "CRM-Lösungen", desc: "Pipeline, Angebot, Kunde — exakt wie dein Vertrieb arbeitet." },
+  { tag: "03", title: "Branchensoftware", desc: "Maßgeschneidert für deinen Prozess, nicht für 1.000 andere." },
+  { tag: "04", title: "KI-Integration", desc: "Lokale Modelle für Vision, Klassifikation, Automatisierung." },
 ];
 
-const reserveCards = [
-  { name: "Operative Software", desc: "Betriebssoftware für Lager, Vertrieb & Management", icon: "⬡", bg: "linear-gradient(155deg,#121c2e,#0f3060)", glow: "rgba(47,184,198,.35)", img: reserveSoftware },
-  { name: "Lokale KI", desc: "KI-Intelligenz lokal — ohne Cloud", icon: "◈", bg: "linear-gradient(155deg,#0a1428,#093050)", glow: "rgba(80,160,255,.3)", img: reserveKi },
-  { name: "Physische Hardware", desc: "Hardware direkt an deiner Arbeitsstation", icon: "◉", bg: "linear-gradient(155deg,#18102a,#301850)", glow: "rgba(180,80,255,.25)", img: reserveHardware },
-  { name: "Autonomer Roboter", desc: "Roboter für autonome Kommissionierung", icon: "🤖", bg: "linear-gradient(155deg,#0c1c0c,#0f3818)", glow: "rgba(80,200,80,.28)", img: reserveRover },
+const branchen = [
+  { title: "Handel &\nDistribution", to: "/branche/handel-distribution", bg: "linear-gradient(160deg,#14202e 0%,#1e3550 40%,#142a44 100%)", glow: "rgba(47,184,198,.22)", img: brHandel },
+  { title: "Produktion", to: "/branche/produktion", bg: "linear-gradient(160deg,#101a10 0%,#1a3020 40%,#122218 100%)", glow: "rgba(80,200,80,.18)", img: brProduktion },
+  { title: "Logistik", to: "/branche/logistik", bg: "linear-gradient(160deg,#0a1828 0%,#16304a 40%,#0c2038 100%)", glow: "rgba(80,140,220,.2)", img: brLogistik },
+  { title: "Sanierung", to: "/branche/sanierung", bg: "linear-gradient(160deg,#1e1410 0%,#3a2418 40%,#241612 100%)", glow: "rgba(220,140,60,.18)", img: brSanierung },
+  { title: "Gastronomie", to: "/#kontakt", bg: "linear-gradient(160deg,#1e1020 0%,#341a40 40%,#281430 100%)", glow: "rgba(160,80,255,.18)", img: caseBuero },
 ];
 
 const Index = () => {
@@ -125,7 +123,6 @@ const Index = () => {
       <main>
         {/* HERO */}
         <section className="relative overflow-hidden h-screen min-h-[680px] flex items-end">
-          {/* dark cinematic gradient */}
           <div
             className="absolute inset-0 z-0"
             style={{
@@ -141,20 +138,16 @@ const Index = () => {
             }}
           />
 
-          {/* Rover video — full hero background */}
+          {/* Software hero background */}
           <div className="absolute inset-0 z-[2]">
-            <video
-              src={heroRoverVideo.url}
-              poster={heroRobot}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
+            <img
+              src={heroSoftware}
+              alt="Maßgeschneiderte Software für den Mittelstand"
+              width={1920}
+              height={1080}
               className="w-full h-full object-cover object-center"
               style={{ filter: "saturate(0.95) contrast(1.05)" }}
             />
-            {/* Readability overlay: strong on left for text, lighter on right */}
             <div
               className="absolute inset-0"
               style={{
@@ -167,12 +160,14 @@ const Index = () => {
                style={{ background: "radial-gradient(circle,rgba(47,184,198,0.35) 0%,transparent 70%)" }} />
 
 
-          <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[660px] container-shell w-full">
+          <div className="relative z-[4] px-6 md:px-14 pb-16 md:pb-20 max-w-[720px] container-shell w-full">
             <h1 className="display text-white mb-6" style={{ fontSize: "clamp(52px, 7.5vw, 88px)", lineHeight: 1.02 }}>
-              Operative<br />Intelligenz<br />für den<br />Mittelstand
+              Maßgeschneiderte<br />
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Software</em><br />
+              für den<br />Mittelstand
             </h1>
             <p className="text-[17px] font-light text-white/60 leading-relaxed max-w-[460px]">
-              Eine neue Ära der Zusammenarbeit<br />zwischen Mensch, Software und Roboter
+              ERP, CRM, Branchensoftware und KI —<br />gebaut für deinen Betrieb, nicht für 1.000 andere.
             </p>
           </div>
         </section>
@@ -181,17 +176,53 @@ const Index = () => {
         <section id="produkte" className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16">
             <h2 className="hl-lg">
-              Software der nächsten Generation für eine{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>smarte Automatisierung</em>
+              Software als{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Kern</em>.
+              Hardware als{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Option</em>.
             </h2>
             <p className="bd pt-1.5">
-              Wir verbinden operative Software, lokale KI-Intelligenz und physische Hardware zu einem einzigen System.
-              Terminals die Aufträge anzeigen, Kameras die Wareneingänge erkennen, Roboter die autonom kommissionieren —
-              und alle sprechen miteinander. Für Unternehmen die echte Dinge tun.
+              SantosLab baut maßgeschneiderte Software für den Mittelstand — ERP, CRM, Branchenlösungen und KI-Integrationen.
+              Wenn Hardware sinnvoll ist, ergänzen wir Terminals, Kameras oder Roboter. Aber nur dann.
+              Software ist der Kern. Alles andere ist optional.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-3.5">
+          {/* Dominant card — Operative Software */}
+          <Link
+            to="/produkte/operative-software"
+            className="relative overflow-hidden rounded-[18px] aspect-[16/9] md:aspect-[21/9] cursor-pointer hover-lift group block mb-3.5"
+            style={{ background: "linear-gradient(145deg,#111827 0%,#1e3a5f 50%,#0f2a4a 100%)" }}
+          >
+            <img
+              src={cardSoftware}
+              alt=""
+              loading="lazy"
+              width={1920}
+              height={1080}
+              className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0.45) 0%,rgba(8,10,16,0.35) 40%,rgba(8,10,16,0.9) 100%)" }} />
+            <div
+              className="absolute w-[420px] h-[420px] rounded-full blur-[90px] pointer-events-none top-[10%] right-[5%]"
+              style={{ background: "rgba(47,184,198,.28)" }}
+            />
+            <div className="absolute top-6 left-7 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
+              Software Core — Unser Hauptprodukt
+            </div>
+            <div className="absolute top-6 right-6 w-[40px] h-[40px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+              <Arrow />
+            </div>
+            <div className="absolute bottom-8 left-7 right-7 max-w-[640px]">
+              <h3 className="display text-[34px] md:text-[48px] font-bold text-white leading-[1.02] mb-3">Operative Software</h3>
+              <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
+                ERP, CRM, Branchensoftware — exakt auf deinen Betrieb zugeschnitten. Eine Codebase, eine Wahrheit.
+              </p>
+            </div>
+          </Link>
+
+          {/* Secondary row — KI, Terminals, Roboter (Add-on) */}
+          <div className="grid md:grid-cols-3 gap-3.5">
             {productCards.map((c, i) => {
               const Cmp: any = c.href ? Link : "div";
               const cmpProps: any = c.href ? { to: c.href } : {};
@@ -218,11 +249,16 @@ const Index = () => {
                   <div className="absolute top-5 left-6 text-[11px] font-medium text-white/45 uppercase tracking-[0.1em]">
                     {c.tag}
                   </div>
+                  {c.soon && (
+                    <div className="absolute top-5 right-14 text-[10px] font-medium text-white/70 uppercase tracking-[0.12em] px-2.5 py-1 rounded-full border border-white/15 bg-white/5">
+                      Coming Soon
+                    </div>
+                  )}
                   <div className="absolute top-5 right-5 w-[34px] h-[34px] bg-white/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
                     <Arrow />
                   </div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="display text-[28px] md:text-[30px] font-bold text-white leading-none">{c.title}</h3>
+                    <h3 className="display text-[24px] md:text-[26px] font-bold text-white leading-none">{c.title}</h3>
                     <p className="text-[12.5px] text-white/50 mt-1.5">{c.desc}</p>
                   </div>
                 </Cmp>
@@ -231,19 +267,17 @@ const Index = () => {
           </div>
         </section>
 
-        {/* FEATURE: ROVER */}
+        {/* FEATURE: ROVER (Add-on) */}
         <section id="anwendungen" className="pb-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
             <h2 className="hl-lg">
-              Deutschlands erster{" "}
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>intelligenter Lager-Assistent</em>
-              {" "}für den Mittelstand
+              Wenn Software allein nicht reicht —{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Hardware als Add-on</em>
             </h2>
             <p className="bd pt-1.5">
-              Gebaut, um deinem Team zu folgen. Entwickelt, um mit Menschen zusammenzuarbeiten.
-              Unser autonomer Roboter übernimmt Kommissionierung mit selbständiger Navigation,
-              Kartierung und direkter Software-Integration. Wenn qualifizierte Mitarbeiter Besseres zu tun haben,
-              übernimmt die Maschine.
+              Manche Betriebe brauchen mehr als Pixel. Wenn dein Prozess Hände, Augen oder Räder benötigt,
+              ergänzen wir das System um Terminals, Vision-Kameras oder autonome Roboter — direkt angebunden
+              an die Software, die wir für dich gebaut haben. Optional. Auf Wunsch. Nie als Standard.
             </p>
           </div>
 
@@ -270,25 +304,66 @@ const Index = () => {
           </div>
         </section>
 
-        {/* USE CASES */}
-        <section id="branchen" className="pb-24 section-x container-shell">
+        {/* WAS WIR BAUEN */}
+        <section id="bauen" className="pb-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
             <h2 className="hl-lg">
-              Software & Robotik für<br />
-              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>jeden Betrieb</em>
+              Was wir{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>bauen</em>
             </h2>
             <p className="bd pt-1.5">
-              Entwickelt für jede Aufgabe, in jeder Umgebung. Ob es um die Automatisierung des Lagers,
-              die Optimierung von Geschäftsabläufen oder die Qualitätskontrolle geht — unsere Technologie
-              passt sich deiner Arbeitsweise an.
+              Vier Disziplinen, ein Ziel: dein Betrieb läuft auf Systemen, die zu dir passen — nicht umgekehrt.
+              Keine Lizenz-Akrobatik, keine endlosen Customizing-Projekte. Eine Codebase, gebaut für deine Realität.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-3.5">
-            {useCases.map((u) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3.5">
+            {buildTypes.map((b, i) => (
               <div
+                key={b.title}
+                className="relative overflow-hidden rounded-[18px] aspect-[4/5] hover-lift group p-7 flex flex-col justify-between"
+                style={{
+                  background: "linear-gradient(155deg,#0f1722 0%,#152538 50%,#0c1828 100%)",
+                  animationDelay: `${i * 80}ms`,
+                }}
+              >
+                <div
+                  className="absolute w-[260px] h-[260px] rounded-full blur-[80px] -top-12 -right-12 pointer-events-none"
+                  style={{ background: "rgba(47,184,198,.18)" }}
+                />
+                <div className="relative z-[2] text-[11px] font-medium text-white/40 uppercase tracking-[0.12em]">
+                  {b.tag}
+                </div>
+                <div className="relative z-[2]">
+                  <h3 className="display text-[22px] md:text-[24px] font-bold text-white leading-tight mb-3">
+                    {b.title}
+                  </h3>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* BRANCHEN */}
+        <section id="branchen" className="pb-24 section-x container-shell">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-14">
+            <h2 className="hl-lg">
+              Software für{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>jede Branche</em>
+            </h2>
+            <p className="bd pt-1.5">
+              Jede Branche hat ihre eigenen Prozesse, Regeln und Engpässe. Wir haben für jede die Vorlagen —
+              und passen sie an deinen Betrieb an. Vom Wareneingang bis zur Versandkontrolle, vom Tresen bis zur Halle.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+            {branchen.map((u) => (
+              <Link
                 key={u.title}
-                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift group"
+                to={u.to}
+                className="relative overflow-hidden rounded-[18px] aspect-[2/3] cursor-pointer hover-lift group block"
                 style={{ background: u.bg }}
               >
                 <img
@@ -307,10 +382,10 @@ const Index = () => {
                   className="absolute w-[260px] h-[260px] rounded-full blur-[80px] top-[25%] left-1/2 -translate-x-1/2 pointer-events-none"
                   style={{ background: u.glow }}
                 />
-                <div className="absolute bottom-7 left-7 z-[2]">
-                  <h3 className="display text-[26px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
+                <div className="absolute bottom-6 left-6 right-6 z-[2]">
+                  <h3 className="display text-[20px] md:text-[22px] font-bold text-white leading-tight whitespace-pre-line">{u.title}</h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -318,10 +393,10 @@ const Index = () => {
         {/* NUMBERS STRIP */}
         <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-border container-shell">
           {[
-            { n: "3", em: "×", l: "Schichten in\neinem System" },
-            { n: "100", em: "%", l: "On-Premise KI —\nkein Cloud-Upload" },
-            { n: "~", em: "500€", l: "Hardware für\neinen Pilot-Roboter" },
-            { n: "", em: "0", l: "manuelle Einträge\nim Automatik-Prozess" },
+            { n: "100", em: "%", l: "Projekte die\nlive gehen" },
+            { n: "4", em: "", l: "Wochen bis\nzum Prototyp" },
+            { n: "5", em: "+", l: "Branchen\nim Einsatz" },
+            { n: "10", em: "+", l: "Jahre\nErfahrung" },
           ].map((x, i) => (
             <div key={i} className={`px-8 md:px-12 py-10 ${i < 3 ? "md:border-r border-border" : ""} ${i % 2 === 0 ? "border-r md:border-r" : ""}`}>
               <div className="display text-[44px] md:text-[52px] font-bold leading-none mb-1.5">
@@ -349,11 +424,11 @@ const Index = () => {
             <div className="relative z-[2] max-w-[580px]">
               <h2 className="display text-white mb-6" style={{ fontSize: "clamp(38px, 5vw, 58px)", lineHeight: 1.04 }}>
                 <span style={{ color: "hsl(var(--teal))" }}>SantosOS.</span><br />
-                Ein ganzes Betriebs-Ökosystem hinter jedem System
+                Das Betriebssystem hinter jedem Projekt
               </h2>
               <p className="text-[15.5px] text-white/55 leading-[1.8] mb-10">
-                SantosOS vereint Software, KI-Modelle und Hardware an einem Ort. Terminals, Kameras, Roboter und
-                operative Systeme kommunizieren in Echtzeit. So gestalten wir die Zukunft des deutschen Mittelstands.
+                SantosOS ist das Fundament, auf dem wir bauen — wiederverwendbare Module für Auth, Daten, Rollen,
+                Workflows und KI. So entstehen deine Systeme schneller, sicherer und ohne Vendor-Lock-in.
               </p>
               <Link to="/santosos" className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium pl-6 pr-3 py-3 rounded-full transition-colors">
                 SantosOS entdecken
@@ -365,21 +440,21 @@ const Index = () => {
           </div>
         </section>
 
-        {/* DRIVEN BY */}
+        {/* HALTUNG */}
         <section id="unternehmen" className="py-20 md:py-24 section-x container-shell">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-0">
             <h2 className="hl-lg max-w-[540px]">
-              Driven by <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>People.</em><br />
-              Powered by <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Purpose.</em>
+              Kein <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Template</em>.<br />
+              Kein <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Kompromiss</em>.
             </h2>
             <p className="bd pt-2 max-w-[480px]">
-              Wir dienen dem Mittelstand durch die Entwicklung von Systemen, die Unternehmen ihre Zeit für das
-              Wesentliche zurückgeben. Unsere Mission ist es, operative Intelligenz zugänglich zu machen — durch
-              Software die denkt, KI die versteht, und Hardware die handelt. Alles verbunden. Alles DSGVO-konform.
+              Wir bauen, was du brauchst — und nichts, was du nicht brauchst.
+              Keine aufgeblasenen Standardlösungen, keine Lizenz-Akrobatik, keine Module für die du extra zahlst und nie nutzt.
+              Dein Betrieb bekommt ein System, das genau eure Realität abbildet. Sonst nichts.
             </p>
           </div>
           <div className="hl-md text-center pt-16 mt-16 border-t border-border">
-            Wir dienen dem Mittelstand.
+            Wir bauen für den Mittelstand.
           </div>
         </section>
 
