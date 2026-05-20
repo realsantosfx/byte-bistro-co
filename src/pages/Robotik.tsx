@@ -160,6 +160,30 @@ const Page = () => {
               </a>
             </div>
           </div>
+
+          {/* Reel indicator */}
+          <div className="absolute z-[3] bottom-6 right-6 md:bottom-8 md:right-10 hidden sm:flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/10 rounded-full pl-5 pr-2 py-2">
+            <div className="text-right">
+              <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em]" style={{ color: "hsl(var(--teal))" }}>
+                {current.label}
+              </div>
+              <div className="text-[11px] text-white/55 leading-none mt-0.5">{current.task}</div>
+            </div>
+            <div className="flex items-center gap-1.5 pl-3 border-l border-white/10">
+              {heroReel.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setReelIdx(i)}
+                  aria-label={`Clip ${i + 1}`}
+                  className="w-1.5 h-1.5 rounded-full transition-all"
+                  style={{
+                    background: i === reelIdx ? "hsl(var(--teal))" : "rgba(255,255,255,0.25)",
+                    width: i === reelIdx ? 18 : 6,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* INTRO — Positioning */}
