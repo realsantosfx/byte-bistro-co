@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import heroImg from "@/assets/site/humanoid-hero.jpg";
 import workVideo from "@/assets/site/robot-humanoid-work.mp4.asset.json";
+import detailVideo from "@/assets/site/robot-humanoid-detail.mp4.asset.json";
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -139,7 +140,7 @@ const Page = () => {
         <section className="pb-20 md:pb-24 section-x container-shell">
           <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
             <video
-              src={workVideo.url}
+              src={detailVideo.url}
               autoPlay
               muted
               loop
