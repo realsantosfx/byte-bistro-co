@@ -49,7 +49,6 @@ const copy = {
     metrics: [
       { value: "−80%", label: "Manueller Koordinationsaufwand" },
       { value: "+127%", label: "Prozesseffizienz in 3 Monaten" },
-      { value: "45.000€", label: "Projektvolumen" },
       { value: "2 Mo.", label: "Bis erste AI-Empfehlungen aktiv" },
     ],
     quoteLabel: "Stimme aus dem Projekt",
@@ -105,7 +104,7 @@ const copy = {
     metrics: [
       { value: "−80%", label: "Manual coordination effort" },
       { value: "+127%", label: "Process efficiency in 3 months" },
-      { value: "€45,000", label: "Project volume" },
+      
       { value: "6 mo.", label: "Until first AI recommendations active" },
     ],
     quoteLabel: "Voice from the project",
