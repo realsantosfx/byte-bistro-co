@@ -21,6 +21,7 @@ import buildBranche from "@/assets/site/build-branche.jpg";
 import buildKi from "@/assets/site/build-ki.jpg";
 import caseLager from "@/assets/site/case-lager.jpg";
 import caseProduktion from "@/assets/site/case-produktion.jpg";
+import caseCrmAussendienst from "@/assets/site/case-crm-aussendienst.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
