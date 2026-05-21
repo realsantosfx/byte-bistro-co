@@ -9,6 +9,8 @@ import roverWorkVideo from "@/assets/site/robot-rover-work.mp4.asset.json";
 import roverFeatureVideo from "@/assets/site/rover-feature-warehouse.mp4.asset.json";
 import roverFeaturePoster from "@/assets/site/rover-feature-warehouse.jpg";
 import humanoidWorkVideo from "@/assets/site/robot-humanoid-work.mp4.asset.json";
+import humanoidFeatureVideo from "@/assets/site/humanoid-feature.mp4.asset.json";
+import humanoidFeaturePoster from "@/assets/site/humanoid-feature.jpg";
 import quadrupedWorkVideo from "@/assets/site/robot-quadruped-work.mp4.asset.json";
 import armWorkVideo from "@/assets/site/robot-arm-work.mp4.asset.json";
 
@@ -332,13 +334,13 @@ const Page = () => {
 
           <div className="relative overflow-hidden rounded-[18px] aspect-[16/9] bg-[#0a0f18]">
             <video
-              src={humanoidWorkVideo.url}
+              src={humanoidFeatureVideo.url}
               autoPlay
               muted
               loop
               playsInline
               preload="auto"
-              poster={humanoidHero}
+              poster={humanoidFeaturePoster}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg,rgba(8,10,16,0) 50%,rgba(8,10,16,0.85) 100%)" }} />
