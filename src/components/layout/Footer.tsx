@@ -68,7 +68,7 @@ const Footer = () => {
 
         <div className="pt-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {year} SantosLab — Johannes Santos. Dietmannsried, Germany.
+            © {year} SantosLab
           </p>
           <ul className="flex gap-5">
             <li><Link to="/impressum" className="text-xs text-white/30 hover:text-white/60 transition-colors">Impressum</Link></li>
