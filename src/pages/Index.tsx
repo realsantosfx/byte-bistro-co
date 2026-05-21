@@ -21,6 +21,7 @@ import buildBranche from "@/assets/site/build-branche.jpg";
 import buildKi from "@/assets/site/build-ki.jpg";
 import caseLager from "@/assets/site/case-lager.jpg";
 import caseProduktion from "@/assets/site/case-produktion.jpg";
+import caseCrmAussendienst from "@/assets/site/case-crm-aussendienst.jpg";
 
 const Arrow = ({ stroke = "white" }: { stroke?: string }) => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -482,7 +483,7 @@ const Index = () => {
                 metricLabel: "verlorene Leads",
                 bg: "linear-gradient(145deg,#0f2024 0%,#1a3a3f 50%,#0a1f24 100%)",
                 glow: "rgba(47,184,198,.22)",
-                img: caseProduktion,
+                img: caseCrmAussendienst,
               },
             ].map((c) => (
               <Link
