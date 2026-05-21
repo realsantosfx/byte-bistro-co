@@ -483,7 +483,7 @@ const Index = () => {
                 metricLabel: "verlorene Leads",
                 bg: "linear-gradient(145deg,#0f2024 0%,#1a3a3f 50%,#0a1f24 100%)",
                 glow: "rgba(47,184,198,.22)",
-                img: caseProduktion,
+                img: caseCrmAussendienst,
               },
             ].map((c) => (
               <Link
