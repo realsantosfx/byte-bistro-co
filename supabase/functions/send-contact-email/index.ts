@@ -62,7 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const body: ContactRequest = await req.json();
-    const { name, email, message, projectType, budget, companySize, timeline } = body;
+    const { name, email, message, projectType, budget, companySize, timeline, sendCraChecklist } = body;
     console.log(`Processing contact from: ${name} (${email})`);
 
     if (!name || !email || !message) {
