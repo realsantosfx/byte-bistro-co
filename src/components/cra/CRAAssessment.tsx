@@ -396,7 +396,7 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
             </div>
             <p className="text-[14px] text-muted-foreground mb-4 max-w-[560px]">
               Ihre Antworten werden mitgesendet. Wir liefern innerhalb von 24 Stunden eine erste Einordnung —
-              Gap-Report auf Wunsch in 48 Stunden.
+              Gap-Report auf Wunsch in 48 Stunden. <strong className="text-foreground">Zusätzlich erhalten Sie sofort per E-Mail unsere 30-Punkte CRA-Checkliste als PDF.</strong>
             </p>
             <div className="grid md:grid-cols-2 gap-3">
               <label className="block">
