@@ -464,11 +464,20 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
               <span className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--teal))" }}>
                 <Check className="w-5 h-5 text-white" />
               </span>
-              <div>
-                <div className="display text-[20px] font-bold mb-1">Anfrage erhalten</div>
-                <p className="text-[14px] text-muted-foreground max-w-[520px]">
-                  Wir melden uns innerhalb von 24 Stunden mit einer ersten Einordnung und Termin­vorschlägen für die Gap-Analyse.
+              <div className="flex-1">
+                <div className="display text-[20px] font-bold mb-1">Anfrage erhalten — Checkliste unterwegs</div>
+                <p className="text-[14px] text-muted-foreground max-w-[560px] mb-5">
+                  Ihre 30-Punkte CRA-Checkliste wurde soeben an <strong className="text-foreground">{email}</strong> gesendet.
+                  Wir melden uns innerhalb von 24 Stunden mit einer ersten Einordnung und Terminvorschlägen für die Gap-Analyse.
                 </p>
+                <a
+                  href="/downloads/santoslab-cra-checkliste.pdf"
+                  download
+                  className="inline-flex items-center gap-2.5 rounded-full border border-border bg-background px-5 py-2.5 text-[13px] font-medium hover:border-foreground/40 transition-colors"
+                >
+                  Checkliste direkt herunterladen (PDF)
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
           </div>
