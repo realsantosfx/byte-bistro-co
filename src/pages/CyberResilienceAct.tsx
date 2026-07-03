@@ -166,14 +166,19 @@ const Page = () => {
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "hsl(var(--teal))" }} />
               EU-Verordnung 2024/2847 · In Kraft seit 10.12.2024
             </div>
-            <h1 className="display text-white mb-7" style={{ fontSize: "clamp(44px, 7vw, 84px)", lineHeight: 1.04 }}>
-              Cyber Resilience Act.<br />
+            <h1 className="display text-white mb-5" style={{ fontSize: "clamp(44px, 7vw, 84px)", lineHeight: 1.04 }}>
+              Cyber Resilience Act umsetzen.<br />
               <span style={{ color: "hsl(var(--teal))" }}>CRA-ready seit Tag 1.</span>
             </h1>
-            <p className="text-[17px] font-light text-white/65 leading-relaxed max-w-[620px]">
-              Der CRA verpflichtet Software-Hersteller zu durchgängiger Cybersicherheit —
-              vom ersten Commit bis zum letzten Patch. SantosLab liefert Software, die nicht nur
-              funktioniert, sondern <strong className="text-white/85 font-medium">nachweislich sicher</strong> ist. Für jedes Projekt.
+            <p className="text-[15px] font-medium text-white/80 uppercase tracking-[0.12em] max-w-[640px] mb-6">
+              Praxis-Leitfaden für Software-Hersteller · EU-Verordnung 2024/2847
+            </p>
+            <p className="text-[17px] font-light text-white/65 leading-relaxed max-w-[640px]">
+              Der <strong className="text-white/85 font-medium">EU Cyber Resilience Act (CRA)</strong> verpflichtet Hersteller
+              von Produkten mit digitalen Elementen ab dem 11.12.2027 zu durchgängiger Cybersicherheit —
+              inklusive <strong className="text-white/85 font-medium">SBOM, Vulnerability Management, 24h-Meldepflicht</strong> und
+              CE-Kennzeichnung. SantosLab baut CRA-Konformität von der ersten Zeile Code an ein — und macht Bestandsprodukte
+              in 48 Stunden analysierbar.
             </p>
             <div className="flex flex-wrap gap-3 mt-9">
               <Link
