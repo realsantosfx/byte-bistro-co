@@ -52,7 +52,7 @@ const copy = {
     ],
     quoteLabel: "Stimme aus dem Projekt",
     quote: "Unser Außendienst hat jahrelang auf Zuruf und Bauchgefühl gearbeitet. SantosLab hat ein System gebaut das unseren Außendienst wirklich abbildet, nach jedem Besuch wird automatisch erfasst was besprochen wurde, jeder im Team sieht den aktuellen Stand, und wir erkennen jetzt frühzeitig wenn ein Kunde abzuspringen droht. Zum ersten Mal haben wir einen echten Überblick über unsere Pipeline.",
-    quoteAuthor: "Uwe Keyser · Geschäftsführer, HVK Keyser",
+    quoteAuthor: "Geschäftsführer · Chemievertrieb Mittelstand (anonymisiert)",
     ctaTitle: "Dein Unternehmen ist das nächste.",
     ctaBody: "Wir nehmen uns 45 Minuten. Du erklärst deine Prozesse. Wir zeigen dir, was möglich ist.",
     ctaButton: "Erstgespräch vereinbaren",
