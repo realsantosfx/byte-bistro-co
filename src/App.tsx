@@ -41,6 +41,7 @@ import DemoVenue from "./pages/DemoVenue";
 import DemoEmbed from "./pages/DemoEmbed";
 import CaseStudyMittelstand from "./pages/CaseStudyMittelstand";
 import CaseStudyChemievertrieb from "./pages/CaseStudyChemievertrieb";
+import CyberResilienceAct from "./pages/CyberResilienceAct";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -93,6 +94,7 @@ const App = () => (
             <Route path="/enterprise/:system/live" element={<DemoEmbed />} />
             <Route path="/case/mittelstand-erp" element={<CaseStudyMittelstand />} />
             <Route path="/case/chemievertrieb-crm" element={<CaseStudyChemievertrieb />} />
+            <Route path="/cra" element={<CyberResilienceAct />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
