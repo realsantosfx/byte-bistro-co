@@ -239,6 +239,7 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
           name: name.trim(),
           email: email.trim(),
           message,
+          sendCraChecklist: true,
         },
       });
       if (error) throw error;
