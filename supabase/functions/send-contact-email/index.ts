@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "resend";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { CRA_CHECKLIST_PDF_BASE64 } from "./cra-checkliste-b64.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -17,6 +18,7 @@ interface ContactRequest {
   budget?: string;
   companySize?: string;
   timeline?: string;
+  sendCraChecklist?: boolean;
 }
 
 const projectTypeLabels: Record<string, string> = {
