@@ -255,7 +255,13 @@ const Enterprise = () => {
                 </motion.div>
                 <div className="relative z-10">
                   <h2 className="headline-lg text-foreground mb-6 max-w-2xl mx-auto">{e.ctaTitle}</h2>
-                  <p className="body-md max-w-lg mx-auto mb-10">{e.ctaBody}</p>
+                  <p className="body-md max-w-lg mx-auto mb-4">{e.ctaBody}</p>
+                  <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-10">
+                    Enterprise-Software von SantosLab ist{" "}
+                    <Link to="/cra" className="text-foreground underline decoration-accent decoration-2 underline-offset-4 hover:opacity-80 transition-opacity">
+                      Cyber Resilience Act–konform
+                    </Link>{" "}— Secure by Design, SBOM und Meldepflichten inklusive.
+                  </p>
                   <Link to="/kontakt">
                     <Button variant="apple" size="lg" className="group">
                       {e.ctaButton}

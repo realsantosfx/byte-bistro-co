@@ -250,9 +250,19 @@ const Page = () => {
               <h2 className="display text-white mb-5" style={{ fontSize: "clamp(28px, 3.8vw, 44px)", lineHeight: 1.1 }}>
                 Beginne mit einem ehrlichen Blick auf deinen Betrieb.
               </h2>
-              <p className="text-[15px] text-white/55 leading-[1.8] mb-9">
+              <p className="text-[15px] text-white/55 leading-[1.8] mb-4">
                 Wir analysieren deinen Prozess, zeigen dir genau, was Operative Software
                 bei dir verändert — und welche Module wirklich Hebel haben.
+              </p>
+              <p className="text-[13px] text-white/45 leading-relaxed mb-9">
+                Jede Auslieferung erfolgt nach unseren{" "}
+                <Link to="/cra" className="text-white/80 underline decoration-[hsl(var(--teal))] decoration-2 underline-offset-4 hover:text-white transition-colors">
+                  CRA-ready Standards
+                </Link>{" "}
+                (Cyber Resilience Act) — inklusive SBOM, Vulnerability Management und dokumentierter Meldeketten. Referenzen findest du unter{" "}
+                <Link to="/projekte" className="text-white/80 underline underline-offset-4 hover:text-white transition-colors">
+                  Projekte
+                </Link>.
               </p>
               <Link
                 to="/kontakt"
