@@ -17,9 +17,9 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Uwe Keyser",
-    role: "Geschäftsführer",
-    company: "HVK Keyser",
+    name: "Geschäftsführer",
+    role: "Chemievertrieb Mittelstand",
+    company: "Anonymisiert",
     text: "Unser Außendienst hat jahrelang auf Zuruf und Bauchgefühl gearbeitet. SantosLab hat ein System gebaut das unseren Außendienst wirklich abbildet, nach jedem Besuch wird automatisch erfasst was besprochen wurde, jeder im Team sieht den aktuellen Stand, und wir erkennen jetzt frühzeitig wenn ein Kunde abzuspringen droht. Zum ersten Mal haben wir einen echten Überblick über unsere Pipeline.",
     rating: 5,
   },
