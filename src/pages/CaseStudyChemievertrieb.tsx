@@ -105,7 +105,7 @@ const copy = {
     ],
     quoteLabel: "Voice from the project",
     quote: "Our field sales worked on word of mouth and gut feeling for years. SantosLab built a system that truly maps our field sales: after every visit, what was discussed is captured automatically, everyone on the team sees the current status, and we now spot early when a customer is about to churn. For the first time we have a real overview of our pipeline.",
-    quoteAuthor: "Uwe Keyser · Managing Director, HVK Keyser",
+    quoteAuthor: "Managing Director · Mid-market chemical distributor (anonymized)",
     ctaTitle: "Your company is next.",
     ctaBody: "We take 45 minutes. You explain your processes. We show you what's possible.",
     ctaButton: "Book intro call",
