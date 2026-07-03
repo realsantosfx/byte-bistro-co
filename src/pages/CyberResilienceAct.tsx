@@ -3,6 +3,7 @@ import { ArrowUpRight, ShieldCheck, FileCode2, Bug, GitBranch, ClipboardCheck, R
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import CRAAssessment from "@/components/cra/CRAAssessment";
 
 const Arrow = () => (
   <svg width="11" height="11" viewBox="0 0 11 11">
@@ -360,6 +361,24 @@ const Page = () => {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ASSESSMENT */}
+        <section id="assessment" className="py-20 md:py-24 section-x container-shell">
+          <div className="mb-10 max-w-[820px]">
+            <div className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.18em] mb-3">
+              CRA-Schnell-Assessment
+            </div>
+            <h2 className="hl-lg mb-5">
+              7 Fragen. Eine ehrliche{" "}
+              <em className="not-italic" style={{ color: "hsl(var(--teal))" }}>Standortbestimmung</em>.
+            </h2>
+            <p className="bd">
+              Beantworten Sie in unter zwei Minuten, wo Sie zwischen Mindeststandard und SantosLab-Niveau stehen — und
+              starten Sie direkt aus dem Ergebnis eine Detailanfrage.
+            </p>
+          </div>
+          <CRAAssessment />
         </section>
 
         {/* FAQ */}
