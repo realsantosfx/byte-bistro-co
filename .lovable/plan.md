@@ -1,21 +1,31 @@
+## Ziel
 
+Die SEO-Meta-Tags in `index.html` sind veraltet — sie sprechen noch von „Restaurants" und nennen den falschen Gründernamen („Johannes Schaffer"). Die aktuelle Positionierung (SantosOS, Robotik, lokale KI, operative Software für Mittelstand & Enterprise) fehlt komplett.
 
-# Plan: CTA-Texte auf allen Demo-Detailseiten vereinheitlichen
+## Änderungen in `index.html`
 
-## Problem
-Die Änderung von „Live Demo öffnen" zu „System aufsetzen" wurde nur in `detailCta` (für `DemoDetail.tsx`) durchgeführt. Die 8 individuellen Demo-Seiten nutzen eigene Translation-Keys (`heroCta`, `ctaButton`), die noch auf „Live Demo öffnen" stehen.
+**Title (Zeile 9)**
+- Alt: `SantosLab — Boutique Software Studio`
+- Neu: `SantosLab — Operative Software, Robotik & lokale KI für den Mittelstand`
 
-## Änderungen
+**Description (Zeile 10, 47, 48)**
+- Alt: „…digitale Geschäftssysteme für Restaurants, servicebasierte Unternehmen und Organisationen."
+- Neu: „SantosLab baut SantosOS: operative Software, Robotik und lokale KI für Mittelstand und Enterprise. Ein Betriebssystem für Produktion, Logistik, Handel und Sanierung."
 
-### 1. `src/i18n/translations.ts` — CTA-Texte aktualisieren
+**Keywords (Zeile 12)**
+- Neu: `SantosOS, operative Software, Robotik, lokale KI, Mittelstand, Enterprise Software, Automatisierung, Vision KI, Deutschland`
 
-Für alle 7 Demo-Systeme (Restaurant, Barber, Studio, Business, Delivery, SalesSystem, GuestService):
-- `heroCta`: „Live Demo öffnen" → **„System aufsetzen"** (DE) / **„Set up system"** (EN)
-- `ctaButton`: „Live Demo öffnen" → **„System aufsetzen"** (DE) / **„Set up system"** (EN)
+**OG-Title / Twitter-Title (Zeilen 45–46)**
+- Neu: `SantosLab — Operative Software, Robotik & lokale KI`
 
-Für DealFlow / Enterprise:
-- `heroCta` / `ctaButton`: → **„System besprechen"** (DE) / **„Discuss system"** (EN) — gemäß Enterprise-Strategie
+**OG-Description / Twitter-Description (Zeilen 47–48)**
+- Angeglichen an neue Description.
 
-### Betroffene Seiten
-Keine Komponenten-Änderungen nötig — alle Seiten verlinken bereits auf `/kontakt`. Nur die Texte in den Translations werden angepasst.
+**JSON-LD Organization (Zeilen 27–40)**
+- `description` auf neue Positionierung aktualisieren.
+- `founder.name` von „Johannes Schaffer" → „Johannes Santos" korrigieren.
 
+## Nicht Teil dieser Änderung
+
+- Per-Route Meta (react-helmet-async) — hinzuzufügen wäre ein separater, größerer Schritt. Sag Bescheid, wenn du per-Seite SEO (Robotik, SantosOS, Enterprise, jede Branche/Anwendung eigene Title/Description) willst — dann plane ich das getrennt.
+- `og:image` bleibt unverändert.
