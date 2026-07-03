@@ -635,9 +635,10 @@ const Index = () => {
                       +
                     </span>
                   </summary>
-                  <div className="px-5 md:px-6 pb-5 md:pb-6 -mt-1 text-[14px] text-white/60 leading-relaxed">
-                    {item.a}
-                  </div>
+                  <div
+                    className="px-5 md:px-6 pb-5 md:pb-6 -mt-1 text-[14px] text-white/60 leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: item.a }}
+                  />
                 </details>
               ))}
             </div>
