@@ -390,6 +390,93 @@ const Page = () => {
           </div>
         </section>
 
+        {/* RELATED — internal linking */}
+        <section className="section-x container-shell pb-4">
+          <div className="rounded-[18px] border border-border bg-muted/30 p-8 md:p-10">
+            <div className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.18em] mb-4">
+              Wie wir das im Betrieb umsetzen
+            </div>
+            <h2 className="hl-md mb-6 max-w-[680px]">
+              CRA in der Praxis — vernetzt mit unseren Leistungen und Referenzen.
+            </h2>
+            <div className="grid md:grid-cols-3 gap-3.5">
+              <Link
+                to="/produkte/operative-software"
+                className="group rounded-[14px] border border-border bg-background p-6 hover:border-foreground/40 transition-colors flex flex-col"
+              >
+                <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground mb-2">Leistung</div>
+                <div className="display text-[17px] font-bold leading-snug mb-2">Operative Software</div>
+                <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
+                  ERP, WMS und CRM-Systeme, die von Tag 1 nach CRA-Standards gebaut werden — inkl. SBOM und Security-Gates.
+                </p>
+                <span className="mt-auto inline-flex items-center gap-1.5 text-[12.5px] font-medium" style={{ color: "hsl(var(--teal))" }}>
+                  Zur Leistung <ArrowUpRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+              <Link
+                to="/enterprise"
+                className="group rounded-[14px] border border-border bg-background p-6 hover:border-foreground/40 transition-colors flex flex-col"
+              >
+                <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground mb-2">Leistung</div>
+                <div className="display text-[17px] font-bold leading-snug mb-2">Enterprise-Software</div>
+                <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
+                  Große Systeme für Konzern-Umgebungen: Zero-Trust-Architektur, SBOM-Pflege im Betrieb, dokumentierte Meldeketten.
+                </p>
+                <span className="mt-auto inline-flex items-center gap-1.5 text-[12.5px] font-medium" style={{ color: "hsl(var(--teal))" }}>
+                  Zur Leistung <ArrowUpRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+              <Link
+                to="/projekte"
+                className="group rounded-[14px] border border-border bg-background p-6 hover:border-foreground/40 transition-colors flex flex-col"
+              >
+                <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground mb-2">Referenzen</div>
+                <div className="display text-[17px] font-bold leading-snug mb-2">Alle Case Studies</div>
+                <p className="text-[13px] text-muted-foreground leading-relaxed mb-4">
+                  Ausgelieferte Systeme im Mittelstand — jedes Projekt nach CRA-ready Standards gebaut und dokumentiert.
+                </p>
+                <span className="mt-auto inline-flex items-center gap-1.5 text-[12.5px] font-medium" style={{ color: "hsl(var(--teal))" }}>
+                  Referenzen ansehen <ArrowUpRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            </div>
+
+            <div className="mt-4 grid md:grid-cols-2 gap-3.5">
+              <Link
+                to="/case/mittelstand-erp"
+                className="group rounded-[14px] border border-border bg-background p-6 hover:border-foreground/40 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground mb-1.5">Case Study · ERP</div>
+                    <div className="display text-[15.5px] font-bold leading-snug">Mittelstand-ERP mit AI-Layer</div>
+                    <p className="text-[12.5px] text-muted-foreground leading-relaxed mt-1.5">
+                      7 M € Umsatz, CRA-konform ausgeliefert — Fehlerquote −80 % in zwei Monaten.
+                    </p>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+                </div>
+              </Link>
+              <Link
+                to="/case/chemievertrieb-crm"
+                className="group rounded-[14px] border border-border bg-background p-6 hover:border-foreground/40 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground mb-1.5">Case Study · CRM</div>
+                    <div className="display text-[15.5px] font-bold leading-snug">Chemievertrieb-CRM mit AI-Layer</div>
+                    <p className="text-[12.5px] text-muted-foreground leading-relaxed mt-1.5">
+                      Außendienst-Pipeline sichtbar gemacht — SBOM, Vulnerability Management und Meldeketten von Anfang an.
+                    </p>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+
         {/* NUMBERS 2 */}
         <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-border container-shell">
           {facts.map((x, i) => (
