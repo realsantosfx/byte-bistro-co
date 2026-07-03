@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowUpRight, ShieldCheck, FileCode2, Bug, GitBranch, ClipboardCheck, RefreshCw, Check, X } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -73,9 +74,80 @@ const faqs = [
 ];
 
 const Page = () => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Start", item: "https://santoslab.de/" },
+      { "@type": "ListItem", position: 2, name: "Cyber Resilience Act", item: "https://santoslab.de/cra" },
+    ],
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: "Cyber Resilience Act (CRA) — Umsetzung für Software-Hersteller",
+    description:
+      "Wie SantosLab den EU Cyber Resilience Act (Verordnung 2024/2847) in Software-Projekten umsetzt: Secure by Design, SBOM, Vulnerability Management, 24h-/72h-Meldepflichten und Konformität nach Anhang I.",
+    author: { "@type": "Organization", name: "SantosLab" },
+    publisher: {
+      "@type": "Organization",
+      name: "SantosLab",
+      url: "https://santoslab.de",
+    },
+    inLanguage: "de-DE",
+    about: [
+      { "@type": "Thing", name: "Cyber Resilience Act" },
+      { "@type": "Thing", name: "EU-Verordnung 2024/2847" },
+      { "@type": "Thing", name: "Software Bill of Materials" },
+    ],
+    mainEntityOfPage: "https://santoslab.de/cra",
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Cyber Resilience Act umsetzen — CRA-konforme Software | SantosLab</title>
+        <meta
+          name="description"
+          content="CRA-Umsetzung nach EU-Verordnung 2024/2847: Secure by Design, SBOM, Vulnerability Management, 24h-/72h-Meldepflichten. SantosLab liefert CRA-ready Software für Mittelstand & Enterprise."
+        />
+        <meta
+          name="keywords"
+          content="Cyber Resilience Act, CRA, EU 2024/2847, SBOM, Secure by Design, Vulnerability Management, CRA Umsetzung, CRA Compliance, CRA Checkliste, Software-Hersteller CRA"
+        />
+        <link rel="canonical" href="https://santoslab.de/cra" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Cyber Resilience Act umsetzen — CRA-konforme Software | SantosLab" />
+        <meta
+          property="og:description"
+          content="Wie SantosLab den EU Cyber Resilience Act umsetzt: Secure by Design, SBOM, Vulnerability Management, Meldepflichten. Plus kostenloses CRA-Schnell-Assessment und PDF-Checkliste."
+        />
+        <meta property="og:url" content="https://santoslab.de/cra" />
+        <meta property="og:site_name" content="SantosLab" />
+        <meta property="og:locale" content="de_DE" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cyber Resilience Act umsetzen | SantosLab" />
+        <meta
+          name="twitter:description"
+          content="CRA-Umsetzung für Software-Hersteller: Secure by Design, SBOM, Meldepflichten. Kostenloses Schnell-Assessment + PDF-Checkliste."
+        />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      </Helmet>
       <Header />
+
 
       <main>
         {/* HERO */}
@@ -94,14 +166,19 @@ const Page = () => {
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "hsl(var(--teal))" }} />
               EU-Verordnung 2024/2847 · In Kraft seit 10.12.2024
             </div>
-            <h1 className="display text-white mb-7" style={{ fontSize: "clamp(44px, 7vw, 84px)", lineHeight: 1.04 }}>
-              Cyber Resilience Act.<br />
+            <h1 className="display text-white mb-5" style={{ fontSize: "clamp(44px, 7vw, 84px)", lineHeight: 1.04 }}>
+              Cyber Resilience Act umsetzen.<br />
               <span style={{ color: "hsl(var(--teal))" }}>CRA-ready seit Tag 1.</span>
             </h1>
-            <p className="text-[17px] font-light text-white/65 leading-relaxed max-w-[620px]">
-              Der CRA verpflichtet Software-Hersteller zu durchgängiger Cybersicherheit —
-              vom ersten Commit bis zum letzten Patch. SantosLab liefert Software, die nicht nur
-              funktioniert, sondern <strong className="text-white/85 font-medium">nachweislich sicher</strong> ist. Für jedes Projekt.
+            <p className="text-[15px] font-medium text-white/80 uppercase tracking-[0.12em] max-w-[640px] mb-6">
+              Praxis-Leitfaden für Software-Hersteller · EU-Verordnung 2024/2847
+            </p>
+            <p className="text-[17px] font-light text-white/65 leading-relaxed max-w-[640px]">
+              Der <strong className="text-white/85 font-medium">EU Cyber Resilience Act (CRA)</strong> verpflichtet Hersteller
+              von Produkten mit digitalen Elementen ab dem 11.12.2027 zu durchgängiger Cybersicherheit —
+              inklusive <strong className="text-white/85 font-medium">SBOM, Vulnerability Management, 24h-Meldepflicht</strong> und
+              CE-Kennzeichnung. SantosLab baut CRA-Konformität von der ersten Zeile Code an ein — und macht Bestandsprodukte
+              in 48 Stunden analysierbar.
             </p>
             <div className="flex flex-wrap gap-3 mt-9">
               <Link
