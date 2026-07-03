@@ -274,7 +274,7 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
         </h3>
         <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[620px] mb-8">
           7 kurze Fragen zu SBOM, Vulnerability Management, Pipeline, Dokumentation und Meldepflicht.
-          Danach erhalten Sie eine ehrliche Einordnung und können Ihre Details für eine 48-Stunden-Gap-Analyse hinterlassen.
+          Danach erhalten Sie eine ehrliche Einordnung — plus unsere <strong className="text-foreground">30-Punkte CRA-Checkliste als PDF per E-Mail</strong>.
         </p>
         <button
           type="button"
