@@ -47,6 +47,7 @@ const Projekte = () => {
             <p className="bd pt-1.5">
               Ausgewählte Case Studies aus dem Mittelstand: individuelle Software-Systeme mit aktiver AI-Schicht,
               live im Betrieb. Keine Demos — sondern Systeme, die täglich Umsatz, Prozesse und Entscheidungen tragen.
+              Jedes Projekt wird nach unseren <Link to="/cra" className="underline decoration-[hsl(var(--teal))] decoration-2 underline-offset-4 hover:text-foreground transition-colors">CRA-ready Standards</Link> gebaut — Secure by Design, SBOM, Vulnerability Management.
             </p>
           </div>
         </section>
