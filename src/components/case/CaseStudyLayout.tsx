@@ -261,6 +261,18 @@ const CaseStudyLayout = ({ r, heroGradient }: Props) => {
             </div>
           </div>
         </section>
+
+        {/* CRA compliance note */}
+        <section className="section-x container-shell pb-16 -mt-4">
+          <div className="rounded-[14px] border border-border bg-muted/30 px-6 py-5 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-[13px] text-muted-foreground max-w-[520px]">
+              Dieses Projekt wurde nach unseren <Link to="/cra" className="text-foreground underline decoration-[hsl(var(--teal))] decoration-2 underline-offset-4 hover:opacity-80 transition-opacity">CRA-ready Standards</Link> gebaut — Secure by Design, SBOM und Vulnerability Management inklusive.
+            </p>
+            <Link to="/cra" className="text-[12px] font-medium uppercase tracking-[0.14em] text-foreground border border-foreground/20 rounded-full px-3.5 py-1.5 hover:bg-foreground hover:text-background transition-colors">
+              Cyber Resilience Act →
+            </Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
