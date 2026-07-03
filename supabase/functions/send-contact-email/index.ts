@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "resend";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { CRA_CHECKLIST_PDF_BASE64 } from "./cra-checkliste-b64.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -17,6 +18,7 @@ interface ContactRequest {
   budget?: string;
   companySize?: string;
   timeline?: string;
+  sendCraChecklist?: boolean;
 }
 
 const projectTypeLabels: Record<string, string> = {
@@ -60,7 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const body: ContactRequest = await req.json();
-    const { name, email, message, projectType, budget, companySize, timeline } = body;
+    const { name, email, message, projectType, budget, companySize, timeline, sendCraChecklist } = body;
     console.log(`Processing contact from: ${name} (${email})`);
 
     if (!name || !email || !message) {
@@ -184,6 +186,44 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     console.log("Email sent successfully:", emailResponse);
+
+    // Deliver the CRA checklist PDF to the requester when asked
+    if (sendCraChecklist) {
+      try {
+        const checklistResponse = await resend.emails.send({
+          from: "SantosLab <onboarding@resend.dev>",
+          to: [email],
+          subject: "Ihre CRA-Checkliste von SantosLab",
+          html: `
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #0f1417;">
+              <h2 style="font-size: 22px; margin: 0 0 12px 0;">Danke, ${name.split(" ")[0] || name}.</h2>
+              <p style="font-size: 15px; line-height: 1.55; color: #333; margin: 0 0 16px 0;">
+                Im Anhang finden Sie die <strong>SantosLab CRA-Checkliste</strong> — 30 konkrete Prüfpunkte entlang der sechs CRA-Säulen (Secure by Design, SBOM, Vulnerability Management, Meldepflichten, Dokumentation, Support &amp; Updates).
+              </p>
+              <p style="font-size: 15px; line-height: 1.55; color: #333; margin: 0 0 16px 0;">
+                Gehen Sie die Liste in Ruhe mit Ihrem Team durch. Wir melden uns innerhalb von 24 Stunden mit einer ersten Einordnung Ihres Assessment-Ergebnisses und einem Terminvorschlag für die 48-Stunden-Gap-Analyse.
+              </p>
+              <p style="font-size: 15px; line-height: 1.55; color: #333; margin: 0 0 24px 0;">
+                Fragen vorab? Antworten Sie einfach auf diese E-Mail oder schreiben Sie an <a href="mailto:hello@santoslab.de" style="color: #2fb8c6;">hello@santoslab.de</a>.
+              </p>
+              <div style="border-top: 1px solid #e5e7eb; padding-top: 16px; color: #5b6570; font-size: 12px;">
+                SantosLab · Operative Software, Robotik &amp; lokale KI · santoslab.de/cra
+              </div>
+            </div>
+          `,
+          attachments: [
+            {
+              filename: "SantosLab-CRA-Checkliste.pdf",
+              content: CRA_CHECKLIST_PDF_BASE64,
+            },
+          ],
+        });
+        console.log("CRA checklist delivered:", checklistResponse);
+      } catch (checklistErr) {
+        console.error("Failed to deliver CRA checklist:", checklistErr);
+      }
+    }
+
 
     return new Response(
       JSON.stringify({ success: true, message: "Nachricht erfolgreich gesendet" }),

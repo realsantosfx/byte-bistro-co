@@ -239,6 +239,7 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
           name: name.trim(),
           email: email.trim(),
           message,
+          sendCraChecklist: true,
         },
       });
       if (error) throw error;
@@ -273,7 +274,7 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
         </h3>
         <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[620px] mb-8">
           7 kurze Fragen zu SBOM, Vulnerability Management, Pipeline, Dokumentation und Meldepflicht.
-          Danach erhalten Sie eine ehrliche Einordnung und können Ihre Details für eine 48-Stunden-Gap-Analyse hinterlassen.
+          Danach erhalten Sie eine ehrliche Einordnung — plus unsere <strong className="text-foreground">30-Punkte CRA-Checkliste als PDF per E-Mail</strong>.
         </p>
         <button
           type="button"
@@ -396,7 +397,7 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
             </div>
             <p className="text-[14px] text-muted-foreground mb-4 max-w-[560px]">
               Ihre Antworten werden mitgesendet. Wir liefern innerhalb von 24 Stunden eine erste Einordnung —
-              Gap-Report auf Wunsch in 48 Stunden.
+              Gap-Report auf Wunsch in 48 Stunden. <strong className="text-foreground">Zusätzlich erhalten Sie sofort per E-Mail unsere 30-Punkte CRA-Checkliste als PDF.</strong>
             </p>
             <div className="grid md:grid-cols-2 gap-3">
               <label className="block">
@@ -463,11 +464,20 @@ ${note ? `\nZusätzliche Anmerkung:\n${note}` : ""}
               <span className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--teal))" }}>
                 <Check className="w-5 h-5 text-white" />
               </span>
-              <div>
-                <div className="display text-[20px] font-bold mb-1">Anfrage erhalten</div>
-                <p className="text-[14px] text-muted-foreground max-w-[520px]">
-                  Wir melden uns innerhalb von 24 Stunden mit einer ersten Einordnung und Termin­vorschlägen für die Gap-Analyse.
+              <div className="flex-1">
+                <div className="display text-[20px] font-bold mb-1">Anfrage erhalten — Checkliste unterwegs</div>
+                <p className="text-[14px] text-muted-foreground max-w-[560px] mb-5">
+                  Ihre 30-Punkte CRA-Checkliste wurde soeben an <strong className="text-foreground">{email}</strong> gesendet.
+                  Wir melden uns innerhalb von 24 Stunden mit einer ersten Einordnung und Terminvorschlägen für die Gap-Analyse.
                 </p>
+                <a
+                  href="/downloads/santoslab-cra-checkliste.pdf"
+                  download
+                  className="inline-flex items-center gap-2.5 rounded-full border border-border bg-background px-5 py-2.5 text-[13px] font-medium hover:border-foreground/40 transition-colors"
+                >
+                  Checkliste direkt herunterladen (PDF)
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
           </div>
