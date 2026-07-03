@@ -618,6 +618,10 @@ const Index = () => {
                   q: "Wie lange dauert es bis zum ersten Ergebnis?",
                   a: "Erste Prototypen der Software stehen meist innerhalb weniger Wochen. Roboter-Integration wird erst danach geplant — wenn Datenflüsse, Prozesse und Übergaben sauber digital abgebildet sind.",
                 },
+                {
+                  q: "Ist eure Software CRA-konform (Cyber Resilience Act)?",
+                  a: "Ja. Jedes Projekt wird nach unseren <a href=\"/cra\" style=\"color:#2fb8c6;text-decoration:underline\">CRA-ready Standards</a> gebaut — Secure by Design, SBOM, Vulnerability Management und dokumentierte 24-/72-Stunden-Meldeketten. Für Bestandsprodukte liefern wir eine Gap-Analyse in 48 Stunden.",
+                },
               ].map((item, i) => (
                 <details
                   key={i}
